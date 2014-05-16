@@ -4,15 +4,17 @@
  * 
  */
 jQuery(document).ready(function($) {
-    // slider
+    //--slider
     var w = $('#main-slider').width();
     $('#slider_container,#slider_container > div').width(w);
     var options = {$AutoPlay: true};
     var jssor_slider1 = new $JssorSlider$('slider_container', options);
 
-    //match CTA Boxes height
+    
+    //--Match CTA Boxes height
     matchColHeights('.site-cta');
-    //----------------- CTA boxes
+    
+    //--CTA boxes
     $('.site-cta').hover(function(){
         $(this).css({
            'borderColor':'#ff6600'

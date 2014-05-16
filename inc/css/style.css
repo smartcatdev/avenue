@@ -34,6 +34,18 @@ root {
     background: #222222;
     color: #d0d0d0;
     overflow: hidden;
+    /*height: 40px;*/
+}
+#site-toolbar .social-bar a{
+    width: 30px;
+    height: 30px;
+    margin: 7px 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #e0e0e0;
+    color: #e0e0e0;
+    border-radius: 100%;
 }
 #site-toolbar .row .social-bar{
     text-align: right;
@@ -49,6 +61,12 @@ root {
 /*-- Header --*/
 .site-header{
     width: 100%;
+}
+.site-title{
+    display: inline-block;
+}
+.site-description{
+    display: inline-block;
 }
 
 /*-- Slider --*/
