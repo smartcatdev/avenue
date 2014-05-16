@@ -1,0 +1,98 @@
+/* 
+    Document   : Avenue Stylesheet
+    Created on : May 14, 2014, 8:23:39 PM
+    Author     : Bilal
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.row{
+    margin: 0 auto;
+    overflow: hidden;
+}
+.scale125{
+    transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -webkit-transform: scale(1.25);
+}
+.scale11{
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+.transition{
+    transition: 0.4s all ease;
+    -moz-transition: 0.4s all ease;
+    -webkit-transition: 0.4s all ease;
+}
+/*-- Toolbar --*/
+#site-toolbar{
+    background: #222222;
+    color: #d0d0d0;
+    overflow: hidden;
+}
+#site-toolbar .row .social-bar{
+    text-align: right;
+}
+.site-branding{
+    border-top: 8px solid #f5f5f5;
+    border-bottom: 5px solid #f5f5f5;
+}
+.main-navigation{
+    border-bottom: 8px solid #f5f5f5;
+}
+
+/*-- Header --*/
+.site-header{
+    width: 100%;
+}
+
+/*-- Slider --*/
+#main-slider{
+    overflow: hidden
+}
+#main-slider .col-md-12{
+    padding: 0;
+}
+
+/*-- CTA boxes --*/
+#site-cta{
+    margin-top: 80px;
+    overflow: visible;
+}
+/*#site-cta .col-md-4 > div{
+    padding: 10px;
+    border-left: 1px solid #333;
+    
+    position: relative;
+}
+#site-cta .col-md-4 > div .fa{
+    position: absolute;
+    top: -50px;
+    left: -25px;
+    font-size: 34px;
+    border: 1px solid #333;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    transition: 0.4s all ease;
+    -moz-transition: 0.4s all ease;
+    -webkit-transition: 0.4s all ease;
+}
+#site-cta .col-md-4 > div h3{
+    position: absolute;
+    top: -35px;
+    left: 35px;
+}*/
+@media(min-width: 1060px){
+    .row{
+        width: 1060px;
+    }
+}
