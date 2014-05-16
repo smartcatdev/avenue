@@ -64,33 +64,40 @@ root {
     margin-top: 80px;
     overflow: visible;
 }
-/*#site-cta .col-md-4 > div{
-    padding: 10px;
-    border-left: 1px solid #333;
+.site-cta{
+    border-left: 1px solid #444;
     
-    position: relative;
 }
-#site-cta .col-md-4 > div .fa{
-    position: absolute;
-    top: -50px;
-    left: -25px;
-    font-size: 34px;
-    border: 1px solid #333;
-    border-radius: 100%;
-    -webkit-border-radius: 100%;
+.site-cta .fa{
+    font-size: 28px;
+    border: 1px solid #444;
     width: 50px;
     height: 50px;
     text-align: center;
     line-height: 50px;
-    transition: 0.4s all ease;
-    -moz-transition: 0.4s all ease;
-    -webkit-transition: 0.4s all ease;
-}
-#site-cta .col-md-4 > div h3{
+    border-radius: 100%;
     position: absolute;
-    top: -35px;
-    left: 35px;
-}*/
+    left: -40px;
+    top: 0;
+    background: #fff;
+    transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+}
+.site-cta .col-md-10 > div{
+    position: relative;
+}
+
+.site-cta h3{
+    font-size: 20px;
+}
+
+/*-- Top Banner --*/
+#top-banner{
+    background: #222;
+    min-height: 200px;
+}
+
 @media(min-width: 1060px){
     .row{
         width: 1060px;

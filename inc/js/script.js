@@ -10,31 +10,86 @@ jQuery(document).ready(function($) {
     var options = {$AutoPlay: true};
     var jssor_slider1 = new $JssorSlider$('slider_container', options);
 
-    //CTA boxes
-    $('#site-cta .col-md-4 > div').hover(function(){
-//        $('.fa',this).addClass('scale125').delay(300).addClass('transition').addClass('scale11');
-        $('.fa',this).stop(true,false).animate({
-            'width':'65px',
-            'height':'65px',
-            'font-size':'45px',
-            'top':'-65px',
-            'left':'-32px',
-            'line-height':'65px'
-        },100,function(){
-            $(this).stop(true,false).animate({
-                'width':'50px',
-                'height':'50px',
-                'font-size':'34px',
-                'top':'-50px',
-                'left':'-25px',
-                'line-height':'50px'                
-            },300,function(){
-                
-            });
+    //match CTA Boxes height
+    matchColHeights('.site-cta');
+    //----------------- CTA boxes
+    $('.site-cta').hover(function(){
+        $(this).css({
+           'borderColor':'#ff6600'
+        });
+        $('.fa',this).css({
+            'width':'85px',
+            'height':'85px',
+            'top':'-50px',
+            'left':'-57px',
+            'line-height': '85px',
+            'color':'#ff6600',
+            'borderColor':'#ff6600'            
         });
     },function(){
+        $(this).css({
+           'borderColor':'#444'
+        });        
+        $('.fa',this).css({
+            'width':'50px',
+            'height':'50px',
+            'top':'0',
+            'left':'-40px',
+            'line-height': '50px',
+            'color':'#444',
+            'borderColor':'#444'            
+        });        
+    })
         
-    });
+        
+//        $('.fa',this).addClass('scale125').delay(300).addClass('transition').addClass('scale11');
+//        $(this).css({
+//           'borderColor':'#ff6600' 
+//        });
+//        $('.fa',this).css({
+//            'color':'#ff6600',
+//            'borderColor':'#ff6600'
+//            }).stop(true,false).animate({
+//                'width':'85px',
+//                'height':'85px',
+//                'top':'-20px',
+//                'left':'-57px',
+//                'line-height': '85px',
+//            },75,'linear',function(){
+//                $(this).stop(true,false).animate({
+//                    'width':'50px',
+//                    'height':'50px',
+//                    'line-height':'50px',
+//                    'top':'-35px',
+//                    'left':'-40px'
+//                },200,'linear',function(){
+//
+//                });
+//            });
+//    },function(){
+//        $(this).css({
+//           'borderColor':'#444' 
+//        });
+//        $('.fa',this).css({
+//            'color':'#444',
+//            'borderColor':'#444'
+//        });
+//        $('.fa',this).stop(true,false).animate({
+//            'top':'0'
+//        },200,'linear');
+//    });
+    //------------------- Match Height Function
+    function matchColHeights(selector){
+        var maxHeight=0;
+        $(selector).each(function(){
+            var height = $(this).height();
+            if (height > maxHeight){
+                maxHeight = height;
+            }
+        });
+        $(selector).height(maxHeight);
+    };
+
 
 
 });
