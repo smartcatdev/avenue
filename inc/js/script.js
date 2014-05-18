@@ -5,8 +5,8 @@
  */
 jQuery(document).ready(function($) {
     //--slider
-    var w = $('#main-slider').width();
-    $('#slider_container,#slider_container > div').width(w);
+    resize_slider();
+
     var options = {$AutoPlay: true};
     var jssor_slider1 = new $JssorSlider$('slider_container', options);
 
@@ -19,6 +19,10 @@ jQuery(document).ready(function($) {
         $(this).css({
            'borderColor':'#ff6600'
         });
+        $('.col-md-10',this).stop(true,false).animate({'bottom': '20px'},300);
+        $('.btn',this).fadeIn(300);
+        $('h3',this).css({'color':'#ff6600'});
+        
         $('.fa',this).css({
             'width':'85px',
             'height':'85px',
@@ -31,7 +35,10 @@ jQuery(document).ready(function($) {
     },function(){
         $(this).css({
            'borderColor':'#444'
-        });        
+        });
+        $('.col-md-10',this).stop(true,false).animate({'bottom': '0'},300);
+        $('h3',this).css({'color':'#444'});
+        $('.btn',this).fadeOut(300);
         $('.fa',this).css({
             'width':'50px',
             'height':'50px',
@@ -41,7 +48,7 @@ jQuery(document).ready(function($) {
             'color':'#444',
             'borderColor':'#444'            
         });        
-    })
+    });
         
         
 //        $('.fa',this).addClass('scale125').delay(300).addClass('transition').addClass('scale11');
@@ -91,7 +98,11 @@ jQuery(document).ready(function($) {
         });
         $(selector).height(maxHeight);
     };
-
+    
+    function resize_slider(){
+        var w = $('#main-slider').width();
+        $('#slider_container,#slider_container > div').width(w);        
+    }
 
 
 });

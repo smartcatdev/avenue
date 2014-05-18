@@ -23,29 +23,33 @@
             <header id="masthead" class="site-header" role="banner">
                 <div id="site-toolbar">
                     <div class="row">
-                        <div class="col-xs-4">
-                            <a href="#">
-                                <i class="fa fa-phone"></i>
-                            </a>
-                            <a href="#">
-                                <i class="fa fa-map-marker"></i>
-                            </a>
-                        </div>
-                        <div class="col-xs-4"></div>
-                        <div class="col-xs-4 social-bar">
-                            <a href="#" target="_blank">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="#" target="_blank">
-                                <i class="fa fa-facebook"></i>                            
-                            </a>
-                            <a href="#" target="_blank">
-                                <i class="fa fa-linkedin"></i>                            
-                            </a>
-                            <a href="#" target="_blank">
-                                <i class="fa fa-flickr"></i>                            
-                            </a>
+                        <div class="col-sm-12">
+                            <div class="col-xs-4 contact-bar">
+                                <a href="#">
+                                    <i class="fa fa-phone"></i>
+                                    <span>613.698.9864</span>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>290 Bath Rd.</span>
+                                </a>
+                            </div>
+                            <div class="col-xs-4"></div>
+                            <div class="col-xs-4 social-bar">
+                                <a href="#" target="_blank" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-facebook"></i>                            
+                                </a>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-linkedin"></i>                            
+                                </a>
+                                <a href="#" target="_blank">
+                                    <i class="fa fa-flickr"></i>                            
+                                </a>
 
+                            </div>
                         </div>
                     </div>
 
@@ -53,8 +57,19 @@
                 <div class="site-branding">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                            <h2 class="site-description"> | <?php bloginfo('description'); ?></h2>
+                            <div class="col-sm-6">
+                                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
+                                <h2 class="site-description"> | <?php bloginfo('description'); ?></h2>
+                            </div>
+                            <div class="col-sm-6 search-bar">
+                                <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
+                                    <label>
+                                        <span class="screen-reader-text">Search for:</span>
+                                        <input type="search" class="search-field" placeholder="Search …" value="" name="s" title="Search for:" />
+                                    </label>
+                                    <!--<input type="submit" class="search-submit" value="Search" />-->
+                                </form>
+                            </div>
                         </div>
                     </div>
 

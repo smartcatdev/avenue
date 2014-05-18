@@ -31,6 +31,9 @@ get_header();
                                 <p>
                                     Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repella.
                                 </p>
+                                <p class="text-right">
+                                    <a href="#" class="btn btn-default btn-primary">Click Here</a>
+                                </p>                                
                             </div>                            
                         </div>
                     </div>
@@ -44,6 +47,9 @@ get_header();
                                 <p>
                                     Itaque earum rerum hic tenetur  Itaque earum rerum hic tenetur  Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repella.
                                 </p>
+                                <p class="text-right">
+                                    <a href="#" class="btn btn-default btn-primary">Click Here</a>
+                                </p>                                
                             </div>                            
                         </div>
                     </div>
@@ -57,6 +63,9 @@ get_header();
                                 <p>
                                     Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repella.
                                 </p>
+                                <p class="text-right">
+                                    <a href="#" class="btn btn-default btn-primary">Click Here</a>
+                                </p>
                             </div>                            
                         </div>
                     </div>
@@ -69,6 +78,20 @@ get_header();
             </div>
             <div class="row"><!-- #content row -->
                 <div id="content" class="site-content">
+
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<?php get_template_part( 'content', 'page' ); ?>
+
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
+
+			<?php endwhile; // end of the loop. ?>                    
+                    
                     
                 </div>
                 

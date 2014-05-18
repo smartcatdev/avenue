@@ -9,6 +9,9 @@
 root { 
     display: block;
 }
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
 
 .row{
     margin: 0 auto;
@@ -36,6 +39,19 @@ root {
     overflow: hidden;
     /*height: 40px;*/
 }
+#site-toolbar .contact-bar a{
+    height: 30px;
+    margin: 7px 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+}
+#site-toolbar .contact-bar a .fa{
+    margin-right: 5px;
+}
+#site-toolbar .contact-bar a span{
+    color: #e0e0e0;
+}
 #site-toolbar .social-bar a{
     width: 30px;
     height: 30px;
@@ -54,6 +70,34 @@ root {
     border-top: 8px solid #f5f5f5;
     border-bottom: 5px solid #f5f5f5;
 }
+.site-branding .search-bar{
+    text-align: right;
+}
+.site-branding .search-bar .search-form{
+    margin-top: 20px;
+    line-height: 20px;
+
+}
+.site-branding .search-bar .search-field{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    outline-color: #fff;
+    transition: 0.2s all ease-in-out;
+    -moz-transition: 0.2s all ease-in-out;
+    -webkit-transition: 0.2s all ease-in-out;
+    
+}
+.site-branding .search-bar .search-field:focus{
+    padding-right: 20px;
+    
+}
+.site-branding .col-sm-6{
+    min-height: 70px;
+    line-height: 70px;
+}
+
 .main-navigation{
     border-bottom: 8px solid #f5f5f5;
 }
@@ -64,6 +108,7 @@ root {
 }
 .site-title{
     display: inline-block;
+    line-height: 0;
 }
 .site-description{
     display: inline-block;
@@ -75,6 +120,23 @@ root {
 }
 #main-slider .col-md-12{
     padding: 0;
+}
+
+/*-- Menu --*/
+#site-navigation{
+    /*background: #222222;*/
+}
+.menu .nav-menu > li a{
+    margin-right: 15px;
+    padding: 8px 10px;
+    background: #fff;
+    color: #222222;
+    transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+} 
+.menu .nav-menu > li a:hover{
+    color: #ff6600;
 }
 
 /*-- CTA boxes --*/
@@ -104,12 +166,25 @@ root {
 }
 .site-cta .col-md-10 > div{
     position: relative;
+    padding-bottom: 20px;
 }
 
 .site-cta h3{
     font-size: 20px;
+    transition: 0.3s all ease;
+    -moz-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    position: relative;
+    font-weight: 600;
+    
 }
-
+.site-cta .col-md-10{
+    position: relative;
+    
+}
+.site-cta .btn{
+    display: none;
+}
 /*-- Top Banner --*/
 #top-banner{
     background: #222;
