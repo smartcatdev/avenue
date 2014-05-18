@@ -33,7 +33,7 @@ get_header();
                         ?>
                     </div>
                     <div class="col-md-3">
-                        Sidebar
+                        <?php get_sidebar(); ?>
                     </div>
                 </div>
             </div>
@@ -41,5 +41,5 @@ get_header();
     </div>
 </div>
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
