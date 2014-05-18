@@ -7,8 +7,7 @@ jQuery(document).ready(function($) {
     //--slider
     resize_slider();
 
-    var options = {$AutoPlay: true};
-    var jssor_slider1 = new $JssorSlider$('slider_container', options);
+
 
     
     //--Match CTA Boxes height
@@ -104,5 +103,9 @@ jQuery(document).ready(function($) {
         $('#slider_container,#slider_container > div').width(w);        
     }
 
+    $('.scroll-top').click(function(){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
 
 });
