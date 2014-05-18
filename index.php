@@ -14,26 +14,41 @@ get_header();
 ?>
 
 <div id="content" class="site-content row">
-    <div class="col-md-12">
+    <div class="">
         <?php if (have_posts()) : ?>
             <?php /* Start the Loop */ ?>
             <?php while (have_posts()) : the_post(); ?>
+                <div class="item-post col-md-12">
+                    <div class="post-thumb col-md-4">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail('large'); ?>
+                        </a>
+                    </div>
+                    <div class="col-md-8">
+                        <h2 class="post-title">
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_title(); ?>
+                            </a>
+                        </h2>
+                        <div class="post-content">
+                            <?php the_excerpt(); ?>
+                        </div>
+                        <div class="text-right">
+                            <a href="<?php the_permalink(); ?>">Read More</a>
+                        </div>                        
+                    </div>
 
-                <?php
-                /* Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
-                the_post_thumbnail();
-                get_template_part('content', get_post_format());
-                ?>
-
+                    
+                </div>
             <?php endwhile; ?>
-            <?php avenue_paging_nav(); ?>
         <?php else : ?>
             <?php get_template_part('content', 'none'); ?>
         <?php endif; ?>
     </div>
+    <div class="col-md-12">
+        <?php avenue_paging_nav(); ?>
+    </div>
+
 </div>
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -106,6 +106,9 @@ body{
 .main-navigation{
     border-bottom: 8px solid #f5f5f5;
 }
+#site-navigation.main-navigation > .row{
+    overflow: visible;
+}
 
 /*-- Header --*/
 .site-header{
@@ -131,7 +134,7 @@ body{
 #site-navigation{
     /*background: #222222;*/
 }
-.menu .nav-menu > li a{
+.nav-menu > li a{
     margin-right: 15px;
     padding: 8px 10px;
     background: #fff;
@@ -140,7 +143,7 @@ body{
     -moz-transition: 0.3s all ease-in-out;
     -webkit-transition: 0.3s all ease-in-out;
 } 
-.menu .nav-menu > li a:hover{
+.nav-menu > li a:hover{
     color: #ff6600;
 }
 
@@ -217,6 +220,7 @@ body{
 }
 .scroll-top{
     font-size: 26px;
+    cursor: pointer;
     transition: 0.2s all ease-in-out;
     -moz-transition: 0.2s all ease-in-out;
     -webkit-transition: 0.2s all ease-in-out;
@@ -239,7 +243,22 @@ body{
 .page .entry-content{
     
 }
+/*-- Blog --*/
+.item-post{
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 10px;
+}
+.item-post .post-title{
+    font-size: 32px;
+}
+.item-post .post-thumb{
 
+    
+}
+.item-post .post-thumb img{
+    width: 100%;
+}
 @media(min-width: 1060px){
     .row{
         width: 1060px;
