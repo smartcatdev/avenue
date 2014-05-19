@@ -9,38 +9,90 @@ get_header();
 <script>
     jQuery(document).ready(function($) {
 
-	$("#sc-slider #sc-thumb .set img").click(function(){
-		var newimage = $(this).attr("src");
-		//$("#sc-slider #sc-main img").css({"visibility":"hidden"});//fadeOut(500)
-		//$("#sc-slider #sc-main img").css({"visibility":"hidden"}).attr("src",newimage).css({"visibility":"visible"});
+        $("#sc-slider #sc-thumb .set img").click(function() {
+            var newimage = $(this).attr("src");
+            //$("#sc-slider #sc-main img").css({"visibility":"hidden"});//fadeOut(500)
+            //$("#sc-slider #sc-main img").css({"visibility":"hidden"}).attr("src",newimage).css({"visibility":"visible"});
 
-		// var theContainer = $(this).parent().parent().parent();
-		// alert($(this).closest('#sc-main').html());
-		// alert($(this).parent().parent().parent().html());
-		var newId = $(this).parent().parent().parent().attr('id');
-		
-		$('#' + newId + ' #sc-main img').animate({"visibility":"hidden"},300,function(){
-			$(this).attr("src",newimage).css({"display":"none","visibility":"visible"}).fadeIn(500);
-		});
-	
-	});
+            // var theContainer = $(this).parent().parent().parent();
+            // alert($(this).closest('#sc-main').html());
+            // alert($(this).parent().parent().parent().html());
+            var newId = $(this).parent().parent().parent().attr('id');
+
+            $('#' + newId + ' #sc-main img').animate({"visibility": "hidden"}, 300, function() {
+                $(this).attr("src", newimage).css({"display": "none", "visibility": "visible"}).fadeIn(500);
+            });
+
+        });
 
     });
 </script>
 <div id="main-slider"> <!-- #slider -->
     <div class="col-md-12">
 
-        <div id="sc-slider">
-            <div id="sc-main">
-                <img src="http://winter-construction.com/wp-content/uploads/ATL_Airport_118.jpg" title="/wp-content/uploads/ATL_Airport_118.jpg" style="visibility: visible;">
-            </div>
-            <div id="sc-thumb">
-                <div class="set">
-                    <img src="http://winter-construction.com/wp-content/uploads/ATL_Airport_118.jpg">
-                    <img src="http://winter-construction.com/wp-content/uploads/ATL_Airport_119.jpg">
-                    <img src="http://winter-construction.com/wp-content/uploads/ATL_Airport_139.jpg">                        
+        <div class="the-survey">
+            
+            <div class="survey-slide" id="slide1" style="display: none;">
+                <h1>Know Your Next Steps?</h1>
+                <p>How does crowdfunding relate to your business or investing goals? How can you quickly and easily get up to speed on crowdfunding for your situation?</p>
+                <p>Take this 2-minute quiz to receive an instant, personalized reading list &amp; action plan that will guide you to crowdfunding success.</p>
+                <p class="action">
+                    <a class="button-primary" id="begin-survey">Start Now</a>
+                </p>
+                <div class="navigation">
+                    <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
+                    <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
                 </div>
             </div>
+
+            <div class="survey-slide quest" id="slide2" style="display: none;">
+                <h1>What kind of organization are you?</h1> <br><br>
+
+                <div class="navigation">
+                    <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
+                    <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
+                </div>
+                
+            </div>
+
+            <div class="survey-slide quest" id="slide3" style="display: block;">
+                <h1>How much do you know about Crowdfunding ?</h1><br><br>
+
+                <div class="navigation">
+                    <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
+                    <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
+                </div>
+
+            </div>
+
+            <div class="survey-slide quest" id="slide4" style="display: none;">
+                <h1>What are you interested in learning more about ?</h1> <br><br>
+
+                    <div class="navigation">
+                        <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
+                        <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
+                    </div>
+
+            </div>
+
+            <div class="survey-slide quest" id="slide5" style="display: none;">
+                <h1>What is your timing for a Crowdfunding project ?</h1> <br><br>
+
+                <div class="navigation">
+                    <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
+                    <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
+                </div>
+
+                <div class="err-message"></div>
+            </div>
+
+            <div class="survey-slide" id="slide6" style="display: none;">
+                <h1>Thank you!</h1>
+ 
+                <div class="err-message"></div>
+            </div>
+
+
         </div>
 
     </div>

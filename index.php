@@ -14,7 +14,7 @@ get_header();
 ?>
 
 <div id="content" class="site-content row">
-    <div class="">
+    <div class="col-md-9">
         <?php if (have_posts()) : ?>
             <?php /* Start the Loop */ ?>
             <?php while (have_posts()) : the_post(); ?>
@@ -34,7 +34,7 @@ get_header();
                             <?php the_excerpt(); ?>
                         </div>
                         <div class="text-right">
-                            <a href="<?php the_permalink(); ?>">Read More</a>
+                            <a class="btn btn-default btn-primary" href="<?php the_permalink(); ?>">Read More</a>
                         </div>                        
                     </div>
 
@@ -44,6 +44,9 @@ get_header();
         <?php else : ?>
             <?php get_template_part('content', 'none'); ?>
         <?php endif; ?>
+    </div>
+    <div class="col-md-3">
+        <?php get_sidebar(); ?>
     </div>
     <div class="col-md-12">
         <?php avenue_paging_nav(); ?>
