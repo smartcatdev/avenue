@@ -146,7 +146,13 @@ body{
 .nav-menu > li a:hover{
     color: #ff6600;
 }
-
+.main-navigation ul ul{
+    top: initial;
+    background: #fff;
+    transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
+}
 /*-- CTA boxes --*/
 #site-cta{
     margin-top: 80px;
@@ -253,7 +259,7 @@ body{
     font-size: 32px;
 }
 .item-post .post-thumb{
-
+    padding: 15px;
     
 }
 .item-post .post-thumb img{
