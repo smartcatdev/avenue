@@ -8,18 +8,41 @@ get_header();
 ?>
 <script>
     jQuery(document).ready(function($) {
-        var options = {$AutoPlay: true};
-        var jssor_slider1 = new $JssorSlider$('slider_container', options);
+
+	$("#sc-slider #sc-thumb .set img").click(function(){
+		var newimage = $(this).attr("src");
+		//$("#sc-slider #sc-main img").css({"visibility":"hidden"});//fadeOut(500)
+		//$("#sc-slider #sc-main img").css({"visibility":"hidden"}).attr("src",newimage).css({"visibility":"visible"});
+
+		// var theContainer = $(this).parent().parent().parent();
+		// alert($(this).closest('#sc-main').html());
+		// alert($(this).parent().parent().parent().html());
+		var newId = $(this).parent().parent().parent().attr('id');
+		
+		$('#' + newId + ' #sc-main img').animate({"visibility":"hidden"},300,function(){
+			$(this).attr("src",newimage).css({"display":"none","visibility":"visible"}).fadeIn(500);
+		});
+	
+	});
+
     });
 </script>
 <div id="main-slider"> <!-- #slider -->
     <div class="col-md-12">
-        <div id="slider_container" style="position: relative; top: 0px; left: 0px; width: 960px; height: 300px;">
-            <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; width: 960px; top: 0px; height: 300px;">
-                <div><img u="image" src="http://cdn.themepride.netdna-cdn.com/themes/corp/wp-content/uploads/2014/04/ls_11.png" /></div>
-                <div><img u="image" src="http://cdn.themepride.netdna-cdn.com/themes/corp/wp-content/uploads/2014/04/slide_bg_2.jpg" /></div>
+
+        <div id="sc-slider">
+            <div id="sc-main">
+                <img src="http://winter-construction.com/wp-content/uploads/ATL_Airport_118.jpg" title="/wp-content/uploads/ATL_Airport_118.jpg" style="visibility: visible;">
+            </div>
+            <div id="sc-thumb">
+                <div class="set">
+                    <img src="http://winter-construction.com/wp-content/uploads/ATL_Airport_118.jpg">
+                    <img src="http://winter-construction.com/wp-content/uploads/ATL_Airport_119.jpg">
+                    <img src="http://winter-construction.com/wp-content/uploads/ATL_Airport_139.jpg">                        
+                </div>
             </div>
         </div>
+
     </div>
 </div><!-- #slider -->
 
@@ -91,19 +114,19 @@ get_header();
 </div>
 
 
-        <div id="content" class="site-content row">
-            <div class="col-md-12">
-            <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('content', 'page'); ?>
-                <?php
-                // If comments are open or we have at least one comment, load up the comment template
-                if (comments_open() || '0' != get_comments_number()) :
-                    comments_template();
-                endif;
-                ?>
-            <?php endwhile; // end of the loop.  ?>
-            </div>
-        </div>
+<div id="content" class="site-content row">
+    <div class="col-md-12">
+        <?php while (have_posts()) : the_post(); ?>
+            <?php get_template_part('content', 'page'); ?>
+            <?php
+            // If comments are open or we have at least one comment, load up the comment template
+            if (comments_open() || '0' != get_comments_number()) :
+                comments_template();
+            endif;
+            ?>
+        <?php endwhile; // end of the loop.  ?>
+    </div>
+</div>
 
 
-    <?php get_footer(); ?>
+<?php get_footer(); ?>

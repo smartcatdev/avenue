@@ -130,6 +130,41 @@ body{
     padding: 0;
 }
 
+#sc-slider{
+
+}
+#sc-slider #sc-main{
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+}
+#sc-slider #sc-main img{
+	width: 100%;
+	height: auto;
+
+}
+#sc-slider #sc-thumb{
+	height: auto;
+	margin-top: 10px;
+}
+#sc-slider #sc-thumb .set{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+#sc-slider #sc-thumb .set img{
+	width: 8%;
+	height: 50px;
+	opacity: 0.6;
+	cursor: pointer;
+	transition: 0.3s all ease;
+	-moz-transition: 0.3s all ease;
+	-webkit-transition: 0.3s all ease;
+}
+#sc-slider #sc-thumb .set img:hover{
+	opacity: 1.0;
+}
+
 /*-- Menu --*/
 #site-navigation{
     /*background: #222222;*/

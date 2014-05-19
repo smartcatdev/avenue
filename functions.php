@@ -96,7 +96,7 @@ function avenue_scripts() {
 	wp_enqueue_style( 'avenue-font', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600)', array(), '1.0' );
         
 	wp_enqueue_script( 'avenue-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
-	wp_enqueue_script( 'avenue-slider', get_template_directory_uri() . '/inc/js/jssor.slider.min.js', array(), '1.0', true );
+//	wp_enqueue_script( 'avenue-slider', get_template_directory_uri() . '/inc/js/jquery.flexslider-min.js', array(), '1.0', true );
 	wp_enqueue_script( 'avenue-jqueryui', get_template_directory_uri() . '/inc/js/jquery-ui.min.js', array(), '1.0', true );
 	wp_enqueue_script( 'avenue-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.js', array(), '1.0', true );
         

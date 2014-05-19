@@ -5,9 +5,9 @@
  */
 jQuery(document).ready(function($) {
     //--slider
-    resize_slider();
+//    resize_slider();
 
-
+    $('.carousel').carousel();
 
     
     //--Match CTA Boxes height
