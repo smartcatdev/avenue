@@ -55,7 +55,8 @@ get_header();
                 <div class="navigation">
                     <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
                     <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
-                </div>                
+                </div>
+                
             </div>
 
             

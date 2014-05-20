@@ -170,6 +170,7 @@ jQuery(document).ready(function($) {
 
     //crowdfunding survey
 
+
     var currentSlide = 1;
     var progress = 0;
     var maxNum = 6;
