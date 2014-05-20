@@ -29,13 +29,13 @@ jQuery(document).ready(function($) {
     });
 
     //multi-option slide
-    $(".q3").click(function() {
-        if ($(".q3:checked").val() == "Crowdfunding alternative approaches") {
-            $(".multi-options").show();
-        } else {
-            $(".multi-options").hide();
-        }
-    });
+//    $(".q3").click(function() {
+//        if ($(".q3:checked").val() == "Crowdfunding alternative approaches") {
+//            $(".multi-options").show();
+//        } else {
+//            $(".multi-options").hide();
+//        }
+//    });
     $(".fa-chevron-right").click(function() {
 
         // progress bar
@@ -43,15 +43,15 @@ jQuery(document).ready(function($) {
             $(".progress-bar").animate({"width": "+=50"});
         }
 
-        $(".err-message").html("");
+
         if (currentSlide < maxNum) {
             if (5 == currentSlide) {
-                if ($(":radio:checked", "#slide2").val() !== undefined && $(":radio:checked", "#slide3").val() !== undefined && $(":radio:checked", "#slide4").val() !== undefined && $(":radio:checked", "#slide5").val() !== undefined) {
-                    currentSlide++;
-                } else {
-                    $(".err-message").html("You haven't answered all the questions. Please go back to fix this");
-                    a
-                }
+//                if ($(":radio:checked", "#slide2").val() !== undefined && $(":radio:checked", "#slide3").val() !== undefined && $(":radio:checked", "#slide4").val() !== undefined && $(":radio:checked", "#slide5").val() !== undefined) {
+//                    currentSlide++;
+//                } else {
+//                    $(".err-message").html("You haven't answered all the questions. Please go back to fix this");
+//                    a
+//                }
 
             } else {
                 currentSlide++;
@@ -77,6 +77,7 @@ jQuery(document).ready(function($) {
     }, function() {
         $(".the-survey .navigation .fa-chevron-right,.the-survey .navigation .fa-chevron-left").fadeOut(300);
     });
+    
     // don't run event when hover over the chevron
     $(".fa-chevron-right,.fa-chevron-left").hover(function(event) {
         event.stopPropagation();
@@ -89,10 +90,6 @@ jQuery(document).ready(function($) {
     function showSlide() {
         $(".the-survey #slide" + currentSlide).fadeIn(750);
     }
-
-
-    $('.carousel').carousel();
-
 
     //--Match CTA Boxes height
     matchColHeights('.site-cta');
@@ -194,46 +191,20 @@ jQuery(document).ready(function($) {
         showSlide();
     });
 
-    //multi-option slide
-    $(".q3").click(function() {
-        if ($(".q3:checked").val() == "Crowdfunding alternative approaches") {
-            $(".multi-options").show();
-        } else {
-            $(".multi-options").hide();
-        }
-    });
-
-
-
-
     //----------chevron funcionality
     $(".fa-chevron-right").click(function() {
-
-        // progress bar
-        if ($(":radio:checked", "#slide" + currentSlide).val() !== undefined && $(".progress-bar").width() < 200) {
-            $(".progress-bar").animate({"width": "+=50"});
-        }
-
-        $(".err-message").html("");
+        
         if (currentSlide < maxNum) {
             if (5 == currentSlide) {
-                if ($(":radio:checked", "#slide2").val() !== undefined && $(":radio:checked", "#slide3").val() !== undefined && $(":radio:checked", "#slide4").val() !== undefined && $(":radio:checked", "#slide5").val() !== undefined) {
-                    currentSlide++;
-                } else {
-                    $(".err-message").html("You haven't answered all the questions. Please go back to fix this");
-                    a
-                }
-
             } else {
                 currentSlide++;
-
             }
         }
         hideSlides();
         showSlide();
     });
     $(".fa-chevron-left").click(function() {
-        $(".err-message").html("");
+
         if (currentSlide > minNum) {
             currentSlide--;
         }
@@ -241,17 +212,19 @@ jQuery(document).ready(function($) {
         showSlide();
     });
 
-
     //show + hide chevrons when hover
-    $(".survey-slide").hover(function() {
-        $(".the-survey .navigation .fa-chevron-right,.the-survey .navigation .fa-chevron-left").fadeIn(300);
-    }, function() {
-        $(".the-survey .navigation .fa-chevron-right,.the-survey .navigation .fa-chevron-left").fadeOut(300);
-    });
-    // don't run event when hover over the chevron
-    $(".fa-chevron-right,.fa-chevron-left").hover(function(event) {
-        event.stopPropagation();
-    });
+//    $(".survey-slide").hover(function() {
+//        var selector = '.the-survey .navigation .fa-chevron-right,.the-survey .navigation .fa-chevron-left';
+//        $(selector).show();
+//    }, function() {
+//        $(selector).hide();
+//    });
+//    
+//    // don't run event when hover over the chevron
+//    $(".fa-chevron-right,.fa-chevron-left").hover(function(event) {
+//        event.stopPropagation();
+//        $(".fa-chevron-right,.fa-chevron-left").show();
+//    });
 
 
     function hideSlides() {
