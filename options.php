@@ -35,6 +35,10 @@ function optionsframework_options() {
 		'four' => __('Four', 'options_framework_theme'),
 		'five' => __('Five', 'options_framework_theme')
 	);
+    $bool_array = array(
+        'yes' => __('Yes','options_framework_theme'),
+        'no' => __('No','options_framework_theme')
+    );
 
 	// Multicheck Array
 	$multicheck_array = array(
@@ -102,97 +106,121 @@ function optionsframework_options() {
 
 	$options = array();
 
+    // ------------------------------------------------------------------ Basic Settings
 	$options[] = array(
 		'name' => __('Basic Settings', 'options_framework_theme'),
 		'type' => 'heading');
 
-	$options[] = array(
-		'name' => __('Input Text Mini', 'options_framework_theme'),
-		'desc' => __('A mini text input field.', 'options_framework_theme'),
-		'id' => 'example_text_mini',
-		'std' => 'Default',
-		'class' => 'mini',
-		'type' => 'text');
+    $options[] = array(
+        'name' => __('Logo', 'options_framework_theme'),
+        'desc' => __('Your website Logo.', 'options_framework_theme'),
+        'id' => 'sc_logo_image',
+        'type' => 'upload');
 
-	$options[] = array(
-		'name' => __('Input Text', 'options_framework_theme'),
-		'desc' => __('A text input field.', 'options_framework_theme'),
-		'id' => 'example_text',
-		'std' => 'Default Value',
-		'type' => 'text');
+    $options[] = array(
+        'name' => __('Header Bar', 'options_framework_theme'),
+        'desc' => __('Toggle the headerbar on or off', 'options_framework_theme'),
+        'id' => 'sc_headerbar_bool',
+        'std' => 'yes',
+        'type' => 'radio',
+        'options' => $bool_array);
 
-	$options[] = array(
-		'name' => __('Textarea', 'options_framework_theme'),
-		'desc' => __('Textarea description.', 'options_framework_theme'),
-		'id' => 'example_textarea',
-		'std' => 'Default Text',
-		'type' => 'textarea');
+    $options[] = array(
+        'name' => __('Facebook URL', 'options_framework_theme'),
+        'desc' => __('Enter the URL for your Facebook Page', 'options_framework_theme'),
+        'id' => 'sc_facebook_url',
+        'std' => 'Default Value',
+        'type' => 'text');
 
-	$options[] = array(
-		'name' => __('Input Select Small', 'options_framework_theme'),
-		'desc' => __('Small Select Box.', 'options_framework_theme'),
-		'id' => 'example_select',
-		'std' => 'three',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $test_array);
+    $options[] = array(
+        'name' => __('Twitter URL', 'options_framework_theme'),
+        'desc' => __('Enter the URL for your Facebook Page', 'options_framework_theme'),
+        'id' => 'sc_twitter_url',
+        'std' => 'Default Value',
+        'type' => 'text');
 
-	$options[] = array(
-		'name' => __('Input Select Wide', 'options_framework_theme'),
-		'desc' => __('A wider select box.', 'options_framework_theme'),
-		'id' => 'example_select_wide',
-		'std' => 'two',
-		'type' => 'select',
-		'options' => $test_array);
+    $options[] = array(
+        'name' => __('LinkedIn URL', 'options_framework_theme'),
+        'desc' => __('Enter the URL for your LinkedIn Page', 'options_framework_theme'),
+        'id' => 'sc_linkedin_url',
+        'std' => 'Default Value',
+        'type' => 'text');
 
-	if ( $options_categories ) {
-	$options[] = array(
-		'name' => __('Select a Category', 'options_framework_theme'),
-		'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_framework_theme'),
-		'id' => 'example_select_categories',
-		'type' => 'select',
-		'options' => $options_categories);
-	}
+    $options[] = array(
+        'name' => __('Google Plus URL', 'options_framework_theme'),
+        'desc' => __('Enter the URL for your Google Plus Page', 'options_framework_theme'),
+        'id' => 'sc_gplus_url',
+        'std' => 'Default Value',
+        'type' => 'text');
 
-	if ( $options_tags ) {
-	$options[] = array(
-		'name' => __('Select a Tag', 'options_check'),
-		'desc' => __('Passed an array of tags with term_id and term_name', 'options_check'),
-		'id' => 'example_select_tags',
-		'type' => 'select',
-		'options' => $options_tags);
-	}
+    $options[] = array(
+        'name' => __('Phone Number', 'options_framework_theme'),
+        'desc' => __('A text input field.', 'options_framework_theme'),
+        'id' => 'sc_phone_url',
+        'std' => 'Default Value',
+        'type' => 'text');
 
-	$options[] = array(
-		'name' => __('Select a Page', 'options_framework_theme'),
-		'desc' => __('Passed an pages with ID and post_title', 'options_framework_theme'),
-		'id' => 'example_select_pages',
-		'type' => 'select',
-		'options' => $options_pages);
+    $options[] = array(
+        'name' => __('Email Address', 'options_framework_theme'),
+        'desc' => __('A text input field.', 'options_framework_theme'),
+        'id' => 'sc_email_url',
+        'std' => 'Default Value',
+        'type' => 'text');
 
-	$options[] = array(
-		'name' => __('Input Radio (one)', 'options_framework_theme'),
-		'desc' => __('Radio select with default options "one".', 'options_framework_theme'),
-		'id' => 'example_radio',
-		'std' => 'one',
-		'type' => 'radio',
-		'options' => $test_array);
+    $options[] = array(
+        'name' => __('Footer Text', 'options_framework_theme'),
+        'desc' => __('Enter text for the footer', 'options_framework_theme'),
+        'id' => 'sc_footer_text',
+        'std' => '&#169; 2014 Your company name',
+        'type' => 'textarea');
 
-	$options[] = array(
-		'name' => __('Example Info', 'options_framework_theme'),
-		'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
-		'type' => 'info');
 
+    // ---------------------------------------------------------------------- Slider
 	$options[] = array(
-		'name' => __('Input Checkbox', 'options_framework_theme'),
-		'desc' => __('Example checkbox, defaults to true.', 'options_framework_theme'),
-		'id' => 'example_checkbox',
-		'std' => '1',
-		'type' => 'checkbox');
-
-	$options[] = array(
-		'name' => __('Advanced Settings', 'options_framework_theme'),
+		'name' => __('Slider', 'options_framework_theme'),
 		'type' => 'heading');
+
+    $options[] = array(
+        'name' => __('Slide #1', 'options_framework_theme'),
+        'desc' => __('First Slide', 'options_framework_theme'),
+        'id' => 'sc_slide1_image',
+        'type' => 'upload');
+    $options[] = array(
+        'name' => __('Slide #1 Text', 'options_framework_theme'),
+        'desc' => __('First Slide Text', 'options_framework_theme'),
+        'id' => 'sc_slide1_text',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Slide #2', 'options_framework_theme'),
+        'desc' => __('Second Slide', 'options_framework_theme'),
+        'id' => 'sc_slide2_image',
+        'type' => 'upload');
+    $options[] = array(
+        'name' => __('Slide #2 Text', 'options_framework_theme'),
+        'desc' => __('Second Slide Text', 'options_framework_theme'),
+        'id' => 'sc_slide2_text',
+        'std' => '',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Slide #3', 'options_framework_theme'),
+        'desc' => __('Third Slide', 'options_framework_theme'),
+        'id' => 'sc_slide3_image',
+        'type' => 'upload');
+    $options[] = array(
+        'name' => __('Slide #3 Text', 'options_framework_theme'),
+        'desc' => __('Third Slide Text', 'options_framework_theme'),
+        'id' => 'sc_slide3_text',
+        'std' => '',
+        'type' => 'text');
+    //--------------------------------------------------------------------------- Homepage
+    $options[] = array(
+        'name' => __('Homepage', 'options_framework_theme'),
+        'type' => 'heading');
+
+
 
 	$options[] = array(
 		'name' => __('Check to Show a Hidden Text Input', 'options_framework_theme'),
@@ -265,6 +293,89 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __('Text Editor', 'options_framework_theme'),
 		'type' => 'heading' );
+    $options[] = array(
+        'name' => __('Input Text Mini', 'options_framework_theme'),
+        'desc' => __('A mini text input field.', 'options_framework_theme'),
+        'id' => 'example_text_mini',
+        'std' => 'Default',
+        'class' => 'mini',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Input Text', 'options_framework_theme'),
+        'desc' => __('A text input field.', 'options_framework_theme'),
+        'id' => 'example_text',
+        'std' => 'Default Value',
+        'type' => 'text');
+
+    $options[] = array(
+        'name' => __('Textarea', 'options_framework_theme'),
+        'desc' => __('Textarea description.', 'options_framework_theme'),
+        'id' => 'example_textarea',
+        'std' => 'Default Text',
+        'type' => 'textarea');
+
+    $options[] = array(
+        'name' => __('Input Select Small', 'options_framework_theme'),
+        'desc' => __('Small Select Box.', 'options_framework_theme'),
+        'id' => 'example_select',
+        'std' => 'three',
+        'type' => 'select',
+        'class' => 'mini', //mini, tiny, small
+        'options' => $test_array);
+
+    $options[] = array(
+        'name' => __('Input Select Wide', 'options_framework_theme'),
+        'desc' => __('A wider select box.', 'options_framework_theme'),
+        'id' => 'example_select_wide',
+        'std' => 'two',
+        'type' => 'select',
+        'options' => $test_array);
+
+    if ( $options_categories ) {
+        $options[] = array(
+            'name' => __('Select a Category', 'options_framework_theme'),
+            'desc' => __('Passed an array of categories with cat_ID and cat_name', 'options_framework_theme'),
+            'id' => 'example_select_categories',
+            'type' => 'select',
+            'options' => $options_categories);
+    }
+
+    if ( $options_tags ) {
+        $options[] = array(
+            'name' => __('Select a Tag', 'options_check'),
+            'desc' => __('Passed an array of tags with term_id and term_name', 'options_check'),
+            'id' => 'example_select_tags',
+            'type' => 'select',
+            'options' => $options_tags);
+    }
+
+    $options[] = array(
+        'name' => __('Select a Page', 'options_framework_theme'),
+        'desc' => __('Passed an pages with ID and post_title', 'options_framework_theme'),
+        'id' => 'example_select_pages',
+        'type' => 'select',
+        'options' => $options_pages);
+
+    $options[] = array(
+        'name' => __('Input Radio (one)', 'options_framework_theme'),
+        'desc' => __('Radio select with default options "one".', 'options_framework_theme'),
+        'id' => 'example_radio',
+        'std' => 'one',
+        'type' => 'radio',
+        'options' => $test_array);
+
+    $options[] = array(
+        'name' => __('Example Info', 'options_framework_theme'),
+        'desc' => __('This is just some example information you can put in the panel.', 'options_framework_theme'),
+        'type' => 'info');
+
+    $options[] = array(
+        'name' => __('Input Checkbox', 'options_framework_theme'),
+        'desc' => __('Example checkbox, defaults to true.', 'options_framework_theme'),
+        'id' => 'example_checkbox',
+        'std' => '1',
+        'type' => 'checkbox');
 
 	/**
 	 * For $settings options see:
