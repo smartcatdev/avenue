@@ -56,10 +56,10 @@ get_header();
                     <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
                     <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
                 </div>
-                
+
             </div>
 
-            
+
 
 
         </div>
@@ -71,7 +71,7 @@ get_header();
     <div class="col-md-12">
         <div class="col-md-4 site-cta">
             <div class="col-md-2">
-                <i class="fa fa-map-marker"></i>
+                <i class="<?php echo of_get_option('sc_cta1_icon', 'fa fa-map-marker'); ?>"></i>
             </div>
             <div class="col-md-10">
                 <div>
@@ -87,7 +87,7 @@ get_header();
         </div>
         <div class="col-md-4 site-cta">
             <div class="col-md-2">
-                <i class="fa fa-map-marker"></i>
+                <i class="<?php echo of_get_option('sc_cta2_icon', 'fa fa-tachometer'); ?>"></i>
             </div>
             <div class="col-md-10">
                 <div>
@@ -103,7 +103,7 @@ get_header();
         </div>
         <div class="col-md-4 site-cta">
             <div class="col-md-2">
-                <i class="fa fa-map-marker"></i>
+                <i class="<?php echo of_get_option('sc_cta3_icon', 'fa fa-map-marker'); ?>"></i>
             </div>
             <div class="col-md-10">
                 <div>
