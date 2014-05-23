@@ -23,8 +23,8 @@
             <header id="masthead" class="site-header" role="banner">
                 <div id="site-toolbar">
                     <div class="row">
-                        <div class="col-sm-12">
-                            <div class="col-xs-4 contact-bar">
+                        <div class="col-md-12">
+                            <div class="col-xs-6 contact-bar">
                                 <a href="#">
                                     <i class="fa fa-phone"></i>
                                     <span>613.698.9864</span>
@@ -34,8 +34,8 @@
                                     <span>290 Bath Rd.</span>
                                 </a>
                             </div>
-                            <div class="col-xs-4"></div>
-                            <div class="col-xs-4 social-bar">
+                            
+                            <div class="col-xs-6 social-bar">
                                 <a href="#" target="_blank" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
                                     <i class="fa fa-twitter"></i>
                                 </a>
@@ -57,11 +57,11 @@
                 <div class="site-branding">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="col-sm-6">
+                            <div class="col-xs-6">
                                 <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
                                 <h2 class="site-description"> | <?php bloginfo('description'); ?></h2>
                             </div>
-                            <div class="col-sm-6 search-bar">
+                            <div class="col-xs-6 search-bar">
                                 <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
                                     <label>
                                         <span class="screen-reader-text">Search for:</span>

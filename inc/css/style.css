@@ -364,6 +364,10 @@ body{
 #site-cta{
     margin-top: 80px;
     overflow: visible;
+    
+}
+#site-cta .site-cta{
+    
 }
 .site-cta{
     border-left: 1px solid #444;
@@ -412,8 +416,7 @@ body{
 }
 /*-- Top Banner --*/
 #top-banner{
-    
-    padding: 15px 0;
+    padding: 15px 0 0 0;
     background: #222222;
     min-height: 100px;
     color: #ffffff;
@@ -484,4 +487,34 @@ body{
         width: 1060px;
     }
     
+}
+@media(min-width: 601px) and (max-width: 991px){
+    #site-cta{
+        margin-top: 0;
+    }
+    #site-cta .site-cta{
+        margin-left: 30px;
+        
+    }
+    .site-cta .col-md-10 > div{
+        padding-left: 20px;
+    }
+    #top-banner .top-banner-text{
+        font-size: 30px;
+        line-height: 30px;
+    }
+}
+@media(min-width: 401px) and (max-width: 600px){
+    #site-cta{
+        margin-top: 0;
+    }    
+    #site-cta .site-cta{
+        margin-left: 30px;    
+    }
+    .site-cta .col-md-10 > div{
+        padding-left: 20px;
+    }
+    .site-branding{
+        margin-top: 90px;
+    }    
 }
