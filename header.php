@@ -36,7 +36,7 @@
                             </div>
                             
                             <div class="col-xs-6 social-bar">
-                                <a href="#" target="_blank" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+                                <a href="#" target="_blank">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                                 <a href="#" target="_blank">

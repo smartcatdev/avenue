@@ -443,16 +443,26 @@ body{
     padding: 20px 10px 20px 0;
 }
 .scroll-top{
-    font-size: 26px;
+    /*font-size: 26px;*/
+    width: 30px;
+    height: 30px;
+    margin: 7px 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #e0e0e0;
+    color: #e0e0e0;
+    border-radius: 100%;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
     -moz-transition: 0.2s all ease-in-out;
     -webkit-transition: 0.2s all ease-in-out;
 }
 .scroll-top:hover{
-    transform: scale(1.3);
-    -moz-transform: scale(1.3);
-    -webkit-transform: scale(1.3);
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    border-color: #ff6600;
 }
 
 /*-- page --*/
@@ -532,16 +542,21 @@ body{
         width: 100%;
         text-align: center;
     }
+
 /*    .site-branding{
         margin-top: 90px;
     }   */
 }
-@media(min-width: 526px) and  (max-width: 600px){
-/*    .site-branding{
-        margin-top: 40px;
-    }*/
+@media(min-width: 400px) and  (max-width: 526px){
+    .site-footer{
+        margin-bottom: 88px;
+    }
 }
-
+@media(min-width: 527px) and (max-width: 600px){
+     .site-footer{
+        margin-bottom: 44px;
+    }
+}
 @media(max-width: 400px){
     .site-branding{
         margin-top: 90px;
@@ -553,10 +568,23 @@ body{
     .the-survey h1{
         font-size: 20px;
     }
+    .site-footer{
+        margin-bottom: 88px;
+    }
 }
 @media(max-width: 600px){
     .main-navigation li{
         float: none;
+    }
+    .main-navigation ul ul{
+        display: block;
+        float: none;
+        position: initial;
+        
+    }
+    .main-navigation ul ul a{
+        width: 100%;
+        padding-left: 30px;
     }
     .nav-menu > li a{
         background: #222;
@@ -579,4 +607,5 @@ body{
     .site-branding{
         margin-top: 0;
     }
+   
 }
