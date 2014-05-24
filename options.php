@@ -163,9 +163,9 @@ function optionsframework_options() {
         'type' => 'text');
 
     $options[] = array(
-        'name' => __('Email Address', 'options_framework_theme'),
+        'name' => __('Address', 'options_framework_theme'),
         'desc' => __('A text input field.', 'options_framework_theme'),
-        'id' => 'sc_email_url',
+        'id' => 'sc_address_url',
         'std' => 'Default Value',
         'type' => 'text');
 
@@ -181,7 +181,13 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Slider', 'options_framework_theme'),
         'type' => 'heading');
-
+    $options[] = array(
+        'name' => __('Slider', 'options_framework_theme'),
+        'desc' => __('Toggle the Slider on or off', 'options_framework_theme'),
+        'id' => 'sc_slider_bool',
+        'std' => 'yes',
+        'type' => 'radio',
+        'options' => $bool_array);
     $options[] = array(
         'name' => __('Slide #1', 'options_framework_theme'),
         'desc' => __('First Slide', 'options_framework_theme'),

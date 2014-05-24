@@ -57,6 +57,12 @@ body{
     display: inline-block;
     text-align: center;
     line-height: 30px;
+    transition: 0.2s all ease;
+    -webkit-transition: 0.2s all ease;
+    -moz-transition: 0.2s all ease;
+}
+#site-toolbar .contact-bar a:hover{
+    
 }
 #site-toolbar .contact-bar a .fa{
     margin-right: 5px;
@@ -74,6 +80,10 @@ body{
     border: 1px solid #e0e0e0;
     color: #e0e0e0;
     border-radius: 100%;
+    transition: 0.2s all ease;
+    -moz-transition: 0.2s all ease;
+    -webkit-transition: 0.2s all ease;
+   
 }
 #site-toolbar .row .social-bar{
     text-align: right;
@@ -100,11 +110,12 @@ body{
     transition: 0.2s all ease-in-out;
     -moz-transition: 0.2s all ease-in-out;
     -webkit-transition: 0.2s all ease-in-out;
-    
 }
+
 .site-branding .search-bar .search-field:focus{
     padding-right: 20px;
-    
+    border-bottom: 1px solid #ff6600;
+    color: #222;
 }
 .site-branding .col-sm-6{
     min-height: 70px;
@@ -117,17 +128,47 @@ body{
 #site-navigation.main-navigation > .row{
     overflow: visible;
 }
+/*-- Social --*/
+#site-toolbar .row .social-bar a.icon-twitter:hover{
+    color: #00abdc;
+    border-color: #00abdc;
+    box-shadow: 0 0 2px #00abdc;
+    -moz-box-shadow: 0 0 2px #00abdc;
+    -webkit-box-shadow: 0 0 2px #00abdc;
+}
+#site-toolbar .row .social-bar a.icon-facebook:hover{
+    color: #3b5998;
+    border-color: #3b5998;
+    box-shadow: 0 0 2px #3b5998;
+    -moz-box-shadow: 0 0 2px #3b5998;
+    -webkit-box-shadow: 0 0 2px #3b5998;
+}
+#site-toolbar .row .social-bar a.icon-linkedin:hover{
+    color: #007bb6;
+    border-color: #007bb6;
+    box-shadow: 0 0 2px #007bb6;
+    -moz-box-shadow: 0 0 2px #007bb6;
+    -webkit-box-shadow: 0 0 2px #007bb6;
+}
+#site-toolbar .row .social-bar a.icon-gplus:hover{
+    color: #dd4b39;
+    border-color: #dd4b39;
+    box-shadow: 0 0 2px #dd4b39;
+    -moz-box-shadow: 0 0 2px #dd4b39;
+    -webkit-box-shadow: 0 0 2px #dd4b39;
+}
+
 
 /*-- Header --*/
 .site-header{
     width: 100%;
 }
 .site-title{
-    display: inline-block;
-    line-height: 0;
+    margin: 0;
+    
 }
 .site-description{
-    display: inline-block;
+    
 }
 
 /*-- Slider --*/
@@ -573,6 +614,9 @@ body{
     }
 }
 @media(max-width: 600px){
+    .site-description{
+        display: none;
+    }
     .main-navigation li{
         float: none;
     }

@@ -75,7 +75,7 @@ get_header();
             </div>
             <div class="col-md-10">
                 <div>
-                    <h3>CTA Box Title</h3>
+                    <h3><?php echo of_get_option('sc_cta1_title','CTA 1 Title') ?></h3>
                     <p>
                         Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repella.
                     </p>

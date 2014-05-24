@@ -25,41 +25,50 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-xs-6 contact-bar">
-                                <a href="#">
+                                <a href="tel:+<?php echo of_get_option('sc_phone_url', '111'); ?>" class="icon-phone">
                                     <i class="fa fa-phone"></i>
-                                    <span>613.698.9864</span>
+                                    <span><?php echo of_get_option('sc_phone_url', '6136989864') ?></span>
                                 </a>
-                                <a href="#">
+                                <a href="#" class="icon-map">
                                     <i class="fa fa-map-marker"></i>
                                     <span>290 Bath Rd.</span>
                                 </a>
                             </div>
-                            
+
                             <div class="col-xs-6 social-bar">
-                                <a href="#" target="_blank">
-                                    <i class="fa fa-twitter"></i>
+                                <a href="#" target="_blank" class="icon-facebook">
+                                    <i class="fa fa-facebook"></i>
                                 </a>
-                                <a href="#" target="_blank">
-                                    <i class="fa fa-facebook"></i>                            
+                                <a href="#" target="_blank" class="icon-twitter">
+                                    <i class="fa fa-twitter"></i>                            
                                 </a>
-                                <a href="#" target="_blank">
+                                <a href="#" target="_blank" class="icon-linkedin">
                                     <i class="fa fa-linkedin"></i>                            
                                 </a>
-                                <a href="#" target="_blank">
-                                    <i class="fa fa-flickr"></i>                            
+                                <a href="#" target="_blank" class="icon-gplus">
+                                    <i class="fa fa-google-plus"></i>                            
                                 </a>
-
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <div class="site-branding">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-xs-6">
-                                <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                                <h2 class="site-description"> | <?php bloginfo('description'); ?></h2>
+                                <h1 class="site-title">
+
+                                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+
+                                        <?php if (of_get_option('sc_logo_image') != '') { ?>
+                                            <img src="<?php echo of_get_option('sc_logo_image'); ?>" alt=""/>
+                                        <?php }else{
+                                            bloginfo('name');
+                                            }
+                                        ?>                                        
+                                    </a>
+                                </h1>
+                                <h2 class="site-description"><?php bloginfo('description'); ?></h2>
                             </div>
                             <div class="col-xs-6 search-bar">
                                 <form role="search" method="get" class="search-form" action="<?php echo home_url('/'); ?>">
@@ -80,7 +89,6 @@
                         <div class="col-md-12">
                             <button class="menu-toggle"><?php _e('Primary Menu', 'avenue'); ?></button>
                             <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'avenue'); ?></a>
-
                             <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
                         </div>
                     </div>
