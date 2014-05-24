@@ -258,4 +258,7 @@ jQuery(document).ready(function($) {
         return false;
     });
 
+    $('.menu-toggle').html('<i class="fa fa-bars fa-lg"></i>');
+
+
 });

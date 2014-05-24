@@ -46,6 +46,7 @@ body{
     overflow: hidden;
     position: fixed;
     left: 0;
+    /*top: 0;*/
     width: 100%;
     z-index: 999;   
     /*height: 40px;*/
@@ -360,6 +361,9 @@ body{
     -moz-transition: 0.3s all ease-in-out;
     -webkit-transition: 0.3s all ease-in-out;
 }
+.menu-toggle{
+    margin: 0 auto;
+}
 /*-- CTA boxes --*/
 #site-cta{
     margin-top: 80px;
@@ -500,7 +504,7 @@ body{
         padding-left: 20px;
     }
     #top-banner .top-banner-text{
-        font-size: 30px;
+        font-size: 28px;
         line-height: 30px;
     }
 }
@@ -516,5 +520,63 @@ body{
     }
     .site-branding{
         margin-top: 90px;
+    }
+    #top-banner .top-banner-text{
+        font-size: 22px;
+        line-height: 24px;
+    }
+}
+@media(max-width: 525px){
+    #site-toolbar .row .social-bar,
+    #site-toolbar .row .contact-bar{
+        width: 100%;
+        text-align: center;
+    }
+/*    .site-branding{
+        margin-top: 90px;
+    }   */
+}
+@media(min-width: 526px) and  (max-width: 600px){
+/*    .site-branding{
+        margin-top: 40px;
+    }*/
+}
+
+@media(max-width: 400px){
+    .site-branding{
+        margin-top: 90px;
     }    
+    #top-banner .top-banner-text{
+        font-size: 22px;
+        line-height: 24px;
+    }    
+    .the-survey h1{
+        font-size: 20px;
+    }
+}
+@media(max-width: 600px){
+    .main-navigation li{
+        float: none;
+    }
+    .nav-menu > li a{
+        background: #222;
+        margin: 0;
+        color: #fff;
+        text-align: center;
+    }
+    .nav-menu > li.current_page_item a{
+        color: #ff6600;
+    }    
+    #site-navigation .row > div.col-md-12{
+        padding: 0;
+    }
+    #menu-main{
+        margin-top: 5px;
+    }
+    #site-toolbar{
+        bottom: 0;
+    }
+    .site-branding{
+        margin-top: 0;
+    }
 }
