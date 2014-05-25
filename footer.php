@@ -7,9 +7,6 @@
  * @package avenue
  */
 ?>
-
-<!--            </div> #content 
-        </div> #content row -->
 <footer id="colophon" class="site-footer" role="contentinfo">
     <div class="site-info">
         <div class="row">
@@ -22,13 +19,9 @@
                 </div>
             </div>                        
         </div>
-
-
     </div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
-
 </body>
 </html>

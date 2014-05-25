@@ -304,8 +304,14 @@ body{
     background: rgba(250,250,250,0.6);
     padding: 25px;
 }
-.the-slider,
-.the-slider #slide1 {
+.the-slider #slide1,
+.the-slider #slide2,
+.the-slider #slide3{
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: cover !important;
+}
+/*.the-slider #slide1 {
 	background: #ddd url(http://preview.ait-themes.com/impression/wp1/wp-content/uploads/slide_spring1.jpg) 100% 100% no-repeat;
 }
 
@@ -327,7 +333,7 @@ body{
 
 .the-slider #slide6 {
 	background: #ddd url(http://preview.ait-themes.com/impression/wp1/wp-content/uploads/slide_winter1.jpg) 100% 100% no-repeat;
-}
+}*/
 
 
 .the-slider #slide1 p {

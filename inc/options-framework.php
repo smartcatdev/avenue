@@ -91,24 +91,24 @@ function sc_slider() {
     <div id="main-slider"> <!-- #slider -->
         <div class="col-md-12">
             <div class="the-slider">
-                <div class="slider-slide" id="slide1" style="display: none;">
-                    <h1><span>Know Your Next Steps?</span></h1>
+                <div class="slider-slide" id="slide1" style="display: none;background: url(<?php echo of_get_option('sc_slide1_image')?>)">
+                    <h1><span><?php echo of_get_option('sc_slide1_text'); ?></span></h1>
                     <div class="navigation">
                         <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
                         <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
                     </div>
                 </div>
 
-                <div class="slider-slide quest" id="slide2" style="display: none;">
-                    <h1><span>What kind of organization are you?</span></h1>
+                <div class="slider-slide quest" id="slide2" style="display: none;background: url(<?php echo of_get_option('sc_slide2_image')?>)">
+                    <h1><span><?php echo of_get_option('sc_slide2_text'); ?></span></h1>
                     <div class="navigation">
                         <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
                         <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
                     </div>                
                 </div>
 
-                <div class="slider-slide quest" id="slide3" style="display: block;">
-                    <h1><span>How much do you know about Crowdfunding ?</span></h1>
+                <div class="slider-slide quest" id="slide3" style="display: block;background: url(<?php echo of_get_option('sc_slide3_image')?>)">
+                    <h1><span><?php echo of_get_option('sc_slide3_text'); ?></span></h1>
                     <div class="navigation">
                         <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
                         <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
