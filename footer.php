@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="col-xs-6 text-left">
-                    <?php printf(__('Theme: %1$s by %2$s.', 'avenue'), 'avenue', '<a href="http://smartcatdesign.net/" rel="designer">SmartCat</a>'); ?>
+                    <?php echo sc_footer(); ?>
                 </div>
                 <div class="col-xs-6 text-right">
                     <i class="scroll-top fa fa-chevron-circle-up"></i>

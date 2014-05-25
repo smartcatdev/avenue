@@ -131,42 +131,42 @@ function optionsframework_options() {
         'name' => __('Facebook URL', 'options_framework_theme'),
         'desc' => __('Enter the URL for your Facebook Page', 'options_framework_theme'),
         'id' => 'sc_facebook_url',
-        'std' => 'Default Value',
+        'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Twitter URL', 'options_framework_theme'),
         'desc' => __('Enter the URL for your Facebook Page', 'options_framework_theme'),
         'id' => 'sc_twitter_url',
-        'std' => 'Default Value',
+        'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('LinkedIn URL', 'options_framework_theme'),
         'desc' => __('Enter the URL for your LinkedIn Page', 'options_framework_theme'),
         'id' => 'sc_linkedin_url',
-        'std' => 'Default Value',
+        'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Google Plus URL', 'options_framework_theme'),
         'desc' => __('Enter the URL for your Google Plus Page', 'options_framework_theme'),
         'id' => 'sc_gplus_url',
-        'std' => 'Default Value',
+        'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Phone Number', 'options_framework_theme'),
         'desc' => __('A text input field.', 'options_framework_theme'),
         'id' => 'sc_phone_url',
-        'std' => 'Default Value',
+        'std' => '',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Address', 'options_framework_theme'),
         'desc' => __('A text input field.', 'options_framework_theme'),
         'id' => 'sc_address_url',
-        'std' => 'Default Value',
+        'std' => '',
         'type' => 'text');
 
     $options[] = array(
@@ -227,12 +227,22 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Homepage', 'options_framework_theme'),
         'type' => 'heading');
+    
+    $options[] = array(
+        'name' => __('Show 3 CTA Boxes', 'options_framework_theme'),
+        'desc' => __('Toggle the CTAs on or off', 'options_framework_theme'),
+        'id' => 'sc_cta_bool',
+        'std' => 'yes',
+        'type' => 'radio',
+        'options' => $bool_array);    
+    
+    
     // box 1
     $options[] = array(
         'name' => __('Box #1 Title', 'options_framework_theme'),
         'desc' => __('First box title', 'options_framework_theme'),
         'id' => 'sc_cta1_title',
-        'std' => '',
+        'std' => 'Box 1 Title',
         'type' => 'text');
     
     $options[] = array(
@@ -248,7 +258,7 @@ function optionsframework_options() {
         'name' => __('Box #1 Text', 'options_framework_theme'),
         'desc' => __('Textarea for Box #1', 'options_framework_theme'),
         'id' => 'sc_cta1_text',
-        'std' => 'Default Text',
+        'std' => 'Box 1 Text. Input anything you want here',
         'type' => 'textarea');
     
     $options[] = array(
@@ -262,7 +272,7 @@ function optionsframework_options() {
         'name' => __('Box #2 Title', 'options_framework_theme'),
         'desc' => __('First box title', 'options_framework_theme'),
         'id' => 'sc_cta2_title',
-        'std' => '',
+        'std' => 'Box #2 Title',
         'type' => 'text');
     
     $options[] = array(
@@ -277,8 +287,8 @@ function optionsframework_options() {
     $options[] = array(
         'name' => __('Box #2 Text', 'options_framework_theme'),
         'desc' => __('Textarea for Box #2', 'options_framework_theme'),
-        'id' => 'sc_cta1_text',
-        'std' => 'Default Text',
+        'id' => 'sc_cta2_text',
+        'std' => 'Box #2 text',
         'type' => 'textarea');
     
     $options[] = array(
@@ -293,7 +303,7 @@ function optionsframework_options() {
         'name' => __('Box #3 Title', 'options_framework_theme'),
         'desc' => __('Third box title', 'options_framework_theme'),
         'id' => 'sc_cta3_title',
-        'std' => '',
+        'std' => 'Box #3 Title',
         'type' => 'text');
     
     $options[] = array(
@@ -309,7 +319,7 @@ function optionsframework_options() {
         'name' => __('Box #3 Text', 'options_framework_theme'),
         'desc' => __('Textarea for Box #3', 'options_framework_theme'),
         'id' => 'sc_cta3_text',
-        'std' => 'Default Text',
+        'std' => 'Box #3 Text',
         'type' => 'textarea');
     
     $options[] = array(
@@ -318,6 +328,30 @@ function optionsframework_options() {
         'id' => 'sc_cta3_url',
         'std' => '',
         'type' => 'text');
+    
+
+    $options[] = array(
+        'name' => __('Show Banner', 'options_framework_theme'),
+        'desc' => __('Toggle the banner on or off', 'options_framework_theme'),
+        'id' => 'sc_banner_bool',
+        'std' => 'yes',
+        'type' => 'radio',
+        'options' => $bool_array); 
+    
+    $options[] = array(
+        'name' => __('Banner Call Out', 'options_framework_theme'),
+        'desc' => __('Call Out Text', 'options_framework_theme'),
+        'id' => 'sc_banner_text',
+        'std' => 'Banner Call Out Text',
+        'type' => 'text');    
+    
+    $options[] = array(
+        'name' => __('Banner Link', 'options_framework_theme'),
+        'desc' => __('URL to link to', 'options_framework_theme'),
+        'id' => 'sc_banner_url',
+        'std' => '',
+        'type' => 'text');    
+    
     //--------------------
     
     

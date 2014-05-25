@@ -16,7 +16,7 @@ jQuery(document).ready(function($) {
     hideSlides();
     showSlide();
 
-    $("#begin-survey").click(function() {
+    $("#begin-slider").click(function() {
         currentSlide++;
         hideSlides();
         showSlide();
@@ -72,10 +72,10 @@ jQuery(document).ready(function($) {
 
 
     //show + hide chevrons when hover
-    $(".survey-slide").hover(function() {
-        $(".the-survey .navigation .fa-chevron-right,.the-survey .navigation .fa-chevron-left").fadeIn(300);
+    $(".slider-slide").hover(function() {
+        $(".the-slider .navigation .fa-chevron-right,.the-slider .navigation .fa-chevron-left").fadeIn(300);
     }, function() {
-        $(".the-survey .navigation .fa-chevron-right,.the-survey .navigation .fa-chevron-left").fadeOut(300);
+        $(".the-slider .navigation .fa-chevron-right,.the-slider .navigation .fa-chevron-left").fadeOut(300);
     });
     
     // don't run event when hover over the chevron
@@ -85,10 +85,10 @@ jQuery(document).ready(function($) {
 
 
     function hideSlides() {
-        $(".the-survey").children(".survey-slide").hide();
+        $(".the-slider").children(".slider-slide").hide();
     }
     function showSlide() {
-        $(".the-survey #slide" + currentSlide).fadeIn(750);
+        $(".the-slider #slide" + currentSlide).fadeIn(750);
     }
 
     //--Match CTA Boxes height
@@ -100,7 +100,7 @@ jQuery(document).ready(function($) {
             'borderColor': '#ff6600'
         });
         $('.col-md-10', this).stop(true, false).animate({'bottom': '20px'}, 300);
-        $('.btn', this).fadeIn(300);
+        $('.btn', this).stop(true,false).fadeIn(300);
         $('h3', this).css({'color': '#ff6600'});
 
         $('.fa', this).css({
@@ -118,7 +118,7 @@ jQuery(document).ready(function($) {
         });
         $('.col-md-10', this).stop(true, false).animate({'bottom': '0'}, 300);
         $('h3', this).css({'color': '#444'});
-        $('.btn', this).fadeOut(300);
+        $('.btn', this).stop(true,false).fadeOut(300);
         $('.fa', this).css({
             'width': '50px',
             'height': '50px',
@@ -168,7 +168,7 @@ jQuery(document).ready(function($) {
 //        },200,'linear');
 //    });
 
-    //crowdfunding survey
+    //crowdfunding slider
 
 
     var currentSlide = 1;
@@ -180,7 +180,7 @@ jQuery(document).ready(function($) {
     hideSlides();
     showSlide();
 
-    $("#begin-survey").click(function() {
+    $("#begin-slider").click(function() {
         currentSlide++;
         hideSlides();
         showSlide();
@@ -214,8 +214,8 @@ jQuery(document).ready(function($) {
     });
 
     //show + hide chevrons when hover
-//    $(".survey-slide").hover(function() {
-//        var selector = '.the-survey .navigation .fa-chevron-right,.the-survey .navigation .fa-chevron-left';
+//    $(".slider-slide").hover(function() {
+//        var selector = '.the-slider .navigation .fa-chevron-right,.the-slider .navigation .fa-chevron-left';
 //        $(selector).show();
 //    }, function() {
 //        $(selector).hide();
@@ -229,10 +229,10 @@ jQuery(document).ready(function($) {
 
 
     function hideSlides() {
-        $(".the-survey").children(".survey-slide").hide();
+        $(".the-slider").children(".slider-slide").hide();
     }
     function showSlide() {
-        $(".the-survey #slide" + currentSlide).fadeIn(750);
+        $(".the-slider #slide" + currentSlide).fadeIn(750);
     }
 
     //------------------- Match Height Function

@@ -21,45 +21,13 @@
     <body <?php body_class(); ?>>
         <div id="page" class="hfeed site">
             <header id="masthead" class="site-header" role="banner">
-                <div id="site-toolbar">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="col-xs-6 contact-bar">
-                                <a href="tel:+<?php echo of_get_option('sc_phone_url', '111'); ?>" class="icon-phone">
-                                    <i class="fa fa-phone"></i>
-                                    <span><?php echo of_get_option('sc_phone_url', '6136989864') ?></span>
-                                </a>
-                                <a href="#" class="icon-map">
-                                    <i class="fa fa-map-marker"></i>
-                                    <span>290 Bath Rd.</span>
-                                </a>
-                            </div>
-
-                            <div class="col-xs-6 social-bar">
-                                <a href="#" target="_blank" class="icon-facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#" target="_blank" class="icon-twitter">
-                                    <i class="fa fa-twitter"></i>                            
-                                </a>
-                                <a href="#" target="_blank" class="icon-linkedin">
-                                    <i class="fa fa-linkedin"></i>                            
-                                </a>
-                                <a href="#" target="_blank" class="icon-gplus">
-                                    <i class="fa fa-google-plus"></i>                            
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php sc_toolbar(); ?>
                 <div class="site-branding">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-xs-6">
                                 <h1 class="site-title">
-
                                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-
                                         <?php if (of_get_option('sc_logo_image') != '') { ?>
                                             <img src="<?php echo of_get_option('sc_logo_image'); ?>" alt=""/>
                                         <?php }else{
@@ -81,9 +49,7 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
                 <nav id="site-navigation" class="main-navigation" role="navigation">
                     <div class="row">
                         <div class="col-md-12">
