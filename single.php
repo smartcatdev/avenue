@@ -11,8 +11,8 @@ get_header();
 
     <?php while (have_posts()) : the_post(); ?>
         <div class="col-md-12">
-            <div class="page-title">
-                <div class="row center">
+            <div class="page-title single-title">
+                <div class="row text-left">
                     <?php the_title(); ?>
                 </div>
             </div>
@@ -20,6 +20,7 @@ get_header();
                 <div class=" page-content col-md-12">
                     <div class="col-md-9">
                         <?php
+                        the_post_thumbnail('medium');
                         the_content();
                         // If comments are open or we have at least one comment, load up the comment template
                         if (comments_open() || '0' != get_comments_number()) :

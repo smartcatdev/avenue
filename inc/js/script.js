@@ -10,17 +10,17 @@ jQuery(document).ready(function($) {
     var currentSlide = 1;
     var maxNum = 3;
     var minNum = 1;
-    hideSlides();
-    showSlide();
+    
+    window.setInterval(function(){
+        slideUp();
+        init();
+    }, 4000);    
+    
+    init();
     
     $(".fa-chevron-right").click(function() {
-        if (currentSlide < maxNum) {
-            currentSlide ++;
-        }else if(currentSlide === maxNum){
-            currentSlide = minNum;
-        }
-        hideSlides();
-        showSlide();
+        slideUp();
+        init();
     });
     $(".fa-chevron-left").click(function() {
         if (currentSlide > minNum) {
@@ -28,8 +28,7 @@ jQuery(document).ready(function($) {
         }else if(currentSlide === minNum){
             currentSlide = maxNum;
         }
-        hideSlides();
-        showSlide();
+        init();
     });
 
 
@@ -45,12 +44,24 @@ jQuery(document).ready(function($) {
 //        event.stopPropagation();
 //    });
 
+    function init(){
+        hideSlides();
+        showSlide();
+    }
+    function slideUp(){
+         if (currentSlide < maxNum) {
+            currentSlide ++;
+        }else if(currentSlide === maxNum){
+            currentSlide = minNum;
+        }
+    }
+    
 
     function hideSlides() {
         $(".the-slider").children(".slider-slide").hide();
     }
     function showSlide() {
-        $(".the-slider #slide" + currentSlide).fadeIn(750);
+        $(".the-slider #slide" + currentSlide).fadeIn(600);
     }
 
     //--Match CTA Boxes height

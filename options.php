@@ -178,6 +178,7 @@ function optionsframework_options() {
 
 
     // ---------------------------------------------------------------------- Slider
+    $path = get_template_directory_uri() . '/images/demo-orange.png';    
     $options[] = array(
         'name' => __('Slider', 'options_framework_theme'),
         'type' => 'heading');
@@ -192,36 +193,39 @@ function optionsframework_options() {
         'name' => __('Slide #1', 'options_framework_theme'),
         'desc' => __('First Slide', 'options_framework_theme'),
         'id' => 'sc_slide1_image',
+        'std' => $path,
         'type' => 'upload');
     $options[] = array(
         'name' => __('Slide #1 Text', 'options_framework_theme'),
         'desc' => __('First Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide1_text',
-        'std' => '',
+        'std' => 'Slide 1',
         'type' => 'text');
-
+    
     $options[] = array(
         'name' => __('Slide #2', 'options_framework_theme'),
         'desc' => __('Second Slide', 'options_framework_theme'),
         'id' => 'sc_slide2_image',
+        'std' => $path,
         'type' => 'upload');
     $options[] = array(
         'name' => __('Slide #2 Text', 'options_framework_theme'),
         'desc' => __('Second Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide2_text',
-        'std' => '',
+        'std' => 'Slide 2',
         'type' => 'text');
 
     $options[] = array(
         'name' => __('Slide #3', 'options_framework_theme'),
         'desc' => __('Third Slide', 'options_framework_theme'),
         'id' => 'sc_slide3_image',
+        'std' => $path,
         'type' => 'upload');
     $options[] = array(
         'name' => __('Slide #3 Text', 'options_framework_theme'),
         'desc' => __('Third Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide3_text',
-        'std' => '',
+        'std' => 'Slide 3',
         'type' => 'text');
     //--------------------------------------------------------------------------- Homepage
     $options[] = array(

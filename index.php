@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-<div id="content" class="site-content row">
+<div id="content" class="site-content row blogroll">
     <div class="col-md-9">
         <?php if (have_posts()) : ?>
             <?php /* Start the Loop */ ?>

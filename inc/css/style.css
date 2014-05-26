@@ -39,6 +39,7 @@ body{
     -moz-transition: 0.4s all ease;
     -webkit-transition: 0.4s all ease;
 }
+
 /*-- Toolbar --*/
 #site-toolbar{
     background: #222222;
@@ -175,20 +176,6 @@ body{
 /*--------------------- Survey -------------------*/
 
 /*------------------Survey from common.css-----------------*/
-/* .the-slider{
-	border: 1px solid #d0d0d0;
-	box-shadow: 0 0 5px 0 #333333;
-	padding: 10px;
-	width: 100%;
-}
-.the-slider #slide1,.the-slider #slide2,.the-slider #slide3,.the-slider #slide4{
-	display: block;
-	height: 100%;
-	background: #f0f0f0;
-	padding: 10px;
-}*/ 
-
-
 #main-slider .col-md-12{
     padding: 0;
 }
@@ -203,13 +190,7 @@ body{
 }
 .the-slider #slide1,.the-slider #slide2,.the-slider #slide3,.the-slider #slide4,.the-slider #slide5,.the-slider #slide6{
 	display: none;
-        
 	background: #f0f0f0;
-        
-}
-.the-slider .slide-results{
-	min-height: 380px;
-	padding: 20px 60px 150px 60px;
 }
 .progress ul{
 	margin: 0;
@@ -219,16 +200,9 @@ body{
 	display: inline;
 	margin-right: 10px;
 }
-.the-slider input[type='radio']{
-	margin: 10px;
-	padding: 5px;
-}
 .the-slider .navigation i{
 	font-size: 50px;
 	color:#ffffff;
-        
-
-	
 }
 .the-slider .navigation .fa-chevron-left{
 	position: absolute;
@@ -244,21 +218,6 @@ body{
 }
 .err-message{
 	color: red;
-}
-.progress{
-	text-align: center;
-	border: 1px solid #d0d0d0;
-	border-radius: 5px;
-	height: 30px;
-	width: 200px;
-	margin: 10px auto;
-}
-.progress-bar{
-	background: #E3BF52;
-	border-radius: 4px;
-	box-shadow: 0 0 10px #888888 inset;
-	height: 30px;
-	width: 0px;
 }
 
 /* @NR */
@@ -468,7 +427,7 @@ body{
 /*-- Top Banner --*/
 #top-banner{
     padding: 15px 0 0 0;
-    background: #222222;
+    background: #222222 url('../images/left-cross.png');
     min-height: 100px;
     color: #ffffff;
     
@@ -513,8 +472,11 @@ body{
 }
 
 /*-- page --*/
+.page-content{
+    margin-top: 30px;
+}
 .page-title{
-    background: #222222;
+    background: #222222 url('../images/left-cross.png');
     margin-left: -15px;
     margin-right: -15px;
     font-size: 32px;
@@ -525,6 +487,9 @@ body{
     
 }
 /*-- Blog --*/
+.blogroll{
+    margin-top: 20px;
+}
 .item-post{
     margin-bottom: 15px;
     border-bottom: 1px solid #e1e1e1;
@@ -543,6 +508,50 @@ body{
     border: 1px solid #e0e0e0;
     padding: 5px;
 }
+.single-title{
+    
+    
+}
+.single-title > div.row{
+    padding-left: 30px; 
+}
+.wp-post-image{
+    width: 200px;
+    float: left;
+    margin: 0 15px 15px 0;
+    padding: 3px;
+    border: 1px solid #e0e0e0;
+}
+/*-- sidebar --*/
+.widget-area .search-field{
+    width: 100%;
+    padding-left: 5px;
+}
+.widget-title{
+    margin-bottom: 0;
+    font-weight: 600;
+}
+.widget-area ul{
+    margin: 0;
+}
+.widget-area ul li{
+    list-style-type: none;
+    padding-left: 0;
+    border-bottom: 1px solid #E6E6E6;
+    
+}
+.widget-area ul li a{
+    font-size: 16px;
+    padding: 7px 0;
+    transition: 0.2s all ease;
+    -moz-transition: 0.2s all ease;
+    -webkit-transition: 0.2s all ease;
+    display: block;
+}
+.widget-area ul li a:hover{
+    
+}
+/*-- Responsive --*/
 @media(min-width: 1060px){
     .row{
         width: 1060px;
