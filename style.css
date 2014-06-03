@@ -3,23 +3,15 @@ Theme Name: avenue
 Theme URI: http://smartcatdesign.net/avenue
 Author: SmartCat
 Author URI: http://smartcatdesign.net
-Description: A responsive professional full width WordPress template
+Description: A unique and modern lightweight responsive WordPress theme that is ready out of the box to make your website appealing while being easy to use. Avenue comes loaded with over 600 icons and a very light weight custom slider
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: avenue
-Domain Path: /languages/
-Tags:
+Tags: orange,black,full-width-template,featured-images,fixed-layout,responsive-layout,theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
- avenue is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
-
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
 */
 
 /*--------------------------------------------------------------
@@ -300,9 +292,9 @@ input[type="search"] {
 	-moz-box-sizing:    content-box;
 	box-sizing:         content-box;
 }
-input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
-	-webkit-appearance: none;
-}
+/*input[type="search"]::-webkit-search-decoration { *//* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	/*-webkit-appearance: none;*/
+/*}*/
 button::-moz-focus-inner,
 input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
 	border: 0;
