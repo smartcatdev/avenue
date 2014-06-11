@@ -26,6 +26,8 @@ get_header();
                     <div class="col-md-9">
                         <?php
                         the_content();
+                        wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'avenue' ), 'after' => '</div>' ) );
+		                        
                         // If comments are open or we have at least one comment, load up the comment template
                         if (comments_open() || '0' != get_comments_number()) :
                             comments_template();

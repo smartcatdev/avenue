@@ -91,24 +91,24 @@ function sc_slider() {
     <div id="main-slider"> <!-- #slider -->
         <div class="col-md-12">
             <div class="the-slider">
-                <div class="slider-slide" id="slide1" style="display: none;background: url(<?php echo of_get_option('sc_slide1_image')?>)">
-                    <h1><span><?php echo of_get_option('sc_slide1_text'); ?></span></h1>
+                <div class="slider-slide" id="slide1" style="display: none;background: url(<?php echo of_get_option('sc_slide1_image','wp-content/themes/avenue/images/demo-orange.png')?>)">
+                    <h1><span><?php echo of_get_option('sc_slide1_text','Slide 1 Text'); ?></span></h1>
                     <div class="navigation">
                         <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
                         <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
                     </div>
                 </div>
 
-                <div class="slider-slide quest" id="slide2" style="display: none;background: url(<?php echo of_get_option('sc_slide2_image')?>)">
-                    <h1><span><?php echo of_get_option('sc_slide2_text'); ?></span></h1>
+                <div class="slider-slide quest" id="slide2" style="display: none;background: url(<?php echo of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')?>)">
+                    <h1><span><?php echo of_get_option('sc_slide2_text','Slide 2 Text'); ?></span></h1>
                     <div class="navigation">
                         <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
                         <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
                     </div>                
                 </div>
 
-                <div class="slider-slide quest" id="slide3" style="display: block;background: url(<?php echo of_get_option('sc_slide3_image')?>)">
-                    <h1><span><?php echo of_get_option('sc_slide3_text'); ?></span></h1>
+                <div class="slider-slide quest" id="slide3" style="display: block;background: url(<?php echo of_get_option('sc_slide3_image','wp-content/themes/avenue/images/demo-orange.png')?>)">
+                    <h1><span><?php echo of_get_option('sc_slide3_text','Slide 3 Text'); ?></span></h1>
                     <div class="navigation">
                         <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
                         <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
@@ -125,13 +125,13 @@ function sc_ctas() {
         <div class="col-md-12">
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta1_icon'); ?>"></i>
+                    <i class="<?php echo of_get_option('sc_cta1_icon','fa fa-desktop'); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta1_title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta1_title','Box 1 Title') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta1_text'); ?>
+                            <?php echo of_get_option('sc_cta1_text','Box 1 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta1_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -141,13 +141,13 @@ function sc_ctas() {
             </div>
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta2_icon'); ?>"></i>
+                    <i class="<?php echo of_get_option('sc_cta2_icon','fa fa-tachometer'); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta2_title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta2_title','Box 2 Title') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta2_text'); ?>
+                            <?php echo of_get_option('sc_cta2_text','Box 2 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta2_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -157,13 +157,13 @@ function sc_ctas() {
             </div>
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta3_icon'); ?>"></i>
+                    <i class="<?php echo of_get_option('sc_cta3_icon','fa fa-rocket'); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta3_title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta3_title','Box 3 Title') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta3_text') ?>
+                            <?php echo of_get_option('sc_cta3_text','Box 3 Text. Input anything you want here') ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta3_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -182,7 +182,7 @@ function sc_banner() {
             <div class="col-md-12 center">
                 <p class="top-banner-text">
                     <span class="primary-color"></span>
-                    <?php echo of_get_option("sc_banner_text"); ?>
+                    <?php echo of_get_option('sc_banner_text','Banner Call Out Text'); ?>
                 </p>
                 <p>
                     <a href="<?php echo of_get_option('sc_banner_url'); ?>" class="btn btn-default btn-primary">Learn More</a>
