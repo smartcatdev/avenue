@@ -5,12 +5,7 @@
  * @package avenue
  */
 
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
+
 
 if ( ! function_exists( 'avenue_setup' ) ) :
 /**
@@ -28,6 +23,14 @@ function avenue_setup() {
 	 * If you're building a theme based on avenue, use a find and replace
 	 * to change 'avenue' to the name of your theme in all the template files
 	 */
+
+    /**
+     * Set the content width based on the theme's design and stylesheet.
+     */
+    if ( ! isset( $content_width ) ) {
+        $content_width = 640; /* pixels */
+    }
+
 	load_theme_textdomain( 'avenue', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
@@ -96,12 +99,10 @@ function avenue_scripts() {
 	wp_enqueue_style( 'avenue-font', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600)', array(), '1.0' );
         
 	wp_enqueue_script( 'avenue-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '1.0', true );
-//	wp_enqueue_script( 'avenue-slider', get_template_directory_uri() . '/inc/js/jquery.flexslider-min.js', array(), '1.0', true );
-	wp_enqueue_script( 'avenue-jqueryui', get_template_directory_uri() . '/inc/js/jquery-ui.min.js', array(), '1.0', true );
 	wp_enqueue_script( 'avenue-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.js', array(), '1.0', true );
         
 	wp_enqueue_script( 'avenue-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
-        wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery'), '1.0');
+    wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery','jquery-ui-core'), '1.0');
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
