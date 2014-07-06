@@ -5,12 +5,16 @@
     Description:
         Purpose of the stylesheet follows.
 */
-a {
+a,a:visited {
   color: #0FAF97;
+}
+a:hover{
+    color: #0B9681;
 }
 .btn-primary {
     background-color: #0FAF97;
     border-color: #16A08B;
+    color: #ffffff !important;
 }
 .btn-primary:hover,
 .btn-primary:focus,

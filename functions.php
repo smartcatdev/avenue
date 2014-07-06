@@ -176,6 +176,19 @@ jQuery(document).ready(function() {
 
 }
 
+add_action('wp_head','sc_avenue_css');
+function sc_avenue_css(){
+    if(false !== get_option('sc_theme_typography'))
+        var_dump(get_option('sc_theme_typography'));
+    ?>
+    <style type="text/stylesheet">
+        body{
+            
+        }
+    </style>
+<?php }
+
+
 
 /*
  * This is an example of filtering menu parameters
