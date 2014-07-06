@@ -93,7 +93,7 @@ function sc_slider() { ?>
                 <?php if ('' != of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
-                            <h1>The jQuery slider that just slides.</h1>
+                            <h1><?php echo get_option('sc_slide1_text','Clean & Modern Design');?></h1>
 <!--                            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>-->
                             <!--<a class="btn" href="#download">Download</a>-->
                         </div>
@@ -103,7 +103,7 @@ function sc_slider() { ?>
                 <?php if ('' != of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
-                            <h1>Fluid, flexible, fantastically minimal.</h1>
+                            <h1><?php echo get_option('sc_slide2_text','Reponsive with Bootstrap');?></h1>
                         </div>
                     </li>
                 <?php } ?>
@@ -111,7 +111,7 @@ function sc_slider() { ?>
                 <?php if ('' != of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
-                            <h1>Open-source.</h1>
+                            <h1><?php echo get_option('sc_slide3_text','Comes with 600 Icons');?></h1>
                         </div>
                     </li>
                 <?php } ?>

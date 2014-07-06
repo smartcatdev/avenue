@@ -177,13 +177,14 @@ jQuery(document).ready(function() {
 }
 
 add_action('wp_head','sc_avenue_css');
-function sc_avenue_css(){
-    if(false !== get_option('sc_theme_typography'))
-        var_dump(get_option('sc_theme_typography'));
-    ?>
-    <style type="text/stylesheet">
+function sc_avenue_css(){ ?>
+    <style type="text/css">
         body{
-            
+            font-size: <?php echo of_get_option('sc_font_size'); ?>;
+            font-family: <?php echo of_get_option('sc_font_family'); ?>;
+        }
+        .row{
+            width: <?php echo of_get_option('sc_container_width'); ?>;
         }
     </style>
 <?php }

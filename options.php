@@ -69,13 +69,18 @@ function optionsframework_options() {
     $typography_defaults = array(
         'size' => '15px',
         'face' => 'georgia');
+    
+    $width_array = array(
+        '1060px' => '1060 px',
+        '1200px' => '1200 px',
+    );
 
     $font_size_array = array(
-        '10px' => '10px',
-        '12px' => '12px',
-        '14px' => '14px',
-        '16px' => '16px',
-        '18px' => '18px',
+        '10px' => '10 px',
+        '12px' => '12 px',
+        '14px' => '14 px',
+        '16px' => '16 px',
+        '18px' => '18 px',
     );
     $font_family_array = array(
         'Arial, Helvetica, sans-serif' => 'Arial',
@@ -221,6 +226,16 @@ function optionsframework_options() {
         'type' => 'heading');
 
     $options[] = array(
+        'name' => __('Container Width', 'options_framework_theme'),
+        'desc' => __('Width of the site content container', 'options_framework_theme'),
+        'id' => 'sc_container_width',
+        'std' => '1060px',
+        'type' => 'select',
+        'class' => 'mini', //mini, tiny, small
+        'options' => $width_array);    
+    
+    
+    $options[] = array(
         'name' => "Select theme skin color",
         'desc' => "This sets the main color of the theme",
         'id' => "sc_theme_color",
@@ -251,13 +266,8 @@ function optionsframework_options() {
         'options' => $font_family_array);    
 
 
-
-
-
-
-
     // ---------------------------------------------------------------------- Slider
-    $path = get_template_directory_uri() . '/images/demo-orange.png';
+    $path = get_template_directory_uri() . '/images/demo-slider.png';
     $options[] = array(
         'name' => __('Slider', 'options_framework_theme'),
         'type' => 'heading');
@@ -278,7 +288,7 @@ function optionsframework_options() {
         'name' => __('Slide #1 Text', 'options_framework_theme'),
         'desc' => __('First Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide1_text',
-        'std' => 'Slide 1',
+        'std' => 'Clean & Modern Design',
         'type' => 'text');
 
     $options[] = array(
@@ -291,7 +301,7 @@ function optionsframework_options() {
         'name' => __('Slide #2 Text', 'options_framework_theme'),
         'desc' => __('Second Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide2_text',
-        'std' => 'Slide 2',
+        'std' => 'Reponsive with Bootstrap',
         'type' => 'text');
 
     $options[] = array(
@@ -304,7 +314,7 @@ function optionsframework_options() {
         'name' => __('Slide #3 Text', 'options_framework_theme'),
         'desc' => __('Third Slide Text', 'options_framework_theme'),
         'id' => 'sc_slide3_text',
-        'std' => 'Slide 3',
+        'std' => 'Comes with 600 Icons',
         'type' => 'text');
     //--------------------------------------------------------------------------- Homepage
     $options[] = array(
