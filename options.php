@@ -363,8 +363,10 @@ function optionsframework_options() {
         'std' => '',
         'type' => 'text');        
     
-    //--------------------
-    
+    //-------------------- Add ons
+    $options[] = array(
+        'name' => __('Add Ons', 'options_framework_theme'),
+        'type' => 'heading');    
     
 
 //    $options[] = array(
@@ -549,3 +551,37 @@ function optionsframework_options() {
 
     return $options;
 }
+
+add_action( 'optionsframework_after','sc_avenue_options_display_sidebar' );
+
+function sc_avenue_options_display_sidebar(){ ?>
+    
+<div class="width30 left ml2p">
+    <div class="center">
+        <img src="<?php echo OPTIONS_FRAMEWORK_DIRECTORY; ?>images/smartcat_wordpress.png"/>
+    </div>
+    
+    <div class="sc-tab-option">
+        <a href="http://smartcatdesign.net/avenue/" target="_blank">
+            Instructions
+        </a>
+    </div>
+
+    <div class="sc-tab-option">
+        <a href="http://smartcatdesign.net/avenue/" target="_blank">
+            Support
+        </a>
+    </div>    
+    
+    <div class="sc-tab-option">
+        <a href="http://smartcatdesign.net/donate/" target="_blank">
+            Donate
+        </a>
+    </div>    
+    
+    
+</div>
+
+
+
+<?php } ?>

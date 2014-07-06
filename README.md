@@ -13,5 +13,3 @@ are licensed under GNU General Public License version 2, see file license.txt.
 * Options Framework Theme is licensed under GPL http://wptheming.com/options-framework-theme/
 <<<<<<< HEAD
 * Unslider by @idiot is fully open source under GPL https://github.com/idiot/unslider http://unslider.com/ 
-=======
->>>>>>> a7a9cbf1a273287ef92208fb977f449c217a2a52

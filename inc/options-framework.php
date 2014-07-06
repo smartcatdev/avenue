@@ -90,6 +90,7 @@ function sc_slider() {
     ?>
             <div class="sc-slider">
                 <ul>
+                    <?php if('' != of_get_option('sc_slide1_image','wp-content/themes/avenue/images/demo-orange.png')){ ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide1_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
                         <div class="inner">
                             <h1>The jQuery slider that just slides.</h1>
@@ -98,7 +99,9 @@ function sc_slider() {
                             <a class="btn" href="#download">Download</a>
                         </div>
                     </li>
-
+                    <?php } ?>
+                    
+                    <?php if('' != of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')){ ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
                         <div class="inner">
                             <h1>Fluid, flexible, fantastically minimal.</h1>
@@ -107,8 +110,10 @@ function sc_slider() {
                             <a class="btn" href="#download">Download</a>
                         </div>
                     </li>
-
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
+                    <?php } ?>
+                    
+                    <?php if('' != of_get_option('sc_slide3_image','wp-content/themes/avenue/images/demo-orange.png')){ ?>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide3_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
                         <div class="inner">
                             <h1>Open-source.</h1>
                             <p>Everything to do with Unslider is hosted on GitHub.</p>
@@ -116,6 +121,7 @@ function sc_slider() {
                             <a class="btn" href="//github.com/idiot/unslider">Contribute</a>
                         </div>
                     </li>
+                    <?php } ?>
                 </ul>
             </div>
  

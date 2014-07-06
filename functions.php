@@ -102,14 +102,14 @@ function avenue_scripts() {
 	wp_enqueue_script( 'avenue-bootstrapjs', get_template_directory_uri() . '/inc/js/bootstrap.js', array(), '1.0', true );
         
 	wp_enqueue_script( 'avenue-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '1.0', true );
-<<<<<<< HEAD
+
 	wp_enqueue_script( 'avenue-uslider', get_template_directory_uri() . '/inc/js/uslider.min.js', array(), '1.0', true );
         
         wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery','jquery-ui-core'), '1.0');
         
-=======
+
     wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery','jquery-ui-core'), '1.0');
->>>>>>> a7a9cbf1a273287ef92208fb977f449c217a2a52
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

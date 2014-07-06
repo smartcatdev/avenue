@@ -1,8 +1,47 @@
 /* Options Framework Admin Styles */
+.width30{
+    width: 25%;
+}
+.width50{ width: 50%;}
+.left{ float: left; }
+.center{ text-align: center;}
+.ml2p{ margin-left: 2%;}
+
+.sc-tab-option{
+    width: 100%;
+    
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.sc-tab-option a{
+    background: #E3603E;
+    display: block;
+    padding: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 1px 1px 3px #333333;
+    -webkit-box-shadow: 1px 1px 3px #333333;
+    -moz-box-shadow: 1px 1px 3px #333333;
+    transition: 0.2s all ease-in-out;
+    -moz-transition: 0.2s all ease-in-out;
+    -webkit-transition: 0.2s all ease-in-out;
+    text-shadow: 1px 1px #000;
+}
+.sc-tab-option a:hover{
+    background: #111111;
+}
 
 #optionsframework {
-    max-width:840px;
+    width:70%;
+    float: left;
     background:#fff;
+}
+@media (max-width: 650px){
+    #optionsframework{
+        width: 100%;
+    }
 }
 #optionsframework h3 {
 	cursor: default;
