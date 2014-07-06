@@ -21,7 +21,7 @@ h3{ font-size: 22px;line-height: 26px;}
     overflow: hidden;
     width: 100%;
 }
-.primary-color{ color: #ff6600;}
+
 .center{ text-align: center;}
 .text-right{ text-align: right;}
 .text-left{ text-align: left;}
@@ -119,7 +119,6 @@ h3{ font-size: 22px;line-height: 26px;}
 
 .site-branding .search-bar .search-field:focus{
     padding-right: 20px;
-    border-bottom: 1px solid #ff6600;
     color: #222;
 }
 .site-branding .col-sm-6{
@@ -167,9 +166,6 @@ h3{ font-size: 22px;line-height: 26px;}
 .icon404{
     font-size: 54px;
     line-height: 90px;
-    color: #ff6600;
-
-
 }
 
 /*-- Header --*/
@@ -181,11 +177,11 @@ h3{ font-size: 22px;line-height: 26px;}
 
 }
 .site-description{
-
+    font-size: 14px;
 }
 /*-- Slider --*/
 .sc-slider-wrapper{
-    width: 1060px;
+    
     margin: 0 auto;
 }
 .sc-slider {
@@ -308,9 +304,7 @@ h3{ font-size: 22px;line-height: 26px;}
     -moz-transition: 0.3s all ease-in-out;
     -webkit-transition: 0.3s all ease-in-out;
 } 
-.nav-menu > li a:hover{
-    color: #ff6600;
-}
+
 .main-navigation ul ul{
     top: initial;
     background: #fff;
@@ -339,7 +333,8 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 .site-cta .fa{
     font-size: 28px;
-    border: 1px solid #444;
+    border: 1px solid;
+    
     width: 50px;
     height: 50px;
     text-align: center;
@@ -418,7 +413,6 @@ h3{ font-size: 22px;line-height: 26px;}
     transform: scale(1.2);
     -moz-transform: scale(1.2);
     -webkit-transform: scale(1.2);
-    border-color: #ff6600;
 }
 
 /*-- page --*/
@@ -602,9 +596,7 @@ h3{ font-size: 22px;line-height: 26px;}
         color: #fff;
         text-align: center;
     }
-    .nav-menu > li.current_page_item a{
-        color: #ff6600;
-    }    
+  
     #site-navigation .row > div.col-md-12{
         padding: 0;
     }

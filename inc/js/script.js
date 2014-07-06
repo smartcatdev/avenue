@@ -20,28 +20,22 @@ jQuery(document).ready(function($) {
 
     //--CTA boxes
     $('.site-cta').hover(function() {
-        $(this).css({
-            'borderColor': '#ff6600'
-        });
+        $(this).addClass('sc-primary-border');
         $('.col-md-10', this).stop(true, false).animate({'bottom': '20px'}, 300);
         $('.btn', this).stop(true, false).fadeIn(300);
-        $('h3', this).css({'color': '#ff6600'});
+        $('h3', this).addClass('sc-primary-color');
 
         $('.fa', this).css({
             'width': '85px',
             'height': '85px',
             'top': '-50px',
             'left': '-57px',
-            'line-height': '85px',
-            'color': '#ff6600',
-            'borderColor': '#ff6600'
-        });
+            'line-height': '85px'
+        }).addClass('sc-primary-color sc-primary-border');
     }, function() {
-        $(this).css({
-            'borderColor': '#444'
-        });
+        $(this).removeClass('sc-primary-border');
         $('.col-md-10', this).stop(true, false).animate({'bottom': '0'}, 300);
-        $('h3', this).css({'color': '#444'});
+        $('h3', this).removeClass('sc-primary-color');
         $('.btn', this).stop(true, false).fadeOut(300);
         $('.fa', this).css({
             'width': '50px',
@@ -49,9 +43,7 @@ jQuery(document).ready(function($) {
             'top': '0',
             'left': '-40px',
             'line-height': '50px',
-            'color': '#444',
-            'borderColor': '#444'
-        });
+        }).removeClass('sc-primary-color sc-primary-border');
     });
 
 

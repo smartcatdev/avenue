@@ -1,0 +1,51 @@
+/* 
+    Document   : orange
+    Created on : Jul 6, 2014, 2:28:39 AM
+    Author     : Bilal
+    Description:
+        Purpose of the stylesheet follows.
+*/
+a {
+  color: #ff6600;
+}
+.btn-primary {
+    background-color: #ff6600;
+    border-color: #EB5E00;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: #EB5E00;
+  border-color: #B64900;
+}
+fieldset[disabled] .btn-primary.active {
+  background-color: #ff6600;
+}
+.btn-primary .badge {
+  color: #ff6600;
+}
+.btn-link {
+  color: #ff6600;
+}
+.sc-primary-color{ color: #ff6600;}
+.sc-primary-border{ border-color: #ff6600;}
+.site-branding .search-bar .search-field:focus{
+    border-bottom: 1px solid #ff6600;
+}
+.icon404{
+    color: #ff6600;
+}
+.nav-menu > li a:hover{
+    color: #ff6600;
+}
+.scroll-top:hover{
+    border-color: #ff6600;
+}
+@media(max-width: 600px){
+    .nav-menu > li.current_page_item a{
+        color: #ff6600;
+    }      
+}
+

@@ -184,12 +184,12 @@ function optionsframework_options() {
     $options[] = array(
         'name' => "Example Image Selector",
         'desc' => "Images for layout.",
-        'id' => "example_images",
-        'std' => "2c-l-fixed",
+        'id' => "sc_theme_color",
+        'std' => "orange",
         'type' => "images",
         'options' => array(
-            '1col-fixed' => $imagepath . 'orange.png',
-            '2c-l-fixed' => $imagepath . 'green.png')
+            'orange' => $imagepath . 'orange.png',
+            'green' => $imagepath . 'green.png')
     );    
     
     

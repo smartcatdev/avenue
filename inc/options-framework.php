@@ -265,9 +265,8 @@ function sc_toolbar() {
 }
 
 function sc_footer() {
-    echo of_get_option('sc_footer_text');
-    ?>
+    echo of_get_option('sc_footer_text');?>
     <br>
-    <?php
-    printf(__('Theme: %1$s by %2$s.', 'avenue'), 'avenue', '<a href="http://smartcatdesign.net/" rel="designer">SmartCat</a>');
-}
+    <!-- Please make a donation so I can dedicate more time towards support and development of this free theme -->
+    <a href="http://smartcatdesign.net/" rel="designer">Design by SmartCat</a>
+<?php }
