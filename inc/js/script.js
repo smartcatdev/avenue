@@ -4,16 +4,22 @@
  * 
  */
 jQuery(document).ready(function($) {
-
+    
+    $('.sc-slider h1').not('.sc-slider li:first-child h1').hide();
     $('.sc-slider').unslider({
-        speed: 500, //  The speed to animate each slide (in milliseconds)
-        delay: 4000, //  The delay between slide animations (in milliseconds)
+        speed: 500,
+        delay: 4000,
         complete: function() {
-        }, //  A function that gets called after every slide animation
-        keys: true, //  Enable keyboard (left, right) arrow shortcuts
-        dots: true, //  Display dot navigation
-        fluid: true,              //  Support responsive design. May break non-responsive designs
-    });    
+            $('.sc-slider h1').fadeIn(500).delay(2500).fadeOut(500);
+        },
+        keys: true, 
+        dots: true,
+        fluid: true,
+    });
+    $('.sc-slider li').hover(function(){
+        $('h1',this).stop(true,false).fadeIn(300);
+    });
+    
 
     //--Match CTA Boxes height
     matchColHeights('.site-cta');

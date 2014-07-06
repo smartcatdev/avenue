@@ -94,9 +94,8 @@ function sc_slider() { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1>The jQuery slider that just slides.</h1>
-                            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
-
-                            <a class="btn" href="#download">Download</a>
+<!--                            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>-->
+                            <!--<a class="btn" href="#download">Download</a>-->
                         </div>
                     </li>
                 <?php } ?>
@@ -105,9 +104,6 @@ function sc_slider() { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1>Fluid, flexible, fantastically minimal.</h1>
-                            <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
-
-                            <a class="btn" href="#download">Download</a>
                         </div>
                     </li>
                 <?php } ?>
@@ -116,9 +112,6 @@ function sc_slider() { ?>
                     <li style="background-image: url('<?php echo of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1>Open-source.</h1>
-                            <p>Everything to do with Unslider is hosted on GitHub.</p>
-
-                            <a class="btn" href="//github.com/idiot/unslider">Contribute</a>
                         </div>
                     </li>
                 <?php } ?>

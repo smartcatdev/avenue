@@ -182,8 +182,8 @@ function optionsframework_options() {
         'type' => 'heading');     
     
     $options[] = array(
-        'name' => "Example Image Selector",
-        'desc' => "Images for layout.",
+        'name' => "Select theme skin color",
+        'desc' => "This sets the main color of the theme",
         'id' => "sc_theme_color",
         'std' => "orange",
         'type' => "images",
@@ -573,6 +573,7 @@ add_action( 'optionsframework_after','sc_avenue_options_display_sidebar' );
 function sc_avenue_options_display_sidebar(){ ?>
     
 <div class="width30 left ml2p">
+    
     <div class="center">
         <img src="<?php echo OPTIONS_FRAMEWORK_DIRECTORY; ?>images/smartcat_wordpress.png"/>
     </div>
@@ -595,6 +596,8 @@ function sc_avenue_options_display_sidebar(){ ?>
         </a>
     </div>    
     
+    <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSmartcatDesign&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=233286813420319" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+
     
 </div>
 
