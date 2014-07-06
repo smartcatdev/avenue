@@ -86,12 +86,12 @@ if (!function_exists('of_get_option')) :
 
 endif;
 
-function sc_slider() {
-    ?>
-            <div class="sc-slider">
-                <ul>
-                    <?php if('' != of_get_option('sc_slide1_image','wp-content/themes/avenue/images/demo-orange.png')){ ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide1_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
+function sc_slider() { ?>
+    <div class="sc-slider-wrapper">
+        <div class="sc-slider">
+            <ul>
+                <?php if ('' != of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1>The jQuery slider that just slides.</h1>
                             <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
@@ -99,10 +99,10 @@ function sc_slider() {
                             <a class="btn" href="#download">Download</a>
                         </div>
                     </li>
-                    <?php } ?>
-                    
-                    <?php if('' != of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')){ ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
+                <?php } ?>
+
+                <?php if ('' != of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1>Fluid, flexible, fantastically minimal.</h1>
                             <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
@@ -110,10 +110,10 @@ function sc_slider() {
                             <a class="btn" href="#download">Download</a>
                         </div>
                     </li>
-                    <?php } ?>
-                    
-                    <?php if('' != of_get_option('sc_slide3_image','wp-content/themes/avenue/images/demo-orange.png')){ ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide3_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
+                <?php } ?>
+
+                <?php if ('' != of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1>Open-source.</h1>
                             <p>Everything to do with Unslider is hosted on GitHub.</p>
@@ -121,11 +121,12 @@ function sc_slider() {
                             <a class="btn" href="//github.com/idiot/unslider">Contribute</a>
                         </div>
                     </li>
-                    <?php } ?>
-                </ul>
-            </div>
- 
-<?php
+                <?php } ?>
+            </ul>
+        </div>
+    </div>
+
+    <?php
 }
 
 function sc_ctas() {
@@ -140,7 +141,7 @@ function sc_ctas() {
                     <div>
                         <h3><?php echo of_get_option('sc_cta1_title', 'Box 1 Title') ?></h3>
                         <p>
-    <?php echo of_get_option('sc_cta1_text', 'Box 1 Text. Input anything you want here'); ?>
+                            <?php echo of_get_option('sc_cta1_text', 'Box 1 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta1_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -156,7 +157,7 @@ function sc_ctas() {
                     <div>
                         <h3><?php echo of_get_option('sc_cta2_title', 'Box 2 Title') ?></h3>
                         <p>
-    <?php echo of_get_option('sc_cta2_text', 'Box 2 Text. Input anything you want here'); ?>
+                            <?php echo of_get_option('sc_cta2_text', 'Box 2 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta2_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -172,7 +173,7 @@ function sc_ctas() {
                     <div>
                         <h3><?php echo of_get_option('sc_cta3_title', 'Box 3 Title') ?></h3>
                         <p>
-    <?php echo of_get_option('sc_cta3_text', 'Box 3 Text. Input anything you want here') ?>
+                            <?php echo of_get_option('sc_cta3_text', 'Box 3 Text. Input anything you want here') ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta3_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -182,7 +183,7 @@ function sc_ctas() {
             </div>
         </div>
     </div><!-- #CTA boxes -->
-<?php
+    <?php
 }
 
 function sc_banner() {
@@ -200,7 +201,7 @@ function sc_banner() {
             </div>
         </div>
     </div>
-<?php
+    <?php
 }
 
 function sc_toolbar() {

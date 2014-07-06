@@ -108,8 +108,6 @@ function avenue_scripts() {
         wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery','jquery-ui-core'), '1.0');
         
 
-    wp_enqueue_script('avenue-script', get_template_directory_uri() . '/inc/js/script.js', array('jquery','jquery-ui-core'), '1.0');
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

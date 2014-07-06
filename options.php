@@ -176,7 +176,23 @@ function optionsframework_options() {
         'std' => '&#169; 2014 Your company name',
         'type' => 'textarea');
 
-
+    // ---------------------------------------------------------------------- Design
+    $options[] = array(
+        'name' => __('Design', 'options_framework_theme'),
+        'type' => 'heading');     
+    
+    $options[] = array(
+        'name' => "Example Image Selector",
+        'desc' => "Images for layout.",
+        'id' => "example_images",
+        'std' => "2c-l-fixed",
+        'type' => "images",
+        'options' => array(
+            '1col-fixed' => $imagepath . 'orange.png',
+            '2c-l-fixed' => $imagepath . 'green.png')
+    );    
+    
+    
     // ---------------------------------------------------------------------- Slider
     $path = get_template_directory_uri() . '/images/demo-orange.png';    
     $options[] = array(
