@@ -11,4 +11,7 @@ are licensed under GNU General Public License version 2, see file license.txt.
 * Font Awesome by Dave Gandy - http://fontawesome.io
 * Theme is built from the _s starter theme licensed under GPLv2 https://github.com/Automattic/_s
 * Options Framework Theme is licensed under GPL http://wptheming.com/options-framework-theme/
+<<<<<<< HEAD
 * Unslider by @idiot is fully open source under GPL https://github.com/idiot/unslider http://unslider.com/ 
+=======
+>>>>>>> a7a9cbf1a273287ef92208fb977f449c217a2a52

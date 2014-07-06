@@ -4,7 +4,7 @@ Theme URI: http://smartcatdesign.net/avenue
 Author: SmartCat
 Author URI: http://smartcatdesign.net
 Description: A unique and modern lightweight responsive WordPress theme that is ready out of the box to make your website appealing while being easy to use. Avenue comes loaded with over 600 icons and a very light weight custom slider
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: orange,black,full-width-template,featured-images,fixed-layout,responsive-layout,theme-options
@@ -12,6 +12,12 @@ Tags: orange,black,full-width-template,featured-images,fixed-layout,responsive-l
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
+Avenue is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
 */
 
 /*--------------------------------------------------------------
