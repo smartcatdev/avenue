@@ -4,65 +4,16 @@
  * 
  */
 jQuery(document).ready(function($) {
-    //--slider
-//    resize_slider();
 
-    var currentSlide = 1;
-    var maxNum = 3;
-    var minNum = 1;
-    
-    window.setInterval(function(){
-        slideUp();
-        init();
-    }, 4000);    
-    
-    init();
-    
-    $(".fa-chevron-right").click(function() {
-        slideUp();
-        init();
-    });
-    $(".fa-chevron-left").click(function() {
-        if (currentSlide > minNum) {
-            currentSlide--;
-        }else if(currentSlide === minNum){
-            currentSlide = maxNum;
-        }
-        init();
-    });
-
-
-    //show + hide chevrons when hover
-    $(".slider-slide").hover(function() {
-        $(".the-slider .navigation .fa-chevron-right,.the-slider .navigation .fa-chevron-left").fadeIn(300);
-    }, function() {
-        $(".the-slider .navigation .fa-chevron-right,.the-slider .navigation .fa-chevron-left").fadeOut(300);
-    });
-    
-    // don't run event when hover over the chevron
-//    $(".fa-chevron-right,.fa-chevron-left").hover(function(event) {
-//        event.stopPropagation();
-//    });
-
-    function init(){
-        hideSlides();
-        showSlide();
-    }
-    function slideUp(){
-         if (currentSlide < maxNum) {
-            currentSlide ++;
-        }else if(currentSlide === maxNum){
-            currentSlide = minNum;
-        }
-    }
-    
-
-    function hideSlides() {
-        $(".the-slider").children(".slider-slide").hide();
-    }
-    function showSlide() {
-        $(".the-slider #slide" + currentSlide).fadeIn(600);
-    }
+    $('.sc-slider').unslider({
+        speed: 500, //  The speed to animate each slide (in milliseconds)
+        delay: 4000, //  The delay between slide animations (in milliseconds)
+        complete: function() {
+        }, //  A function that gets called after every slide animation
+        keys: true, //  Enable keyboard (left, right) arrow shortcuts
+        dots: true, //  Display dot navigation
+        fluid: true,              //  Support responsive design. May break non-responsive designs
+    });    
 
     //--Match CTA Boxes height
     matchColHeights('.site-cta');
@@ -73,7 +24,7 @@ jQuery(document).ready(function($) {
             'borderColor': '#ff6600'
         });
         $('.col-md-10', this).stop(true, false).animate({'bottom': '20px'}, 300);
-        $('.btn', this).stop(true,false).fadeIn(300);
+        $('.btn', this).stop(true, false).fadeIn(300);
         $('h3', this).css({'color': '#ff6600'});
 
         $('.fa', this).css({
@@ -91,7 +42,7 @@ jQuery(document).ready(function($) {
         });
         $('.col-md-10', this).stop(true, false).animate({'bottom': '0'}, 300);
         $('h3', this).css({'color': '#444'});
-        $('.btn', this).stop(true,false).fadeOut(300);
+        $('.btn', this).stop(true, false).fadeOut(300);
         $('.fa', this).css({
             'width': '50px',
             'height': '50px',

@@ -355,6 +355,13 @@ function optionsframework_options() {
         'id' => 'sc_banner_url',
         'std' => '',
         'type' => 'text');    
+
+    $options[] = array(
+        'name' => __('Banner Button Text', 'options_framework_theme'),
+        'desc' => __('Text that shows up on the button', 'options_framework_theme'),
+        'id' => 'sc_banner_button_text',
+        'std' => '',
+        'type' => 'text');        
     
     //--------------------
     

@@ -88,36 +88,39 @@ endif;
 
 function sc_slider() {
     ?>
-    <div id="main-slider"> <!-- #slider -->
-        <div class="col-md-12">
-            <div class="the-slider">
-                <div class="slider-slide" id="slide1" style="display: none;background: url(<?php echo of_get_option('sc_slide1_image','wp-content/themes/avenue/images/demo-orange.png')?>)">
-                    <h1><span><?php echo of_get_option('sc_slide1_text','Slide 1 Text'); ?></span></h1>
-                    <div class="navigation">
-                        <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
-                        <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
-                    </div>
-                </div>
+            <div class="sc-slider">
+                <ul>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide1_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
+                        <div class="inner">
+                            <h1>The jQuery slider that just slides.</h1>
+                            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>
 
-                <div class="slider-slide quest" id="slide2" style="display: none;background: url(<?php echo of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')?>)">
-                    <h1><span><?php echo of_get_option('sc_slide2_text','Slide 2 Text'); ?></span></h1>
-                    <div class="navigation">
-                        <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
-                        <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
-                    </div>                
-                </div>
+                            <a class="btn" href="#download">Download</a>
+                        </div>
+                    </li>
 
-                <div class="slider-slide quest" id="slide3" style="display: block;background: url(<?php echo of_get_option('sc_slide3_image','wp-content/themes/avenue/images/demo-orange.png')?>)">
-                    <h1><span><?php echo of_get_option('sc_slide3_text','Slide 3 Text'); ?></span></h1>
-                    <div class="navigation">
-                        <div class="left"><i class="fa fa-chevron-left" style="display: none;"></i></div>
-                        <div class="right"><i class="fa fa-chevron-right" style="display: none;"></i></div>
-                    </div>                
-                </div>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
+                        <div class="inner">
+                            <h1>Fluid, flexible, fantastically minimal.</h1>
+                            <p>Use any HTML in your slides, extend with CSS. You have full control.</p>
+
+                            <a class="btn" href="#download">Download</a>
+                        </div>
+                    </li>
+
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide2_image','wp-content/themes/avenue/images/demo-orange.png')?>');">
+                        <div class="inner">
+                            <h1>Open-source.</h1>
+                            <p>Everything to do with Unslider is hosted on GitHub.</p>
+
+                            <a class="btn" href="//github.com/idiot/unslider">Contribute</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </div><!-- #slider -->
-<?php }
+ 
+<?php
+}
 
 function sc_ctas() {
     ?>
@@ -125,13 +128,13 @@ function sc_ctas() {
         <div class="col-md-12">
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta1_icon','fa fa-desktop'); ?>"></i>
+                    <i class="<?php echo of_get_option('sc_cta1_icon', 'fa fa-desktop'); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta1_title','Box 1 Title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta1_title', 'Box 1 Title') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta1_text','Box 1 Text. Input anything you want here'); ?>
+    <?php echo of_get_option('sc_cta1_text', 'Box 1 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta1_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -141,13 +144,13 @@ function sc_ctas() {
             </div>
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta2_icon','fa fa-tachometer'); ?>"></i>
+                    <i class="<?php echo of_get_option('sc_cta2_icon', 'fa fa-tachometer'); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta2_title','Box 2 Title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta2_title', 'Box 2 Title') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta2_text','Box 2 Text. Input anything you want here'); ?>
+    <?php echo of_get_option('sc_cta2_text', 'Box 2 Text. Input anything you want here'); ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta2_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -157,13 +160,13 @@ function sc_ctas() {
             </div>
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
-                    <i class="<?php echo of_get_option('sc_cta3_icon','fa fa-rocket'); ?>"></i>
+                    <i class="<?php echo of_get_option('sc_cta3_icon', 'fa fa-rocket'); ?>"></i>
                 </div>
                 <div class="col-md-10">
                     <div>
-                        <h3><?php echo of_get_option('sc_cta3_title','Box 3 Title') ?></h3>
+                        <h3><?php echo of_get_option('sc_cta3_title', 'Box 3 Title') ?></h3>
                         <p>
-                            <?php echo of_get_option('sc_cta3_text','Box 3 Text. Input anything you want here') ?>
+    <?php echo of_get_option('sc_cta3_text', 'Box 3 Text. Input anything you want here') ?>
                         </p>
                         <p class="text-right">
                             <a href="<?php echo of_get_option('sc_cta3_url') ?>" class="btn btn-default btn-primary">Click Here</a>
@@ -173,7 +176,8 @@ function sc_ctas() {
             </div>
         </div>
     </div><!-- #CTA boxes -->
-<?php }
+<?php
+}
 
 function sc_banner() {
     ?>
@@ -182,55 +186,81 @@ function sc_banner() {
             <div class="col-md-12 center">
                 <p class="top-banner-text">
                     <span class="primary-color"></span>
-                    <?php echo of_get_option('sc_banner_text','Banner Call Out Text'); ?>
+                    <?php echo of_get_option('sc_banner_text', 'Banner Call Out Text'); ?>
                 </p>
                 <p>
-                    <a href="<?php echo of_get_option('sc_banner_url'); ?>" class="btn btn-default btn-primary">Learn More</a>
+                    <a href="<?php echo of_get_option('sc_banner_url'); ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_banner_button_text', 'Learn More'); ?></a>
                 </p>
             </div>
         </div>
     </div>
-<?php }
+<?php
+}
 
-function sc_toolbar() { ?>
-    <div id="site-toolbar">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="col-xs-6 contact-bar">
-                    <a href="tel:+<?php echo of_get_option('sc_phone_url'); ?>" class="icon-phone">
-                        <i class="fa fa-phone"></i>
-                        <span><?php echo of_get_option('sc_phone_url'); ?></span>
-                    </a>
-                    <a href="#" class="icon-map">
-                        <i class="fa fa-map-marker"></i>
-                        <span><?php echo of_get_option('sc_address_url') ?></span>
-                    </a>
-                </div>
+function sc_toolbar() {
+    if ('no' != of_get_option('sc_headerbar_bool', 'yes')) {
+        ?>
+        <div id="site-toolbar">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-xs-6 contact-bar">
+                        <?php if ('' != of_get_option('sc_phone_url')) { ?>
+                            <a href="tel:+<?php echo of_get_option('sc_phone_url'); ?>" class="icon-phone">
+                                <i class="fa fa-phone"></i>
+                                <span><?php echo of_get_option('sc_phone_url'); ?></span>
+                            </a>
+                        <?php } ?>
 
-                <div class="col-xs-6 social-bar">
-                    <a href="<?php echo of_get_option('sc_facebook_url')?>" target="_blank" class="icon-facebook">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="<?php echo of_get_option('sc_twitter_url')?>" target="_blank" class="icon-twitter">
-                        <i class="fa fa-twitter"></i>                            
-                    </a>
-                    <a href="<?php echo of_get_option('sc_linkedin_url')?>" target="_blank" class="icon-linkedin">
-                        <i class="fa fa-linkedin"></i>                            
-                    </a>
-                    <a href="<?php echo of_get_option('sc_gplus_url')?>" target="_blank" class="icon-gplus">
-                        <i class="fa fa-google-plus"></i>                            
-                    </a>
+                        <?php if ('' != of_get_option('sc_address_url')) { ?>
+                            <a href="#" class="icon-map">
+                                <i class="fa fa-map-marker"></i>
+                                <span><?php echo of_get_option('sc_address_url') ?></span>
+                            </a>
+                        <?php } ?>
+
+
+                    </div>
+
+                    <div class="col-xs-6 social-bar">
+
+                        <?php if ('' != of_get_option('sc_facebook_url')) { ?>
+                            <a href="<?php echo of_get_option('sc_facebook_url') ?>" target="_blank" class="icon-facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        <?php } ?>
+
+                        <?php if ('' != of_get_option('sc_twitter_url')) { ?>
+                            <a href="<?php echo of_get_option('sc_twitter_url') ?>" target="_blank" class="icon-twitter">
+                                <i class="fa fa-twitter"></i>                            
+                            </a>
+                        <?php } ?>
+
+
+                        <?php if ('' != of_get_option('sc_linkedin_url')) { ?>
+                            <a href="<?php echo of_get_option('sc_linkedin_url') ?>" target="_blank" class="icon-linkedin">
+                                <i class="fa fa-linkedin"></i>                            
+                            </a>
+                        <?php } ?>
+
+
+                        <?php if ('' != of_get_option('sc_gplus_url')) { ?>
+                            <a href="<?php echo of_get_option('sc_gplus_url') ?>" target="_blank" class="icon-gplus">
+                                <i class="fa fa-google-plus"></i>                            
+                            </a>
+                        <?php } ?>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>    
-
-
-<?php
+        <?php
+    }
 }
-function sc_footer(){
-    echo of_get_option('sc_footer_text'); ?>
+
+function sc_footer() {
+    echo of_get_option('sc_footer_text');
+    ?>
     <br>
-    <?php printf(__('Theme: %1$s by %2$s.', 'avenue'), 'avenue', '<a href="http://smartcatdesign.net/" rel="designer">SmartCat</a>');
-    
+    <?php
+    printf(__('Theme: %1$s by %2$s.', 'avenue'), 'avenue', '<a href="http://smartcatdesign.net/" rel="designer">SmartCat</a>');
 }
