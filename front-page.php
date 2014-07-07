@@ -4,15 +4,7 @@
  * @author bilal hassan <info@smartcatdesign.net>
  * 
  */
-get_header();
-?>
-<script>
-    jQuery(document).ready(function($) {
-
-
-
-    });
-</script>
+get_header();?>
 <?php if(of_get_option('sc_slider_bool','yes')=='yes') echo sc_slider(); ?>
 <?php if(of_get_option('sc_cta_bool','yes')=='yes') echo sc_ctas(); ?>
 <?php if(of_get_option('sc_banner_bool','yes')=='yes') echo sc_banner(); ?>
