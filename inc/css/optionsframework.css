@@ -7,6 +7,22 @@
 .center{ text-align: center;}
 .ml2p{ margin-left: 2%;}
 
+
+#wpbody-content .metabox-holder{
+    padding-top: 0;
+}
+#setting-error-save_options{
+    margin: 0;
+    padding: 0;
+}
+#setting-error-save_options p{
+    margin: 0;
+    box-shadow: 0;
+    -webkit-box-shadow: 0;
+    -moz-box-shadow: 0;
+    
+}
+
 .sc-tab-option{
     width: 100%;
     
@@ -44,6 +60,7 @@
 h2.nav-tab-wrapper{
     border: 0;
     padding-left: 0;
+    overflow: hidden;
 }
 
 h2 .nav-tab:focus{
@@ -68,6 +85,7 @@ h2 .nav-tab{
     -webkit-box-sizing: border-box;
     background-image: url('../../images/menu-bg.png');
     color: rgba(255,255,255,0.6);
+    padding-top: 20px;
 }
 h2 .nav-tab:hover{
     color: #E3603E;
@@ -209,11 +227,12 @@ h2 .nav-tab:hover{
 	margin-bottom:10px;
 }
 #optionsframework .controls .of-radio-img-img {
-	border:3px solid #f9f9f9;
+	/*border:3px solid #f9f9f9;*/
 	margin:0 5px 10px 0;
 	display:none;
 	cursor:pointer;
 	float:left;
+        padding: 3px;
 }
 #optionsframework .controls .of-radio-img-selected {
 	border:3px solid #ccc

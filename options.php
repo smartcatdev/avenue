@@ -453,9 +453,9 @@ function optionsframework_options() {
         'type' => 'text');
 
     //-------------------- Add ons
-    $options[] = array(
-        'name' => __('Add Ons', 'options_framework_theme'),
-        'type' => 'heading');
+//    $options[] = array(
+//        'name' => __('Add Ons', 'options_framework_theme'),
+//        'type' => 'heading');
 
 
 //    $options[] = array(
@@ -670,6 +670,12 @@ function sc_avenue_options_display_sidebar() {
             </a>
         </div>    
 
+        <div class="sc-tab-option">
+            <a href="http://smartcatdesign.net/avenue/" target="_blank">
+                View Avenue Icons
+            </a>
+        </div>           
+        
         <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSmartcatDesign&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=233286813420319" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
 
 
