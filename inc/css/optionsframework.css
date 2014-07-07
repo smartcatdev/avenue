@@ -33,20 +33,77 @@
     background: #111111;
 }
 
+.nav-tab-active:hover{
+    background: url('../../images/menu-bg.png');
+    
+}
+.nav-tab-active{
+    color: #E3603E !important;
+}
+
+h2.nav-tab-wrapper{
+    border: 0;
+    padding-left: 0;
+}
+
+h2 .nav-tab:focus{
+    outline: none;
+}
+.nav-tab-active, .nav-tab-active:hover{
+    border-bottom: 0;
+}
+h2 .nav-tab{
+    outline: none;
+    float: left;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    border: solid 1px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0px 0px 1px 1px rgba(255,255,255,0.05);
+    border-top: none;
+    margin: 0px;
+    list-style-type: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-image: url('../../images/menu-bg.png');
+    color: rgba(255,255,255,0.6);
+}
+h2 .nav-tab:hover{
+    color: #E3603E;
+}
+.nav-tab-active{
+    color: #E3603E;
+}
+
+.nav-tab-wrapper{
+    
+/*    width: 600px;
+    height: 200px;*/
+    
+}
+#optionsframework h4.heading{
+    color: #A8A8A8;
+}
 #optionsframework {
     width:70%;
     float: left;
-    background:#fff;
+    background: url('../../images/menu-bg.png');
+    border: 0;
 }
 @media (max-width: 650px){
     #optionsframework{
         width: 100%;
     }
 }
+#optionsframework label{
+    color: #A8A8A8;
+}
 #optionsframework h3 {
 	cursor: default;
-	background-color: #f1f1f1;
-	border-bottom: 1px solid #ddd;
+	background:  url('../../images/menu-bg.png');
+	border: 0;
+        color: #ffffff;
 }
 #optionsframework p {
 	margin-bottom:0;
@@ -69,7 +126,7 @@
 	float: left;
 	font-size: 12px;
 	line-height:16px;
-	color: #777;
+	color: #A8A8A8;
 }
 #optionsframework .section-checkbox .controls {
 	width: 98%;
