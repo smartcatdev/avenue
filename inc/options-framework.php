@@ -87,6 +87,7 @@ if (!function_exists('of_get_option')) :
 endif;
 
 function sc_slider() { ?>
+
     <div class="sc-slider-wrapper">
         <div class="sc-slider">
             <ul>
