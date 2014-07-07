@@ -4,6 +4,10 @@
  *
  * @package avenue
  */
+if (!isset($content_width)) {
+    $content_width = 1060; /* pixels */
+}
+
 if (!function_exists('avenue_setup')) :
 
     /**
