@@ -186,8 +186,8 @@ function sc_banner() {
         <div class="row <?php echo of_get_option('sc_container_width'); ?>">
             <div class="col-md-12 center">
                 <p class="top-banner-text">
-                    <span class="primary-color"></span>
-                    <?php echo of_get_option('sc_banner_text', 'Banner Call Out Text'); ?>
+                    <span class="primary-color"><?php echo of_get_option('sc_banner_text', 'Banner Call Out Text'); ?></span>
+                    
                 </p>
                 <p>
                     <a href="<?php echo of_get_option('sc_banner_url'); ?>" class="btn btn-default btn-primary"><?php echo of_get_option('sc_banner_button_text', 'Learn More'); ?></a>

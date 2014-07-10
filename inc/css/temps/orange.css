@@ -11,6 +11,7 @@ a,a:visited {
 a:hover{
     color: #D85904;
 }
+.primary-color{ color: #ff6600;}
 .btn-primary {
     background-color: #ff6600;
     border-color: #EB5E00;
