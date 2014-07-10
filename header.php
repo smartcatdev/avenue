@@ -23,7 +23,7 @@
             <header id="masthead" class="site-header" role="banner">
                 <?php sc_toolbar(); ?>
                 <div class="site-branding">
-                    <div class="row">
+                    <div class="row <?php echo of_get_option('sc_container_width'); ?>">
                         <div class="col-md-12">
                             <div class="col-xs-6">
                                 <h1 class="site-title">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <div class="row">
+                    <div class="row <?php echo of_get_option('sc_container_width'); ?>">
                         <div class="col-md-12">
                             <button class="menu-toggle"><?php _e('Primary Menu', 'avenue'); ?></button>
                             <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'avenue'); ?></a>

@@ -125,7 +125,7 @@ function sc_slider() { ?>
 
 function sc_ctas() {
     ?>
-    <div id="site-cta" class="row"><!-- #CTA boxes -->
+    <div id="site-cta" class="row <?php echo of_get_option('sc_container_width'); ?>"><!-- #CTA boxes -->
         <div class="col-md-12">
             <div class="col-md-4 site-cta">
                 <div class="col-md-2">
@@ -183,7 +183,7 @@ function sc_ctas() {
 function sc_banner() {
     ?>
     <div id="top-banner" class="full-banner col-md-12">
-        <div class="row">
+        <div class="row <?php echo of_get_option('sc_container_width'); ?>">
             <div class="col-md-12 center">
                 <p class="top-banner-text">
                     <span class="primary-color"></span>

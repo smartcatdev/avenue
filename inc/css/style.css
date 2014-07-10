@@ -181,7 +181,6 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 /*-- Slider --*/
 .sc-slider-wrapper{
-    overflow: hidden;
     margin: 0 auto;
 }
 .sc-slider {
@@ -512,7 +511,14 @@ h3{ font-size: 22px;line-height: 26px;}
     .row{
         width: 1060px;
     }
-
+    .row.row1060{
+        width: 1060px;
+    }
+}
+@media(min-width: 1200px){
+    .row.row1200{
+        width: 1200px;
+    }
 }
 @media(min-width: 601px) and (max-width: 991px){
     #site-cta{

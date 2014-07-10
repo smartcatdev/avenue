@@ -12,11 +12,11 @@ get_header();
     <?php while (have_posts()) : the_post(); ?>
         <div class="col-md-12">
             <div class="page-title single-title">
-                <div class="row text-left">
+                <div class="row text-left <?php echo of_get_option('sc_container_width'); ?>">
                     <?php the_title(); ?>
                 </div>
             </div>
-            <div class="row">
+            <div class="row <?php echo of_get_option('sc_container_width'); ?>">
                 <div class=" page-content col-md-12">
                     <div class="col-md-9">
                         <?php

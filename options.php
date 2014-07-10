@@ -71,8 +71,8 @@ function optionsframework_options() {
         'face' => 'georgia');
     
     $width_array = array(
-        '1060px' => '1060 px',
-        '1200px' => '1200 px',
+        'row1060' => '1060 px',
+        'row1200' => '1200 px',
     );
 
     $font_size_array = array(

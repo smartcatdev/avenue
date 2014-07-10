@@ -9,7 +9,7 @@ get_header();?>
 <?php if(of_get_option('sc_cta_bool','yes')=='yes') echo sc_ctas(); ?>
 <?php if(of_get_option('sc_banner_bool','yes')=='yes') echo sc_banner(); ?>
 
-<div id="content" class="site-content row">
+<div id="content" class="site-content row <?php echo of_get_option('sc_container_width'); ?>">
     <div class="col-md-12">
         <?php while (have_posts()) : the_post(); ?>
             <?php
