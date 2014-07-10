@@ -4,9 +4,6 @@
  *
  * @package avenue
  */
-if (!isset($content_width)) {
-    $content_width = 1060; /* pixels */
-}
 
 if (!function_exists('avenue_setup')) :
 
@@ -24,11 +21,13 @@ if (!function_exists('avenue_setup')) :
          * Translations can be filed in the /languages/ directory.
          * If you're building a theme based on avenue, use a find and replace
          * to change 'avenue' to the name of your theme in all the template files
-         */
+         */    
+        if (!isset($content_width)) {
+            global $content_width;
+            $content_width = 1060;
+        }
 
-
-
-        define('SC_AVENUE_VERSION', '1.4');
+        define('SC_AVENUE_VERSION', '1.0.6');
         /**
          * Set the content width based on the theme's design and stylesheet.
          */
