@@ -91,8 +91,8 @@ function sc_slider() { ?>
     <div class="sc-slider-wrapper">
         <div class="sc-slider">
             <ul>
-                <?php if ('' != of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide1_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
+                <?php if ('' != of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide1_image', get_template_directory_uri() . '/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1><?php echo of_get_option('sc_slide1_text','Clean & Modern Design');?></h1>
 <!--                            <p>No fancy effects or unnecessary markup, and it’s less than 3kb.</p>-->
@@ -101,16 +101,16 @@ function sc_slider() { ?>
                     </li>
                 <?php } ?>
 
-                <?php if ('' != of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide2_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
+                <?php if ('' != of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide2_image', get_template_directory_uri() . '/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1><?php echo of_get_option('sc_slide2_text','Reponsive with Bootstrap');?></h1>
                         </div>
                     </li>
                 <?php } ?>
 
-                <?php if ('' != of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png')) { ?>
-                    <li style="background-image: url('<?php echo of_get_option('sc_slide3_image', 'wp-content/themes/avenue/images/demo-orange.png') ?>');">
+                <?php if ('' != of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png')) { ?>
+                    <li style="background-image: url('<?php echo of_get_option('sc_slide3_image', get_template_directory_uri() . '/images/demo-orange.png') ?>');">
                         <div class="inner">
                             <h1><?php echo of_get_option('sc_slide3_text','Comes with 600 Icons');?></h1>
                         </div>

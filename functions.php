@@ -98,7 +98,7 @@ function avenue_scripts() {
     wp_enqueue_style('fontawesome', get_template_directory_uri() . '/inc/css/font-awesome.min.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-main-style', get_template_directory_uri() . '/inc/css/style.css', array(), SC_AVENUE_VERSION);
     wp_enqueue_style('avenue-font', 'http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600)', array(), SC_AVENUE_VERSION);
-    wp_enqueue_style('avenue-template', get_template_directory_uri() . '/inc/css/temps/' . of_get_option('sc_theme_color') . '.css', array(), SC_AVENUE_VERSION);
+    wp_enqueue_style('avenue-template', get_template_directory_uri() . '/inc/css/temps/' . of_get_option('sc_theme_color','orange') . '.css', array(), SC_AVENUE_VERSION);
 
 
 
@@ -191,18 +191,18 @@ function sc_avenue_css() {
 <?php
 }
 
-/*
- * This is an example of filtering menu parameters
- */
-
-/*
-function prefix_options_menu_filter( $menu ) {
-	$menu['mode'] = 'menu';
-	$menu['page_title'] = __( 'Hello Options', 'textdomain');
-	$menu['menu_title'] = __( 'Hello Options', 'textdomain');
-	$menu['menu_slug'] = 'hello-options';
-	return $menu;
-}
-
-add_filter( 'optionsframework_menu', 'prefix_options_menu_filter' );
-*/
+//add_action( 'admin_head', 'spacious_favicon' );
+//add_action( 'wp_head', 'spacious_favicon' );
+///**
+// * Fav icon for the site
+// */
+//function spacious_favicon() {
+//	if ( of_get_option( 'spacious_activate_favicon', '0' ) == '1' ) {
+//		$spacious_favicon = of_get_option( 'spacious_favicon', '' );
+//		$spacious_favicon_output = '';
+//		if ( !empty( $spacious_favicon ) ) {
+//			$spacious_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $spacious_favicon ).'" type="image/x-icon" />';
+//		}
+//		echo $spacious_favicon_output;
+//	}
+//}
