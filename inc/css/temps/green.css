@@ -1,0 +1,83 @@
+/* 
+    Document   : orange
+    Created on : Jul 6, 2014, 2:28:39 AM
+    Author     : Bilal
+    Description:
+        Purpose of the stylesheet follows.
+*/
+a,a:visited {
+  color: #0FAF97;
+}
+a:hover{
+    color: #0B9681;
+}
+.primary-color{ color: #0FAF97;}
+.btn-primary {
+    background-color: #0FAF97;
+    border-color: #16A08B;
+    color: #ffffff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  background-color: #14927F;
+  border-color: #16A08B;
+}
+fieldset[disabled] .btn-primary.active {
+  background-color: #0FAF97;
+}
+.btn-primary .badge {
+  color: #0FAF97;
+}
+.btn-link {
+  color: #0FAF97;
+}
+.sc-primary-color{ color: #0FAF97;}
+.sc-primary-border{ border-color: #0FAF97;}
+.site-branding .search-bar .search-field:focus{
+    border-bottom: 1px solid #0FAF97;
+}
+.icon404{
+    color: #0FAF97;
+}
+.nav-menu > li a:hover{
+    color: #0FAF97;
+}
+.scroll-top:hover{
+    border-color: #0FAF97;
+}
+#site-toolbar{
+    /*border-bottom: 4px solid #0FAF97;*/
+}
+
+
+@media(max-width: 600px){
+    .nav-menu > li.current_page_item a{
+        color: #0FAF97;
+    }      
+}
+
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a{
+    color: rgb(15, 175, 151);
+}
+#top-banner{
+    background: #0FAF97;
+}
+#site-toolbar .social-bar a:hover{
+    background: #0FAF97;
+}
+.nav-menu > li a:hover{
+    border-color: #0FAF97;
+}
+.main-navigation .current_page_parent .current-menu-item a,
+.main-navigation .current_page_item > a,
+.main-navigation .current_page_parent > a{
+    border-bottom: 5px solid #0FAF97;
+}
+.sc-slider-wrapper .camera_caption .secondary-caption{
+    background: #0FAF97;
+    background: rgba(15, 175, 151, 0.75);
+}
