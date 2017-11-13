@@ -1,0 +1,136 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-Nov-2017, 9:17:39 AM
+    Author     : zackmitchell
+*/
+
+a,
+a:hover {
+    text-decoration: none !important;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+#site-toolbar {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+#site-toolbar .contact-bar a,
+#site-toolbar .social-bar a {
+    transition: 0.25s all ease-in-out;
+    -webkit-transition: 0.25s all ease-in-out;
+    -moz-transition: 0.25s all ease-in-out;
+    cursor: pointer;
+}
+
+#site-toolbar .contact-bar a .fa {
+    vertical-align: middle;
+}
+
+#site-toolbar .contact-bar a.icon-phone .fa {
+    font-size: 18px;
+}
+
+/* --- Branding Bar --- */
+#site-branding {
+    min-height: 80px;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+#site-branding div.branding {
+   width: 25%;
+}
+
+#site-branding div.navigation {
+   width: 75%;
+   font-size: 15px;
+   height: 100%;
+}
+
+#site-branding img {
+    max-height: 80px;
+    width: auto;
+}
+
+@media (max-width:991px) {
+    #site-branding div.branding {
+        width: 100%;
+    }
+}
+
+#site-branding .site-title {
+    margin: 0;
+    padding-top: .15em;
+    font-size: 32px;
+}
+
+#site-branding div#primary-menu {
+    float: right;
+}
+
+#site-branding div.navigation ul#primary-menu {
+    text-align: right;
+}
+
+ul#primary-menu > li {
+    vertical-align: text-top;
+    display: inline-block;
+    padding-bottom: 0;
+    float: none;
+}
+
+#site-branding ul#primary-menu ul.sub-menu {
+    background-color: #fff;
+    opacity: 0;
+    transition: .3s all ease-in-out;
+    -moz-transition: .3s all ease-in-out;
+    -webkit-transition: .3s all ease-in-out;
+    text-align: left;
+    padding: 15px 0;
+}
+
+#site-branding ul#primary-menu li:hover ul.sub-menu {
+    opacity: 1;
+}
+
+@media (max-width:991px) {
+/*    #site-branding {
+        height: 80px;
+    }*/
+    #site-branding .navigation {
+        display: none;
+    }
+/*    div#content {
+        margin-top: 120px !important;
+    }*/
+}
+
+div#site-branding-sticky-wrap {
+    background: #ffffff;
+    border-bottom: 1px solid #DDD;
+    z-index: 999;
+}
+
+header#masthead ul#primary-menu > li > a {
+     transition: 0.15s all ease-in-out;
+    -webkit-transition: 0.15s all ease-in-out;
+    -moz-transition: 0.15s all ease-in-out;   
+}
+
+header#masthead ul#primary-menu > li > a:hover {
+    border-bottom: 5px solid #eee;
+}

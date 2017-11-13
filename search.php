@@ -1,47 +1,51 @@
 <?php
 /**
- * The template for displaying Search Results pages.
+ * The template for displaying search results pages
  *
- * @package avenue
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
+ * @package Avenue
  */
 
 get_header(); ?>
 
-	<div class="site-content">
-		<div class="col-md-12">
-			<?php if ( have_posts() ) : ?>
-				<div class="page-title">
-					<h1 class="row center"><?php printf( __( 'Search Results for: %s', 'avenue' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</div><!-- .page-title -->
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-				<?php /* Start the Loop */ ?>
-				<div class="row">
-					<div class="page-content col-md-12">
-						<div class="col-md-9">
-							<?php while ( have_posts() ) : the_post(); ?>
-				
-								<?php
-								/**
-								 * Run the loop for the search to output the results.
-								 * If you want to overload this in a child theme then include a file
-								 * called content-search.php and that will be used instead.
-								 */
-								get_template_part( 'content', 'search' );
-							?>
-							<?php endwhile; ?>
-	
-							<?php avenue_paging_nav(); ?>
-						</div>
-						<div class="col-md-3">
-                        	<?php get_sidebar(); ?>
-						</div>
-					</div>
-				</div>
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
+		<?php
+		if ( have_posts() ) : ?>
 
-		</div><!-- .col-md-12 -->
-	</div><!-- .site-content -->
-	
-<?php get_footer(); ?>
+			<header class="page-header">
+				<h1 class="page-title"><?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'avenue' ), '<span>' . get_search_query() . '</span>' );
+				?></h1>
+			</header><!-- .page-header -->
+
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
+
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', 'search' );
+
+			endwhile;
+
+			the_posts_navigation();
+
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();

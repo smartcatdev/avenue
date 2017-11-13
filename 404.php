@@ -1,38 +1,60 @@
 <?php
 /**
- * The template for displaying 404 pages (Not Found).
+ * The template for displaying 404 pages (not found)
  *
- * @package avenue
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package Avenue
  */
-get_header();
-?>
 
-<div id="content" class="site-content">
-    <div class="page-title">
-        <div class="row text-left">
-            <div class="col-md-12">
-                Page Not Found
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-9">
-            <?php if (avenue_categorized_blog()) : // Only show the widget if site has multiple categories. ?>
-                <div class="widget widget_categories">
-                    <h2 class="widgettitle center">
-                        <i class="fa fa-exclamation-triangle icon404"></i>
-                        <h3 class="center">Sorry the page you're looking for is not available</h3>
-                        <div class="center mt20">
-                            <?php get_search_form(); ?>
-                        </div>
-                    </h2>
+get_header(); ?>
 
-                </div><!-- .widget -->
-            <?php endif; ?>
-        </div>
-        <div class="col-md-3">
-            <?php get_sidebar(); ?>
-        </div>
-    </div>
-</div>
-<?php get_footer(); ?>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+			<section class="error-404 not-found">
+				<header class="page-header">
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'avenue' ); ?></h1>
+				</header><!-- .page-header -->
+
+				<div class="page-content">
+					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'avenue' ); ?></p>
+
+					<?php
+						get_search_form();
+
+						the_widget( 'WP_Widget_Recent_Posts' );
+					?>
+
+					<div class="widget widget_categories">
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'avenue' ); ?></h2>
+						<ul>
+						<?php
+							wp_list_categories( array(
+								'orderby'    => 'count',
+								'order'      => 'DESC',
+								'show_count' => 1,
+								'title_li'   => '',
+								'number'     => 10,
+							) );
+						?>
+						</ul>
+					</div><!-- .widget -->
+
+					<?php
+
+						/* translators: %1$s: smiley */
+						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'avenue' ), convert_smilies( ':)' ) ) . '</p>';
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+
+						the_widget( 'WP_Widget_Tag_Cloud' );
+					?>
+
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_footer();

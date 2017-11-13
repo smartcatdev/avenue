@@ -1,61 +1,56 @@
 <?php
 /**
- * The main template file.
+ * The main template file
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package avenue
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Avenue
  */
-get_header();
-?>
 
-<div id="content" class="site-content row blogroll">
-    <div class="col-md-9 site-content item-page <?php echo of_get_option('sc_blog_layout'); ?>">
-        <?php if (have_posts()) : ?>
-            <?php /* Start the Loop */ ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <div class="item-post col-md-12">
-                    <?php if( 'on' == of_get_option('sc_blog_featured', 'on')) : ?>
-                        <div class="post-thumb col-sm-4">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('large'); ?>
-                            </a>
-                        </div>
-                    <?php endif; ?>
-                    <div class="col-sm-8 <?php echo 'on' == of_get_option('sc_blog_featured', 'on') ? '' : 'featured_none'; ?>">
-                        <h2 class="post-title">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_title(); ?>
-                            </a>
-                        </h2>
-                        <div class="post-content">
-                            <?php the_excerpt(); ?>
-                        </div>
-                        <div class="text-right">
-                            <a class="btn btn-default btn-primary" href="<?php the_permalink(); ?>">Read More</a>
-                        </div>                        
-                    </div>
-                </div>
-            <?php endwhile; ?>
-        <?php else : ?>
-            <?php get_template_part('content', 'none'); ?>
-        <?php endif; ?>
-    </div>
-    
-    <?php if( 'col2r' == of_get_option('sc_blog_layout', 'col2r')) : ?>
-        <div class="col-md-3 avenue-sidebar">
-            <?php get_sidebar(); ?>
-        </div>
-    <?php endif; ?>
-    
-    <div class="col-md-12">
-        <?php avenue_paging_nav(); ?>
-    </div>
+get_header(); ?>
 
-</div>
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
-<?php get_footer(); ?>
+		<?php
+		if ( have_posts() ) :
+
+			if ( is_home() && ! is_front_page() ) : ?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+
+			<?php
+			endif;
+
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
+
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_format() );
+
+			endwhile;
+
+			the_posts_navigation();
+
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();
