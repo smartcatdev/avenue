@@ -18,18 +18,34 @@
 
                                 <?php if ( isset( $avenue_options['sc_slide' . $ctr . '_text'] ) ) : ?>
 
-                                    <span class="smartcat-animate fadeInUp">
-                                        <?php echo esc_attr( $avenue_options['sc_slide' . $ctr . '_text'] ); ?>
-                                    </span>
-
+                                    <div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <span class="primary-caption animated fadeInLeft">
+                                                        <?php echo esc_html( $avenue_options['sc_slide' . $ctr . '_text'] ); ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 <?php endif; ?>
                                 
                                 <?php if ( isset( $avenue_options['sc_slide' . $ctr . '_text2'] ) ) : ?>
 
-                                    <span class="smartcat-animate fadeInUp">
-                                        <?php echo esc_attr( $avenue_options['sc_slide' . $ctr . '_text2'] ); ?>
-                                    </span>
-
+                                    <div>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <span class="secondary-caption fadeInUp animated">
+                                                        <?php echo esc_html( $avenue_options['sc_slide' . $ctr . '_text2'] ); ?>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
                                 <?php endif; ?>
 
                             </div>

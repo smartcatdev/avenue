@@ -55,7 +55,7 @@ function avenue_scripts() {
     wp_enqueue_script( 'avenue-main-script', get_template_directory_uri() . '/inc/js/avenue.js', array('jquery', 'jquery-masonry'), AVENUE_VERSION, true );
 
     $slider_array = array(
-        'desktop_height'    => isset( $avenue_options['avenue_slider_height'] )     ? $avenue_options['avenue_slider_height']       : '56',
+        'desktop_height'    => isset( $avenue_options['avenue_slider_height'] )     ? $avenue_options['avenue_slider_height']       : '42',
         'slide_timer'       => isset( $avenue_options['avenue_slider_time'] )       ? $avenue_options['avenue_slider_time']         : 4000, 
         'animation'         => isset( $avenue_options['avenue_slider_fx'] )         ? $avenue_options['avenue_slider_fx']           : 'simpleFade',
         'pagination'        => isset( $avenue_options['avenue_slider_pagination'] ) ? $avenue_options['avenue_slider_pagination']   : 'off',
@@ -85,15 +85,62 @@ add_action( 'wp_enqueue_scripts', 'avenue_scripts' );
  */
 function avenue_widgets_init() {
     
-    register_sidebar( array(
-        'name'          => esc_html__( 'Sidebar', 'avenue' ),
-        'id'            => 'sidebar-1',
-        'description'   => esc_html__( 'Add widgets here.', 'avenue' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
+    $avenue_options = avenue_get_options();
+    
+    // Homepage A
+    register_sidebar(array(
+        'name' => __('Homepage Widget Area - A', 'avenue'),
+        'id' => 'sidebar-banner',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+
+    // Homepage B
+    register_sidebar(array(
+        'name' => __('Homepage Widget Area - B', 'avenue'),
+        'id' => 'sidebar-bannerb',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+
+    // Homepage C
+    register_sidebar(array(
+        'name' => __('Homepage Widget Area - C', 'avenue'),
+        'id' => 'sidebar-bannerc',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ));
+
+    // Right Sidebar
+    register_sidebar(array(
+        'name' => __('Sidebar', 'avenue'),
+        'id' => 'sidebar-1',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
+
+    // Footer
+    register_sidebar(array(
+        'name' => __('Footer', 'avenue'),
+        'id' => 'sidebar-footer',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="' . esc_attr( $avenue_options['sc_footer_columns'] ) . ' widget %2$s animated wow fadeIn">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
     
 }
 add_action( 'widgets_init', 'avenue_widgets_init' );
@@ -151,15 +198,17 @@ function avenue_custom_css() {
 
         h1,h2,h3,h4,h5,h6 {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family'] ); ?>;
+            font-family: Montserrat !important;
         }
         
         body {
             background-color: #f8f8f8;
             font-size: <?php echo esc_attr( $avenue_options['sc_font_size'] ); ?>px;
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family_secondary'] ); ?>;
+            font-family: Abel !important;
         }
         
-/*
+        /*
         ----- Header Heights ---------------------------------------------------------
         */
 
@@ -215,26 +264,78 @@ function avenue_custom_css() {
        
         /* --- Primary --- */
         
-        #something-colored
+        a, a:visited,
+        .primary-color,
+        .btn-primary .badge,
+        .btn-link,
+        .sc-primary-color,
+        .icon404,
+        header#masthead ul#primary-menu > li > a:hover
         {
             color: <?php echo esc_attr( $primary_theme_color ); ?>;
         }
         
-        #something-with-bg-color
+        .btn-primary,
+        fieldset[disabled] .btn-primary.active,
+        #top-banner,
+        #site-toolbar .social-bar a:hover
         {
             background: <?php echo esc_attr( $primary_theme_color ); ?>;
+        }
+        
+        .btn-primary,
+        .sc-primary-border,
+        .scroll-top:hover,
+        header#masthead ul#primary-menu > li > a:hover
+        {
+            border-color: <?php echo esc_attr( $primary_theme_color ); ?>;
+        }
+        
+        .site-branding .search-bar .search-field:focus{
+            border-bottom: 1px solid <?php echo esc_attr( $primary_theme_color ); ?>;
+        }
+        
+        .main-navigation .current_page_parent .current-menu-item a,
+        .main-navigation .current_page_item > a,
+        .main-navigation .current_page_parent > a {
+            border-bottom: 5px solid <?php echo esc_attr( $primary_theme_color ); ?>;
+        }
+        
+        .sc-slider-wrapper .camera_caption .secondary-caption {
+            background: <?php echo esc_attr( avenue_hex2rgba( $primary_theme_color, .75 ) ); ?>;
+        }
+        
+        @media(max-width: 600px){
+            .nav-menu > li.current_page_item a {
+                color: <?php echo esc_attr( $primary_theme_color ); ?>;
+            }
         }
                
         /* --- Secondary --- */
         
-        #something-alt-colored 
+        a:hover,
+        .main-navigation .current_page_item a,
+        .main-navigation .current-menu-item a
         {
             color: <?php echo esc_attr( $secondary_theme_color ); ?>;
         }
         
-        #something-with-alt-bg-color
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open .dropdown-toggle.btn-primary
         {
             background-color: <?php echo esc_attr( $secondary_theme_color ); ?>;
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus,
+        .btn-primary:active,
+        .btn-primary.active,
+        .open .dropdown-toggle.btn-primary
+        {
+            border-color: <?php echo esc_attr( $secondary_theme_color ); ?>;
         }
         
     </style>
@@ -383,6 +484,16 @@ function avenue_render_footer() {
 }
 
 /**
+ * Render the free Widget Areas.
+ */
+add_action( 'avenue_free_widget_areas', 'avenue_render_free_widget_areas' );
+function avenue_render_free_widget_areas() {
+    
+    get_template_part('template-parts/layout', 'homepage-areas' );
+    
+}
+
+/**
  * Render the SC designer section.
  */
 add_action( 'avenue_designer', 'avenue_add_designer', 10 );
@@ -417,23 +528,23 @@ function avenue_get_theme_skin_colors() {
         switch ( $avenue_options['sc_theme_color'] ) :
 
             case 'orange' :
-                $colors_array['primary'] = '#83CBDC';
-                $colors_array['accent'] = '#57A9BD';
+                $colors_array['primary'] = '#FF6131';
+                $colors_array['accent'] = '#D85904';
                 break;
 
             case 'green' :
-                $colors_array['primary'] = '#ACBD5D';
-                $colors_array['accent'] = '#8F9E4A';
+                $colors_array['primary'] = '#0FAF97';
+                $colors_array['accent'] = '#0B9681';
                 break;
 
-            case 'red' :
-                $colors_array['primary'] = '#DC838D';
-                $colors_array['accent'] = '#E05867';
+            case 'blue' :
+                $colors_array['primary'] = '#3B7DBD';
+                $colors_array['accent'] = '#195794';
                 break;
 
             default :
-                $colors_array['primary'] = '#83CBDC';
-                $colors_array['accent'] = '#57A9BD';
+                $colors_array['primary'] = '#FF6131';
+                $colors_array['accent'] = '#D85904';
                 break;
 
         endswitch;

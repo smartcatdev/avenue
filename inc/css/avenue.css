@@ -91,6 +91,15 @@ ul#primary-menu > li {
     display: inline-block;
     padding-bottom: 0;
     float: none;
+    padding-right: 15px;
+}
+
+ul#primary-menu > li:last-of-type {
+    padding-right: 0;
+}
+
+ul#primary-menu > li > a {
+    color: #222222;
 }
 
 #site-branding ul#primary-menu ul.sub-menu {
@@ -123,14 +132,122 @@ div#site-branding-sticky-wrap {
     background: #ffffff;
     border-bottom: 1px solid #DDD;
     z-index: 999;
+    animation-duration: .6s;
+    -webkit-animation-duration: .6s;
+    -moz-animation-duration: .6s;   
 }
 
 header#masthead ul#primary-menu > li > a {
-     transition: 0.15s all ease-in-out;
+    transition: 0.15s all ease-in-out;
     -webkit-transition: 0.15s all ease-in-out;
     -moz-transition: 0.15s all ease-in-out;   
 }
 
 header#masthead ul#primary-menu > li > a:hover {
     border-bottom: 5px solid #eee;
+}
+
+@media (min-width:992px) {
+    .mobile-trigger-wrap {
+        display: none;
+    }
+}
+
+.mobile-trigger-wrap #mobile-menu-trigger {
+    float: none;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.mobile-trigger-wrap {
+    float: right;
+    width: 100%;
+    text-align: right;
+}
+
+.sc-slider-wrapper .camera_caption .secondary-caption {
+    display: block;
+    float: left;
+    margin-top: 5px;
+}
+
+/* ----- CTA Trio ----- */
+div#site-cta-wrap {
+    background-color: #fff;
+}
+
+@media (max-width:767px) {
+    div#site-cta-wrap {
+        padding-left: 45px;
+        padding-top: 30px;
+    }
+    .site-cta .col-md-10 > div {
+        padding-left: 30px;
+    }
+    #site-cta .site-cta {
+        height: auto !important;
+        padding-bottom: 30px;
+    }
+}
+
+.site-cta .title-wrap {
+    min-height: 50px;
+    display: table; 
+    width: 100%;
+    margin-bottom: 15px;
+    border-bottom: thin solid #e3e3e3;
+    padding-bottom: 10px;
+}
+
+.site-cta h3 {
+    font-size: 22px;
+    height: auto;
+    line-height: 1em;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.site-cta p {
+    min-height: 45px;
+}
+
+.site-cta .btn {
+    display: none;
+/*    position: absolute;
+    bottom: 0;
+    left: 0;*/
+/*    transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;*/
+}
+
+.site-cta p:last-of-type {
+    min-height: 30px;
+}
+
+/* ----- Widget Areas ----- */
+
+#top-banner a {
+    color: #fff;
+}
+
+#top-banner ul,
+#mid-banner ul,
+#bottom-banner ul {
+    list-style: none;   
+    margin-left: 0;
+    padding-left: 0;
+}
+
+div.homepage-widget-area h2 {
+    margin-top: 0;
+    font-size: 55px;
+    line-height: normal;
+    height: auto !important;
+    padding: 0 !important;
+    margin-bottom: 15px;
 }

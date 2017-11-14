@@ -15,7 +15,6 @@ $wp_customize->add_section( 'title_tagline', array(
     'panel'                 => 'avenue_header_panel'
 ) );
 
-
 // ---------------------------------------------
 // Toolbar Section
 // ---------------------------------------------

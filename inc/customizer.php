@@ -16,10 +16,10 @@ function avenue_customize_register( $wp_customize ) {
     require_once( 'customizer-panels/settings-header-footer.php' );
 
     // Frontpage
-    // require_once( 'customizer-panels/settings-frontpage.php' );
+    require_once( 'customizer-panels/settings-frontpage.php' );
 
     // Slider
-    // require_once( 'customizer-panels/settings-slider.php' );
+    require_once( 'customizer-panels/settings-slider.php' );
 
     // Blog
     // require_once( 'customizer-panels/settings-blog.php' );

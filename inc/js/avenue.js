@@ -41,9 +41,9 @@ jQuery(document).ready(function ($) {
         $('.fa', this).css({
             'width': '85px',
             'height': '85px',
-            'top': '-50px',
+            'top': '-40px',
             'left': '-57px',
-            'line-height': '85px',
+            'line-height': '84px',
             fontSize: '40px'
         }).addClass('sc-primary-color sc-primary-border');
     }, function () {
@@ -56,7 +56,7 @@ jQuery(document).ready(function ($) {
             'height': '50px',
             'top': '0',
             'left': '-40px',
-            'line-height': '50px',
+            'line-height': '48px',
             fontSize: '28px'
         }).removeClass('sc-primary-color sc-primary-border');
     });

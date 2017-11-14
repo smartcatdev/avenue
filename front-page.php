@@ -18,8 +18,7 @@ $alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_optio
 
     <main id="main" class="site-main">
 
-        <?php // if ( $avenue_options['sc_slider_bool'] == 'yes' ) : ?>
-        <?php if ( true ) : ?>
+        <?php if ( $avenue_options['sc_slider_bool'] == 'yes' ) : ?>
 
             <?php do_action( 'avenue_slider' ); ?>
         
@@ -49,9 +48,7 @@ $alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_optio
             <?php do_action( 'avenue_cta_trio' ); ?>
         <?php endif; ?>
         
-        <?php // do_action( 'ares_pro_widget_areas' ); ?>
-        
-        <?php // do_action( 'ares_free_widget_areas' ); ?>
+        <?php do_action( 'avenue_free_widget_areas' ); ?>
         
         <?php if ( isset( $avenue_options['sc_frontpage_content_bool'] ) && $avenue_options['sc_frontpage_content_bool'] == 'yes' ) : ?>
         

@@ -83,6 +83,12 @@ $avenue_options = avenue_get_options();
 
                     </div>
                     
+                    <div class="mobile-trigger-wrap">
+                    
+                        <span id="mobile-menu-trigger"><span class="fa fa-bars"></span></span>
+
+                    </div>
+                    
                 </div>
                 
             </div>

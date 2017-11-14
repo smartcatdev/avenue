@@ -18,11 +18,11 @@ h3{ font-size: 22px;line-height: 26px;}
 
 .hidden{display: none;}
 
-.row{
+/*.row{
     margin: 0 auto;
     overflow: hidden;
     width: 100%;
-}
+}*/
 
 .center{ text-align: center;}
 .text-right{ text-align: right;}
@@ -47,6 +47,7 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 .btn-primary{
     border-radius: 0;
+    color: #fff !important;
 }
 /*-- Logo --*/
 #sc_logo{
@@ -167,9 +168,10 @@ h3{ font-size: 22px;line-height: 26px;}
     min-height: 70px;
     line-height: 70px;
 }
-.site-branding .row [class*="col-"],#site-navigation .row{
-    height: 100%;
-    line-height: 80px;
+.site-branding .row [class*="col-"],
+#site-navigation .row{
+/*    height: 100%;
+    line-height: 80px;*/
 }
 #site-navigation{
     height: 80px;
@@ -249,9 +251,15 @@ h3{ font-size: 22px;line-height: 26px;}
     -moz-box-shadow: 0 2px 10px rgb(51, 51, 51);
     -webkit-box-shadow: 0 2px 10px rgb(51, 51, 51);*/
 }
-.sc-slider-wrapper .camera_caption{
+.sc-slider-wrapper .camera_caption {
     width: 100%;
-    top: 30%;
+    top: 0;
+    height: 100%;
+    display: table;
+}
+.sc-slider-wrapper .camera_caption > div {
+    display: table-cell;
+    vertical-align: middle;
 }
 .sc-slider-wrapper .camera_caption > div{
     /*min-height: 100px;*/
@@ -385,7 +393,9 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 .site-cta{
     border-left: 2px solid #444;
-
+    transition: 0.3s all ease-in-out;
+    -moz-transition: 0.3s all ease-in-out;
+    -webkit-transition: 0.3s all ease-in-out;
 }
 #site-cta .col-md-12{
     margin-top: 65px;
@@ -398,7 +408,7 @@ h3{ font-size: 22px;line-height: 26px;}
     width: 50px;
     height: 50px;
     text-align: center;
-    line-height: 50px;
+    line-height: 48px;
     border-radius: 100%;
     position: absolute;
     left: -40px;
@@ -410,7 +420,7 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 .site-cta .col-md-10 > div{
     position: relative;
-    padding-bottom: 20px;
+    
 }
 
 .site-cta h3{
@@ -435,7 +445,7 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 /*-- Top Banner --*/
 #top-banner{
-    padding: 40px 0 30px 0;
+    padding: 40px 0;
     /*background: #222222 url('../images/left-cross.png');*/
     min-height: 100px;
     color: #ffffff;
@@ -444,10 +454,7 @@ h3{ font-size: 22px;line-height: 26px;}
     -webkit-box-shadow:0px 0px 15px 1px #000 inset;*/
 }
 #top-banner .top-banner-text{
-    font-size: 20px;
-    line-height: 26px;
     margin-bottom: 20px;
-    font-weight: 200;
 }
 #top-banner .date,
 #top-banner .author{
@@ -455,7 +462,7 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 #top-banner .top-banner-text h2{
     font-size: 55px;
-    line-height: 50px;
+    line-height: normal;
     margin-bottom: 15px;
     font-weight: 500;
     
@@ -514,31 +521,30 @@ h3{ font-size: 22px;line-height: 26px;}
     color: #fff;
 }
 #mid-banner{
-    background: #EEE;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    background: #f8f8f8;
+    padding: 40px 0;
 }
 
 #mid-banner h2{
     font-size: 55px;
     font-weight: 500;
-    line-height: 60px;
+    line-height: normal;
     height: 70px;
     margin-bottom: 15px;
 }
 
 #bottom-banner{
-    background: url('../images/2_1.jpg');
+    background: #2c2c2c;
+/*    background: url('../images/2_1.jpg'); */
     color: #fff;
+    padding: 40px 0;
 }
 #bottom-banner h2{
     font-size: 55px;
-    font-weight: 600;
     height: 110px;
-    line-height: 60px;
+    line-height: normal;
     padding-top: 40px;
     padding-bottom: 10px;
-    color: #fff;
 }
 #bottom-banner .textwidget{
     padding-top: 10px;
@@ -748,7 +754,7 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 /*-- Responsive --*/
 @media(min-width: 1170px){
-    .row{
+/*    .row{
         width: 1170px;
     }
 
@@ -758,12 +764,12 @@ h3{ font-size: 22px;line-height: 26px;}
     #top-banner .top-banner-text .overlay .title{
         font-size: 26px;
         font-weight: 400;
-    }
+    }*/
 }
 @media(min-width: 1200px){
-    .row.row1200{
+/*    .row.row1200{
         width: 1200px;
-    }
+    }*/
 }
 @media(min-width: 992px) and (max-width: 1059px){
     .sc-slider-wrapper .camera_caption > div{
@@ -884,7 +890,7 @@ h3{ font-size: 22px;line-height: 26px;}
     }
   
     #site-navigation .row > div.col-md-12{
-        padding: 0;
+/*        padding: 0;*/
     }
     #menu-main{
         margin-top: 5px;
