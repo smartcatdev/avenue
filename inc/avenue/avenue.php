@@ -197,7 +197,8 @@ function avenue_custom_css() {
 
     <style>
 
-        h1,h2,h3,h4,h5,h6 {
+        h1,h2,h3,h4,h5,h6,
+        #site-branding div.navigation ul#primary-menu > li > a {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family'] ); ?>;
             
         }
@@ -286,7 +287,7 @@ function avenue_custom_css() {
         
         .btn-primary,
         fieldset[disabled] .btn-primary.active,
-        #top-banner,
+        #homepage-area-a,
         #site-toolbar .social-bar a:hover,
         .error-404 i.fa.icon404 
         {

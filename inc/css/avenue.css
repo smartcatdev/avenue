@@ -368,13 +368,13 @@ div#site-cta-wrap {
 
 /* ----- Widget Areas ----- */
 
-#top-banner a {
+#homepage-area-a a {
     color: #fff;
 }
 
-#top-banner ul,
-#mid-banner ul,
-#bottom-banner ul {
+#homepage-area-a ul,
+#homepage-area-b ul,
+#homepage-area-c ul {
     list-style: none;   
     margin-left: 0;
     padding-left: 0;

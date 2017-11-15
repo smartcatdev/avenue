@@ -1,21 +1,25 @@
 <?php if( is_active_sidebar( 'sidebar-banner' ) ) : ?>
             
-    <div id="top-banner" class="full-banner homepage-widget-area">
+    <div id="homepage-area-a" class="full-banner homepage-widget-area">
 
-        <div class="container">
+        <div class="inner">
+        
+            <div class="container">
 
-            <div class="row">
+                <div class="row">
 
-                <div class="col-md-12">
+                    <div class="col-md-12">
 
-                    <div class="top-banner-text">
-                        <?php dynamic_sidebar( 'sidebar-banner' ); ?>
+                        <div class="top-banner-text">
+                            <?php dynamic_sidebar( 'sidebar-banner' ); ?>
+                        </div>
+
                     </div>
 
                 </div>
 
             </div>
-
+            
         </div>
 
     </div>
@@ -26,22 +30,26 @@
 
 if( is_active_sidebar( 'sidebar-bannerb' ) ) :?>
 
-    <div id="mid-banner" class="homepage-widget-area">
+    <div id="homepage-area-b" class="homepage-widget-area">
 
-        <div class="container">
+        <div class="inner">
+        
+            <div class="container">
 
-            <div class="row">
+                <div class="row">
 
-                <div class="col-md-12">
+                    <div class="col-md-12">
 
-                    <div class="top-banner-text">
-                        <?php dynamic_sidebar( 'sidebar-bannerb' ); ?>
-                    </div>            
+                        <div class="top-banner-text">
+                            <?php dynamic_sidebar( 'sidebar-bannerb' ); ?>
+                        </div>            
+
+                    </div>
 
                 </div>
 
             </div>
-
+            
         </div>
 
     </div>
@@ -50,22 +58,26 @@ if( is_active_sidebar( 'sidebar-bannerb' ) ) :?>
 
 if( is_active_sidebar( 'sidebar-bannerc' ) ) :?>
 
-    <div id="bottom-banner" class="homepage-widget-area">
+    <div id="homepage-area-c" class="homepage-widget-area">
 
-        <div class="container">
+        <div class="inner">
+            
+            <div class="container">
 
-            <div class="row">
+                <div class="row">
 
-                <div class="col-md-12">
+                    <div class="col-md-12">
 
-                    <div class="top-banner-text">
-                        <?php dynamic_sidebar( 'sidebar-bannerc' ); ?>
-                    </div>            
+                        <div class="top-banner-text">
+                            <?php dynamic_sidebar( 'sidebar-bannerc' ); ?>
+                        </div>            
+
+                    </div>
 
                 </div>
 
             </div>
-
+            
         </div>
 
     </div>

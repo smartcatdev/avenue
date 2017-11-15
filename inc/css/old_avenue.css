@@ -444,26 +444,28 @@ h3{ font-size: 22px;line-height: 26px;}
     font-size: 14px;
 }
 /*-- Top Banner --*/
-#top-banner{
-    padding: 40px 0;
+#homepage-area-a{
     /*background: #222222 url('../images/left-cross.png');*/
-    min-height: 100px;
+    
     color: #ffffff;
 /*    box-shadow: 0px 0px 15px 1px #000 inset;
     -moz-box-shadow: 0px 0px 15px 1px #000 inset;
     -webkit-box-shadow:0px 0px 15px 1px #000 inset;*/
 }
-#top-banner .top-banner-text{
+#homepage-area-a .inner {
+    padding: 40px 0;
+}
+
+#homepage-area-a .top-banner-text{
     margin-bottom: 20px;
 }
-#top-banner .date,
-#top-banner .author{
+#homepage-area-a .date,
+#homepage-area-a .author{
     font-size: 16px;
 }
-#top-banner .top-banner-text h2{
+#homepage-area-a .top-banner-text h2{
     font-size: 55px;
     line-height: normal;
-    margin-bottom: 15px;
     font-weight: 500;
     
 }
@@ -520,33 +522,33 @@ h3{ font-size: 22px;line-height: 26px;}
 #sc_avenue_recent_posts .author{
     color: #fff;
 }
-#mid-banner{
+#homepage-area-b{
     background: #f8f8f8;
+}
+#homepage-area-b .inner{
     padding: 40px 0;
 }
 
-#mid-banner h2{
+#homepage-area-b h2{
     font-size: 55px;
     font-weight: 500;
     line-height: normal;
-    height: 70px;
-    margin-bottom: 15px;
 }
 
-#bottom-banner{
+#homepage-area-c{
     background: #2c2c2c;
 /*    background: url('../images/2_1.jpg'); */
     color: #fff;
+}
+#homepage-area-c .inner {
     padding: 40px 0;
 }
-#bottom-banner h2{
+#homepage-area-c h2{
     font-size: 55px;
-    height: 110px;
+    font-weight: 500;
     line-height: normal;
-    padding-top: 40px;
-    padding-bottom: 10px;
 }
-#bottom-banner .textwidget{
+#homepage-area-c .textwidget{
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 14px;
@@ -756,7 +758,7 @@ h3{ font-size: 22px;line-height: 26px;}
     .sc-slider-wrapper .camera_caption > div{
         font-size: 36px;
     }
-    #top-banner .top-banner-text .overlay .title{
+    #homepage-area-a .top-banner-text .overlay .title{
         font-size: 26px;
         font-weight: 400;
     }*/
@@ -782,13 +784,6 @@ h3{ font-size: 22px;line-height: 26px;}
     .site-cta .col-md-10 > div{
         padding-left: 20px;
     }
-    #top-banner .top-banner-text{
-        font-size: 20px;
-        line-height: 26px;
-    }
-    #top-banner .top-banner-text h2{
-        font-size: 26px;
-    }
     .sc-slider-wrapper .camera_caption > div{
         font-size: 24px;
     }    
@@ -806,19 +801,7 @@ h3{ font-size: 22px;line-height: 26px;}
     .site-branding{
         margin-top: 90px;
     }
-    #top-banner .top-banner-text{
-        font-size: 18px;
-        line-height: 24px;
-    }
-    #top-banner .top-banner-text h2{
-        font-size: 32px;
-        line-height: 36px;
-    }    
-    #mid-banner h2{
-        font-size: 32px;
-        line-height: 36px;
-        
-    }
+
     .sc-slider-wrapper .camera_caption > div{
         font-size: 20px;
     }   
@@ -850,11 +833,6 @@ h3{ font-size: 22px;line-height: 26px;}
         margin-top: 90px;
     }    
     
-    #top-banner .top-banner-text{
-        font-size: 22px;
-        line-height: 24px;
-    }    
-
     .site-footer{
         margin-bottom: 88px;
     }

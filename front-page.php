@@ -50,6 +50,8 @@ $alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_optio
         
         <?php do_action( 'avenue_free_widget_areas' ); ?>
         
+        <?php do_action( 'avenue_pro_widget_areas' ); ?>
+        
         <?php if ( isset( $avenue_options['sc_frontpage_content_bool'] ) && $avenue_options['sc_frontpage_content_bool'] == 'yes' ) : ?>
         
             <div class="container">
