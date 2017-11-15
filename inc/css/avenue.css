@@ -389,6 +389,10 @@ div.homepage-widget-area h2 {
     margin-bottom: 15px;
 }
 
+.widget-area ul li:last-of-type {
+    border-bottom: 0;
+}
+
 /* ----- Frontpage ----- */
 #content .frontpage {
     padding: 50px 0;
@@ -438,7 +442,8 @@ img#scl {
 }
 
 /* ----- Single Templates ----- */
-body.single-post .post-title {
+body.single-post .post-title,
+body.page.page-template-default .post-title {
     margin-top: 5px;
     font-size: 30px;
     font-weight: 400;
@@ -446,4 +451,23 @@ body.single-post .post-title {
     padding-bottom: 10px;
     padding-top: 0px;
     margin-bottom: 10px;
+}
+
+/* ----- Error 404 Page ----- */
+.error-404 .page-title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.error-404 .description {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.error-404 i.fa.icon404 {;
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    color: #fff;
+    border-radius: 50%;
 }

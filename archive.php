@@ -7,45 +7,94 @@
  * @package Avenue
  */
 
-get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+get_header(); 
 
-		<?php
-		if ( have_posts() ) : ?>
+$avenue_options = avenue_get_options();
+$alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_options['blog_layout_style'] == 'masonry' ? true : false;
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+?>
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+<div id="primary" class="content-area">
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+    <main id="main" class="site-main error-404">
 
-			endwhile;
+        <header class="">
 
-			the_posts_navigation();
+            <div class="container">
 
-		else :
+                <div class="row">
 
-			get_template_part( 'template-parts/content', 'none' );
+                    <div class="col-sm-12">
 
-		endif; ?>
+                        <?php
+                            the_archive_title( '<h1 class="page-title">', '</h1>' );
+                            the_archive_description( '<div class="archive-description">', '</div>' );
+                        ?>
+                        
+                    </div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                </div>
+
+            </div>
+
+        </header><!-- .page-header -->
+
+        <div class="container">
+
+            <div class="frontpage row">
+
+                <div class="col-sm-12">
+                    
+                    <?php if ( have_posts() ) :
+                        
+                        if ( $alternate_blog ) : ?>
+
+                            <div id="avenue-alt-blog-wrap">
+
+                                <div id="masonry-blog-wrapper">
+
+                                    <div class="grid-sizer"></div>
+                                    <div class="gutter-sizer"></div>
+
+                        <?php endif;
+                        
+                        /* Start the Loop */
+                        while ( have_posts() ) : the_post();
+
+                            if ( $alternate_blog ) { 
+                                get_template_part('template-parts/content', 'posts-alt' );
+                            } else {
+                                get_template_part('template-parts/content', 'posts' );
+                            }
+
+                        endwhile;
+                        
+                        if ( $alternate_blog ) : ?>
+
+                                </div>
+                            
+                            </div>
+                            
+                        <?php endif;
+
+                        the_posts_navigation();
+
+                    else :
+
+                        get_template_part( 'template-parts/content', 'none' );
+
+                    endif; ?>
+                
+                </div>
+                
+            </div>
+        
+        </div>
+
+    </main><!-- #main -->
+
+</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

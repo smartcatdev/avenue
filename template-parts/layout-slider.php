@@ -16,7 +16,7 @@
 
                             <div class="camera_caption fadeFromBottom">
 
-                                <?php if ( isset( $avenue_options['sc_slide' . $ctr . '_text'] ) ) : ?>
+                                <?php if ( isset( $avenue_options['sc_slide' . $ctr . '_text'] ) && $avenue_options['sc_slide' . $ctr . '_text'] != '' ) : ?>
 
                                     <div>
                                         <div class="container">
@@ -32,7 +32,7 @@
                                     
                                 <?php endif; ?>
                                 
-                                <?php if ( isset( $avenue_options['sc_slide' . $ctr . '_text2'] ) ) : ?>
+                                <?php if ( isset( $avenue_options['sc_slide' . $ctr . '_text2'] ) && $avenue_options['sc_slide' . $ctr . '_text2'] != '' ) : ?>
 
                                     <div>
                                         <div class="container">

@@ -206,16 +206,16 @@ function avenue_get_options() {
         'sc_slider_bool'                    => 'yes',
         
         'sc_slide1_image'                   => get_template_directory_uri() . '/inc/images/avenue_demo.jpg',
-        'sc_slide1_text'                    => __( '', 'avenue' ),
-        'sc_slide1_text2'                   => __( '', 'avenue' ),
+        'sc_slide1_text'                    => __( 'Welcome to Avenue', 'avenue' ),
+        'sc_slide1_text2'                   => __( 'A professional, multi-purpose WordPress theme', 'avenue' ),
         
         'sc_slide2_image'                   => get_template_directory_uri() . '/inc/images/avenue_demo.jpg',
-        'sc_slide2_text'                    => __( '', 'avenue' ),
-        'sc_slide2_text2'                   => __( '', 'avenue' ),
+        'sc_slide2_text'                    => __( 'Welcome to Avenue', 'avenue' ),
+        'sc_slide2_text2'                   => __( 'A professional, multi-purpose WordPress theme', 'avenue' ),
         
         'sc_slide3_image'                   => get_template_directory_uri() . '/inc/images/avenue_demo.jpg',
-        'sc_slide3_text'                    => __( '', 'avenue' ),
-        'sc_slide3_text2'                   => __( '', 'avenue' ),
+        'sc_slide3_text'                    => __( 'Welcome to Avenue', 'avenue' ),
+        'sc_slide3_text2'                   => __( 'A professional, multi-purpose WordPress theme', 'avenue' ),
         
         // CTA TRIO
         
@@ -252,6 +252,18 @@ function avenue_migration_process() {
     // Options array exists from a previous version, set defaults on newer Customizer options
 
     $existing_avenue_options = avenue_get_options();
+
+    if ( array_key_exists( 'sc_cta1_icon', $existing_avenue_options ) && strpos( $existing_avenue_options['sc_cta1_icon'], 'fa ' ) !== false ) :
+        $existing_avenue_options['sc_cta1_icon'] = str_replace( 'fa ', '', $existing_avenue_options['sc_cta1_icon'] );
+    endif; 
+
+    if ( array_key_exists( 'sc_cta2_icon', $existing_avenue_options ) && strpos( $existing_avenue_options['sc_cta2_icon'], 'fa ' ) !== false ) :
+        $existing_avenue_options['sc_cta2_icon'] = str_replace( 'fa ', '', $existing_avenue_options['sc_cta2_icon'] );
+    endif; 
+
+    if ( array_key_exists( 'sc_cta3_icon', $existing_avenue_options ) && strpos( $existing_avenue_options['sc_cta3_icon'], 'fa ' ) !== false ) :
+        $existing_avenue_options['sc_cta3_icon'] = str_replace( 'fa ', '', $existing_avenue_options['sc_cta3_icon'] );
+    endif; 
 
     if ( ! array_key_exists( 'sc_frontpage_content_bool', $existing_avenue_options ) ) :
         $existing_avenue_options['sc_frontpage_content_bool'] = 'yes';

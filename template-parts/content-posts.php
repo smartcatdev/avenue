@@ -35,7 +35,7 @@ $avenue_options = avenue_get_options();
                         </a>
                     </h2>
                     <div class="post-content">
-                        <?php echo wp_trim_words( $post->post_content, 50); ?>
+                        <?php the_excerpt(); ?>
                     </div>
                     <div class="text-right">
                         <a class="btn btn-default btn-primary avenue-button" href="<?php the_permalink(); ?>">

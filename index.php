@@ -12,45 +12,123 @@
  * @package Avenue
  */
 
-get_header(); ?>
+get_header(); 
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+$avenue_options = avenue_get_options();
+$alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_options['blog_layout_style'] == 'masonry' ? true : false;
 
-		<?php
-		if ( have_posts() ) :
+?>
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+<div id="primary" class="content-area">
 
-			<?php
-			endif;
+    <main id="main" class="site-main index">
+  
+        <div class="container">
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+            <div class="page-content row">
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+                <div class="col-md-<?php echo $avenue_options['sc_blog_layout'] == 'col2r' && is_active_sidebar(1) ? '8' : '12'; ?> site-content item-page">
 
-			endwhile;
+                    <?php if ( have_posts() ) :
+                    
+                        if ( $alternate_blog ) : ?>
 
-			the_posts_navigation();
+                            <div id="avenue-alt-blog-wrap">
 
-		else :
+                                <div id="masonry-blog-wrapper">
 
-			get_template_part( 'template-parts/content', 'none' );
+                                    <div class="grid-sizer"></div>
+                                    <div class="gutter-sizer"></div>
 
-		endif; ?>
+                        <?php endif;
+                    
+                        while ( have_posts() ) : the_post();
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                            if ( $alternate_blog ) :
+                                    
+                                get_template_part('template-parts/content', 'posts-alt' );
+                                    
+                            else : ?>
+                                    
+                                <div class="item-post">
 
-<?php
-get_sidebar();
-get_footer();
+                                    <?php if ( $avenue_options['sc_blog_featured'] == 'on' && has_post_thumbnail() ) : ?>
+
+                                        <div class="post-thumb col-sm-4">
+
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_post_thumbnail('large'); ?>
+                                            </a>
+                                            <div class="clear"></div>
+                                            
+                                        </div>
+
+                                    <?php endif; ?>
+
+                                    <div class="col-sm-<?php echo $avenue_options['sc_blog_featured'] == 'on' && has_post_thumbnail() ? '8' : '12'; ?> <?php echo has_post_thumbnail() ? '' : 'text-left'; ?>">
+
+                                        <h2 class="post-title">
+                                            <a href="<?php the_permalink(); ?>">
+                                                <?php the_title(); ?>
+                                            </a>
+                                        </h2>
+
+                                        <div class="post-content">
+                                            <?php the_excerpt(); ?>
+                                        </div>
+
+                                        <div class="text-right">
+                                            <a class="btn btn-default btn-primary avenue-button" href="<?php the_permalink(); ?>">
+                                                <?php _e( 'Read More', 'avenue' ); ?>
+                                            </a>
+                                        </div>  
+
+                                    </div>
+                                    
+                                    <div class="clear"></div>
+
+                                </div>
+                                    
+                            <?php endif;
+
+                        endwhile;
+                                    
+                        if ( $alternate_blog ) : ?>
+
+                                </div>
+                                
+                            </div>
+
+                        <?php endif; ?>
+
+                        <div class="pagination-links">
+                            <?php echo the_posts_pagination( array( 'mid_size' => 1 ) ); ?>
+                        </div>
+                    
+                    <?php else : ?>
+                    
+                        <?php get_template_part('template-parts/content', 'none'); ?>
+                    
+                    <?php endif; ?>
+                    
+                </div>
+                
+                <?php if ( $avenue_options['sc_blog_layout'] == 'col2r' && is_active_sidebar(1) ) : ?>
+
+                    <div class="col-md-4 avenue-sidebar">
+                        <?php get_sidebar(); ?>
+                    </div>
+
+                <?php endif; ?>
+                
+            </div>
+            
+            <div class="clear"></div>
+            
+        </div>
+
+    </main>
+    
+</div>
+
+<?php get_footer();

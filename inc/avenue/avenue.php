@@ -203,8 +203,11 @@ function avenue_custom_css() {
         }
         
         body {
-            /* background-color: #f8f8f8; */
             font-size: <?php echo esc_attr( $avenue_options['sc_font_size'] ); ?>px;
+            font-family: <?php echo esc_attr( $avenue_options['sc_font_family_secondary'] ); ?>;
+        }
+        
+        .error-404 .description {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family_secondary'] ); ?>;
         }
         
@@ -284,7 +287,8 @@ function avenue_custom_css() {
         .btn-primary,
         fieldset[disabled] .btn-primary.active,
         #top-banner,
-        #site-toolbar .social-bar a:hover
+        #site-toolbar .social-bar a:hover,
+        .error-404 i.fa.icon404 
         {
             background: <?php echo esc_attr( $primary_theme_color ); ?>;
         }

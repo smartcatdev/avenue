@@ -7,54 +7,73 @@
  * @package Avenue
  */
 
-get_header(); ?>
+get_header(); 
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+$avenue_options = avenue_get_options();
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'avenue' ); ?></h1>
-				</header><!-- .page-header -->
+?>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'avenue' ); ?></p>
+<div id="primary" class="content-area">
 
-					<?php
-						get_search_form();
+    <main id="main" class="site-main">
 
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+        <section class="error-404 not-found">
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'avenue' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
+            <div class="container">
 
-					<?php
+                <div class="frontpage row">
 
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'avenue' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+                    <div class="col-sm-12">
+                        
+                        <div class="page-content">
+                            
+                            <article>
+                                
+                                <div class="widget widget_categories">
+                                    
+                                    <h2 class="widgettitle center">
+                                        
+                                        <i class="fa fa-exclamation-triangle icon404"></i>
+                                        
+                                        <h1 class="page-title">
+                                            <?php if ( isset( $avenue_options['avenue_error_page_heading'] ) && $avenue_options['avenue_error_page_heading'] != '' ) : ?>
+                                                <?php echo esc_html( $avenue_options['avenue_error_page_heading'] ); ?>
+                                            <?php else : ?>
+                                                <?php esc_html_e( 'Oops! That page can\'t be found.', 'avenue' ); ?>
+                                            <?php endif; ?>
+                                        </h1>
+                                        
+                                        <h3 class="description center">
+                                            <?php if ( isset( $avenue_options['avenue_error_page_subheading'] ) && $avenue_options['avenue_error_page_subheading'] != '' ) : ?>
+                                                <?php echo esc_html( $avenue_options['avenue_error_page_subheading'] ); ?>
+                                            <?php else : ?>
+                                                <?php _e('Please try again or perform a search.', 'avenue' ); ?>
+                                            <?php endif; ?>
+                                        </h3>
+                                        
+                                        <div class="center mt20">
+                                            <?php get_search_form(); ?>
+                                        </div>
+                                        
+                                    </h2>
 
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+                                </div><!-- .widget -->
+                                
+                            </article>
+                            
+                        </div><!-- .page-content -->
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </section><!-- .error-404 -->
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+    </main><!-- #main -->
+    
+</div><!-- #primary -->
 
 <?php
 get_footer();
