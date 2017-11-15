@@ -50,6 +50,7 @@ function avenue_scripts() {
     wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/inc/js/jquery.easing.1.3.js', array('jquery'), AVENUE_VERSION, true );
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/inc/js/bootstrap.min.js', array('jquery'), AVENUE_VERSION, true );
     wp_enqueue_script( 'sticky-js', get_template_directory_uri() . '/inc/js/jquery.sticky.js', array('jquery'), AVENUE_VERSION, true );
+    wp_enqueue_script( 'bigSlide-js', get_template_directory_uri() . '/inc/js/bigSlide.min.js', array('jquery'), AVENUE_VERSION, true );
     wp_enqueue_script( 'camera-js', get_template_directory_uri() . '/inc/js/camera.min.js', array('jquery'), AVENUE_VERSION, true );
     wp_enqueue_script( 'wow', get_template_directory_uri() . '/inc/js/wow.min.js', array('jquery'), AVENUE_VERSION, true );
     wp_enqueue_script( 'avenue-main-script', get_template_directory_uri() . '/inc/js/avenue.js', array('jquery', 'jquery-masonry'), AVENUE_VERSION, true );
@@ -198,14 +199,13 @@ function avenue_custom_css() {
 
         h1,h2,h3,h4,h5,h6 {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family'] ); ?>;
-            font-family: Montserrat !important;
+            
         }
         
         body {
-            background-color: #f8f8f8;
+            /* background-color: #f8f8f8; */
             font-size: <?php echo esc_attr( $avenue_options['sc_font_size'] ); ?>px;
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family_secondary'] ); ?>;
-            font-family: Abel !important;
         }
         
         /*
@@ -233,6 +233,10 @@ function avenue_custom_css() {
                height: <?php echo intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
                min-height: <?php echo intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
             }
+        }
+        
+        #site-branding ul#primary-menu ul.sub-menu {
+            top: <?php echo intval( $avenue_options['avenue_branding_bar_height'] ); ?>px;
         }
         
         /* 
@@ -270,7 +274,9 @@ function avenue_custom_css() {
         .btn-link,
         .sc-primary-color,
         .icon404,
-        header#masthead ul#primary-menu > li > a:hover
+        header#masthead ul#primary-menu > li > a:hover,
+        #site-branding ul#primary-menu ul.sub-menu > li a:hover,
+        .scroll-top:hover
         {
             color: <?php echo esc_attr( $primary_theme_color ); ?>;
         }
@@ -501,7 +507,7 @@ function avenue_add_designer() { ?>
     
     <a href="https://smartcatdesign.net/" rel="designer" style="display: inline-block !important" class="rel">
         <?php printf( esc_html__( 'Designed by %s', 'avenue' ), 'Smartcat' ); ?> 
-        <img src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo_mini.png'?>" alt="<?php printf( esc_attr__( '%s Logo', 'avenue'), 'Smartcat' ); ?>" />
+        <img id="scl" src="<?php echo get_template_directory_uri() . '/inc/images/cat_logo_mini.png'?>" alt="<?php printf( esc_attr__( '%s Logo', 'avenue'), 'Smartcat' ); ?>" />
     </a>
     
 <?php }

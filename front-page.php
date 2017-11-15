@@ -28,15 +28,15 @@ $alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_optio
 
             <div id="post-slider-cta">
 
-                <?php if ( $avenue_options['ares_cta_header_one'] ) : ?>
-                    <h3 class="main-heading smartcat-animate fadeInLeft">
-                        <?php echo esc_html( $avenue_options['ares_cta_header_one'] ); ?>
+                <?php if ( $avenue_options['avenue_cta_header_one'] ) : ?>
+                    <h3 class="main-heading animated fadeInLeft">
+                        <?php echo esc_html( $avenue_options['avenue_cta_header_one'] ); ?>
                     </h3>
                 <?php endif; ?>
 
-                <?php if ( $avenue_options['ares_cta_header_two'] ) : ?>
-                    <h4 class="secondary-heading smartcat-animate fadeInRight">
-                        <?php echo esc_html( $avenue_options['ares_cta_header_two'] ); ?>
+                <?php if ( $avenue_options['avenue_cta_header_two'] ) : ?>
+                    <h4 class="secondary-heading animated fadeInRight">
+                        <?php echo esc_html( $avenue_options['avenue_cta_header_two'] ); ?>
                     </h4>
                 <?php endif; ?>
 
@@ -60,7 +60,7 @@ $alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_optio
                     
                         <div class="col-sm-12">
 
-                            <div id="ares-alt-blog-wrap">
+                            <div id="avenue-alt-blog-wrap">
                                 
                                 <div id="masonry-blog-wrapper">
 

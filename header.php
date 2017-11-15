@@ -89,6 +89,45 @@ $avenue_options = avenue_get_options();
 
                     </div>
                     
+                    <div id="mobile-overlay"></div>
+
+                    <div id="mobile-menu-wrap">
+
+                        <nav id="menu" role="navigation">
+
+                            <img id="mobile-menu-close" src="<?php echo esc_url( get_template_directory_uri() . '/inc/images/close-mobile.png' ); ?>" alt="<?php _e( 'Close Menu', 'avenue' ); ?>">
+
+                            <?php if ( has_nav_menu( 'primary' ) ) : ?>
+
+                                <?php wp_nav_menu( array(
+                                    'theme_location' => 'primary',
+                                    'menu_id'        => 'mobile-menu',
+                                ) ); ?>
+
+                            <?php else : ?>
+
+                                <?php if ( current_user_can( 'edit_theme_options' ) ) : ?>
+
+                                    <ul id="mobile-menu" class="menu">
+
+                                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
+
+                                            <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>">
+                                               <?php _e( 'Add a Primary Menu?', 'avenue' ); ?>
+                                            </a>
+
+                                        </li>
+
+                                    </ul>
+
+                                <?php endif; ?>
+
+                            <?php endif; ?>
+
+                        </nav>
+
+                    </div>
+                    
                 </div>
                 
             </div>

@@ -22,13 +22,13 @@ function avenue_customize_register( $wp_customize ) {
     require_once( 'customizer-panels/settings-slider.php' );
 
     // Blog
-    // require_once( 'customizer-panels/settings-blog.php' );
+    require_once( 'customizer-panels/settings-blog.php' );
 
     // Single
-    // require_once( 'customizer-panels/settings-single-post.php' );
+    require_once( 'customizer-panels/settings-single.php' );
     
     // Appearance
-    // require_once( 'customizer-panels/settings-appearance.php' );
+    require_once( 'customizer-panels/settings-appearance.php' );
     
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
     $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -89,6 +89,63 @@ function avenue_sanitize_show_hide( $input ) {
         'yes'   => __( 'Show', 'avenue' ),
         'no'    => __( 'Hide', 'avenue' ),
     );
+
+    if ( array_key_exists( $input, $valid_keys ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+
+}
+
+function avenue_sanitize_on_off( $input ) {
+
+    $valid_keys = array(
+        'on'    => __( 'Show', 'avenue' ),
+        'off'   => __( 'Hide', 'avenue' ),
+    );
+
+    if ( array_key_exists( $input, $valid_keys ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+
+}
+
+function avenue_sanitize_col_sidebar( $input ) {
+
+    $valid_keys = array(
+        'col1'      => __( 'No Sidebar', 'avenue' ),
+        'col2r'     => __( 'Right Sidebar', 'avenue' ),
+    );
+
+    if ( array_key_exists( $input, $valid_keys ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+
+}
+
+function avenue_sanitize_sidebar_off_on( $input ) {
+
+    $valid_keys = array(
+        'sidebar-off'   => __( 'No Sidebar', 'avenue' ),
+        'sidebar-on'    => __( 'Right Sidebar', 'avenue' ),
+    );
+
+    if ( array_key_exists( $input, $valid_keys ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+
+}
+
+function avenue_sanitize_icon( $input ) {
+
+    $valid_keys = smk_font_awesome('readable');
 
     if ( array_key_exists( $input, $valid_keys ) ) {
         return $input;

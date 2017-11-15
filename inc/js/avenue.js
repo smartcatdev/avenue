@@ -74,6 +74,49 @@ jQuery(document).ready(function ($) {
     }
     
     //¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+    //  Mobile Menu - bigSlide.js
+    //__________________________________________________________________________
+
+    function delayedSlide() {
+        slideTimeoutID = window.setTimeout( initBigSlide, 200);
+    }
+
+    function initBigSlide() {
+        $( 'div#mobile-menu-wrap nav#menu' ).fadeIn();
+        clearBigSlideTimeout();
+    }
+
+    function clearBigSlideTimeout() {
+        window.clearTimeout( slideTimeoutID );
+    }
+    
+    delayedSlide();
+
+    $( '#mobile-menu-trigger, #mobile-menu-close, #mobile-overlay' ).bigSlide({
+        menu: ( '#mobile-menu-wrap' ),
+        side: 'left',
+        afterOpen: function() {
+            $('#mobile-overlay').stop().fadeIn();
+            $('#mobile-menu-close').stop().fadeIn();
+        },
+        beforeClose: function() {
+            $('#mobile-menu-close').stop().fadeOut();
+            $('#mobile-overlay').stop().fadeOut();
+        }
+    });
+    
+    //¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+    //  Mobile Menu Collapse/Expand
+    //__________________________________________________________________________
+
+    $( 'div#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children' ).prepend( '<div class="submenu-button-wrap"><span class="fa fa-plus"></span></div>' );
+
+    $( 'div#mobile-menu-wrap ul#mobile-menu > li.menu-item-has-children span' ).on( 'click', function() {
+        $(this).parent().stop().toggleClass('submenu-rotated').find('span').toggleClass('fa-plus fa-minus');
+        $(this).parent().parent().find( '> ul.sub-menu' ).stop().slideToggle( 400 );
+    });
+    
+    //¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
     //  Scroll to Top
     //__________________________________________________________________________
     

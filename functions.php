@@ -170,7 +170,7 @@ function avenue_get_options() {
         'sc_twitter_url'                    => '',
         'sc_linkedin_url'                   => '',
         'sc_gplus_url'                      => '',
-        'sc_instagram_url'                  => '',
+        'sc_instagram_url'                  => '',                                                      // New
         'sc_youtube_url'                    => '',
         'sc_pinterest_url'                  => '',
         'sc_phone_url'                      => '(555) 555-5555',
@@ -185,8 +185,8 @@ function avenue_get_options() {
         
         'sc_theme_color'                    => 'orange',                          
         'sc_font_size'                      => 14,                              
-        'sc_font_family'                    => 'Source Sans Pro, sans-serif',      
-        'sc_font_family_secondary'          => 'Roboto, sans-serif',                                    // New
+        'sc_font_family'                    => 'Montserrat, sans-serif',      
+        'sc_font_family_secondary'          => 'Lato, sans-serif',                                      // New
         
         // SINGLE LAYOUT
         
@@ -252,6 +252,10 @@ function avenue_migration_process() {
     // Options array exists from a previous version, set defaults on newer Customizer options
 
     $existing_avenue_options = avenue_get_options();
+
+    if ( ! array_key_exists( 'sc_frontpage_content_bool', $existing_avenue_options ) ) :
+        $existing_avenue_options['sc_frontpage_content_bool'] = 'yes';
+    endif; 
 
     if ( ! array_key_exists( 'sc_font_family_secondary', $existing_avenue_options ) ) :
         $existing_avenue_options['sc_font_family_secondary'] = 'Roboto, sans-serif';
