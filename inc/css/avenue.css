@@ -17,6 +17,30 @@ a:hover {
     outline: none !important;
 }
 
+a.avenue-button,
+input[type="submit"] {
+    display: inline-block;
+    padding: 7px 15px;
+    margin: 0 5px 0 0;
+    border-radius: 0 !important;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+}
+
+.widget {
+    margin-bottom: 45px;
+}
+
+h2.widget-title {
+    font-size: 32px !important;
+    margin-bottom: 15px;
+}
+
 #site-toolbar {
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
@@ -29,6 +53,14 @@ a:hover {
     -webkit-transition: 0.25s all ease-in-out;
     -moz-transition: 0.25s all ease-in-out;
     cursor: pointer;
+}
+
+#site-toolbar .contact-bar a {
+    font-size: 12px;
+}
+
+#site-toolbar .social-bar a {
+    font-size: 14px;
 }
 
 #site-toolbar .contact-bar a .fa {
@@ -174,6 +206,14 @@ header#masthead ul#primary-menu > li:hover > a {
     display: block;
     float: left;
     margin-top: 5px;
+}
+
+.sc-slider-wrapper .camera_wrap .camera_pag .camera_pag_ul li {
+    background: rgba(255, 255, 255, .33);
+}
+
+.sc-slider-wrapper .camera_wrap .camera_pag .camera_pag_ul li.cameracurrent > span {
+    background: #fff !important;
 }
 
 ul#primary-menu > li.menu-item-has-children ul.sub-menu {
@@ -374,7 +414,9 @@ div#site-cta-wrap {
 
 #homepage-area-a ul,
 #homepage-area-b ul,
-#homepage-area-c ul {
+#homepage-area-c ul,
+#homepage-area-d ul,
+#homepage-area-e ul {
     list-style: none;   
     margin-left: 0;
     padding-left: 0;

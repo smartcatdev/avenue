@@ -8,11 +8,11 @@ function avenue_scripts() {
     wp_enqueue_style( 'avenue-style', get_stylesheet_uri() );
     
     // Get the Options array
-    $avenue_options = avenue_get_options();
+    $avenue_options     = avenue_get_options();
 
     // Load Fonts from array
-    $fonts = avenue_fonts();
-    $non_google_fonts = avenue_non_google_fonts();
+    $fonts              = avenue_fonts();
+    $non_google_fonts   = avenue_non_google_fonts();
     
     // Are both fonts Google Fonts?
     if ( array_key_exists ( $avenue_options['sc_font_family'], $fonts ) && !array_key_exists ( $avenue_options['sc_font_family'], $non_google_fonts ) &&
@@ -93,9 +93,9 @@ function avenue_widgets_init() {
         'name' => __('Homepage Widget Area - A', 'avenue'),
         'id' => 'sidebar-banner',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s animated wow fadeIn">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h2>',
+        'before_widget' => '<div class="col-sm-12"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'after_widget' => '</aside></div>',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ));
 
@@ -104,9 +104,9 @@ function avenue_widgets_init() {
         'name' => __('Homepage Widget Area - B', 'avenue'),
         'id' => 'sidebar-bannerb',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s animated wow fadeIn">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h2>',
+        'before_widget' => '<div class="col-sm-6"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'after_widget' => '</aside></div>',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ));
 
@@ -115,9 +115,9 @@ function avenue_widgets_init() {
         'name' => __('Homepage Widget Area - C', 'avenue'),
         'id' => 'sidebar-bannerc',
         'description' => '',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s animated wow fadeIn">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h2>',
+        'before_widget' => '<div class="col-sm-4"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'after_widget' => '</aside></div>',
+        'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ));
 
@@ -198,7 +198,8 @@ function avenue_custom_css() {
     <style>
 
         h1,h2,h3,h4,h5,h6,
-        #site-branding div.navigation ul#primary-menu > li > a {
+        #site-branding div.navigation ul#primary-menu > li > a,
+        .avenue-callout .buttons .avenue-button {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family'] ); ?>;
             
         }
@@ -208,7 +209,8 @@ function avenue_custom_css() {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family_secondary'] ); ?>;
         }
         
-        .error-404 .description {
+        .error-404 .description,
+        .faq-item .faq-answer {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family_secondary'] ); ?>;
         }
         
@@ -280,7 +282,8 @@ function avenue_custom_css() {
         .icon404,
         header#masthead ul#primary-menu > li > a:hover,
         #site-branding ul#primary-menu ul.sub-menu > li a:hover,
-        .scroll-top:hover
+        .scroll-top:hover,
+        .avenue-sidebar .avenue-contact-info .contact-row .detail span.fa
         {
             color: <?php echo esc_attr( $primary_theme_color ); ?>;
         }
@@ -289,7 +292,9 @@ function avenue_custom_css() {
         fieldset[disabled] .btn-primary.active,
         #homepage-area-a,
         #site-toolbar .social-bar a:hover,
-        .error-404 i.fa.icon404 
+        .error-404 i.fa.icon404,
+        .avenue-sidebar .avenue-callout .buttons .avenue-button,
+        .avenue-sidebar .avenue-contact-form input[type="submit"]
         {
             background: <?php echo esc_attr( $primary_theme_color ); ?>;
         }
@@ -335,7 +340,9 @@ function avenue_custom_css() {
         .btn-primary:focus,
         .btn-primary:active,
         .btn-primary.active,
-        .open .dropdown-toggle.btn-primary
+        .open .dropdown-toggle.btn-primary,
+        .avenue-sidebar .avenue-callout .buttons .avenue-button:hover,
+        .avenue-sidebar .avenue-contact-form input[type="submit"]:hover
         {
             background-color: <?php echo esc_attr( $secondary_theme_color ); ?>;
         }

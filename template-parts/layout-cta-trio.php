@@ -29,7 +29,7 @@
                             </p>
 
                             <p class="">
-                                <a href="<?php echo esc_url( $avenue_options['sc_cta1_url'] ); ?>" class="btn btn-default btn-primary">
+                                <a href="<?php echo esc_url( $avenue_options['sc_cta1_url'] ); ?>" class="btn btn-default btn-primary avenue-button">
                                     <?php echo esc_html( $avenue_options['sc_cta1_button_text'] );  ?>
                                 </a>
                             </p>
@@ -61,7 +61,7 @@
                             </p>
 
                             <p class="">
-                                <a href="<?php echo esc_url( $avenue_options['sc_cta2_url'] ); ?>" class="btn btn-default btn-primary">
+                                <a href="<?php echo esc_url( $avenue_options['sc_cta2_url'] ); ?>" class="btn btn-default btn-primary avenue-button">
                                     <?php echo esc_html( $avenue_options['sc_cta2_button_text'] );  ?>
                                 </a>
                             </p>        
@@ -93,7 +93,7 @@
                             </p>
 
                             <p class="">
-                                <a href="<?php echo esc_url( $avenue_options['sc_cta3_url'] ); ?>" class="btn btn-default btn-primary">
+                                <a href="<?php echo esc_url( $avenue_options['sc_cta3_url'] ); ?>" class="btn btn-default btn-primary avenue-button">
                                     <?php echo esc_html( $avenue_options['sc_cta3_button_text'] );  ?>
                                 </a>
                             </p>        
