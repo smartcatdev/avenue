@@ -199,7 +199,9 @@ function avenue_custom_css() {
 
         h1,h2,h3,h4,h5,h6,
         #site-branding div.navigation ul#primary-menu > li > a,
-        .avenue-callout .buttons .avenue-button {
+        div#mobile-menu-wrap ul#mobile-menu > li,
+        .avenue-callout .buttons .avenue-button,
+        .avenue-events .event-details .location {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family'] ); ?>;
             
         }
@@ -294,7 +296,12 @@ function avenue_custom_css() {
         #site-toolbar .social-bar a:hover,
         .error-404 i.fa.icon404,
         .avenue-sidebar .avenue-callout .buttons .avenue-button,
-        .avenue-sidebar .avenue-contact-form input[type="submit"]
+        .avenue-sidebar .avenue-contact-form input[type="submit"],
+        .avenue-sidebar .avenue-events .event-details a.avenue-button,
+        footer#colophon .footer-boxes .avenue-callout .buttons .avenue-button,
+        footer#colophon .footer-boxes .avenue-contact-form input[type="submit"],
+        footer#colophon .footer-boxes .avenue-events .event-details a.avenue-button,
+        footer#colophon .footer-boxes .avenue-pricing-table a.avenue-button
         {
             background: <?php echo esc_attr( $primary_theme_color ); ?>;
         }
@@ -318,7 +325,7 @@ function avenue_custom_css() {
         }
         
         .sc-slider-wrapper .camera_caption .secondary-caption {
-            background: <?php echo esc_attr( avenue_hex2rgba( $primary_theme_color, .75 ) ); ?>;
+            background: <?php echo esc_attr( avenue_hex2rgba( $primary_theme_color, 1 ) ); ?>;
         }
         
         @media(max-width: 600px){
@@ -342,7 +349,12 @@ function avenue_custom_css() {
         .btn-primary.active,
         .open .dropdown-toggle.btn-primary,
         .avenue-sidebar .avenue-callout .buttons .avenue-button:hover,
-        .avenue-sidebar .avenue-contact-form input[type="submit"]:hover
+        .avenue-sidebar .avenue-contact-form input[type="submit"]:hover,
+        .avenue-sidebar .avenue-events .event-details a.avenue-button:hover,
+        footer#colophon .footer-boxes .avenue-callout .buttons .avenue-button:hover,
+        footer#colophon .footer-boxes .avenue-contact-form input[type="submit"]:hover,
+        footer#colophon .footer-boxes .avenue-events .event-details a.avenue-button:hover,
+        footer#colophon .footer-boxes .avenue-pricing-table a.avenue-button:hover
         {
             background-color: <?php echo esc_attr( $secondary_theme_color ); ?>;
         }

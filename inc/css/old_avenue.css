@@ -285,14 +285,13 @@ h3{ font-size: 22px;line-height: 26px;}
     display: inline-block;
 }
 .sc-slider-wrapper .camera_caption .primary-caption{
-    /*float: left;*/
-
-    background-color: rgba(255, 255, 255, 0.65);
+    /* float: left; */
+    background-color: rgba(255, 255, 255, 1);
     color: rgb(73, 73, 73);
     font-size: 20px;
     font-weight: 300;
-    line-height: 20px;
-    padding: 10px;
+    line-height: normal;
+    padding: 10px 15px;
     text-align: right;
     text-decoration: none;
     border-width: 0px;
@@ -304,14 +303,14 @@ h3{ font-size: 22px;line-height: 26px;}
     animation-duration: 0.6s; 
     
 }
-.sc-slider-wrapper .camera_caption .secondary-caption{
+.sc-slider-wrapper .camera_caption .secondary-caption {
     /*float: right;*/
     background-color: rgba(13, 172, 158, 0.85);
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: 300;
-    line-height: 20px;
-    padding: 10px;
+    line-height: normal;
+    padding: 10px 15px;
     text-align: right;
     text-decoration: none;
     border-width: 0px;
@@ -594,8 +593,8 @@ h3{ font-size: 22px;line-height: 26px;}
 /*#sc_avenue_recent_posts*/
 /*-- Site Footer --*/
 .site-footer{
-    border-top: 1px solid #2e2e2e;
-    color: #e0e0e0;
+/*    border-top: 1px solid #2e2e2e;*/
+    color: #fff;
 }
 .site-footer .site-info{
     background: #222222;
@@ -605,15 +604,12 @@ h3{ font-size: 22px;line-height: 26px;}
     padding-top: 50px;
     padding-bottom: 50px;
 }
-.site-footer .footer-boxes .widget:first-child{
-    padding-left: 0;
-}
-.site-footer .footer-boxes .widget-title{
+/*.site-footer .footer-boxes .widget-title{
     color: rgb(255, 255, 255);
     font-size: 25px;
     font-weight: 500;
     padding-bottom: 20px;
-}
+}*/
 .site-footer .col-md-6{
     padding: 20px 10px 20px 0;
 }
