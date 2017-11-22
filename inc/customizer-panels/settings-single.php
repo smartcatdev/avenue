@@ -9,23 +9,6 @@ $wp_customize->add_section( 'avenue_single_post_section', array(
     'priority'              => 10
 ) );
 
-    // Single Layout - Include Sidebar?
-    $wp_customize->add_setting( 'avenue[sc_single_layout]', array(
-        'default'               => 'col2r',
-        'transport'             => 'refresh',
-        'sanitize_callback'     => 'avenue_sanitize_col_sidebar',
-        'type'                  => 'option'
-    ) );
-    $wp_customize->add_control( 'avenue[sc_single_layout]', array(
-        'label'   => __( 'Include the right sidebar on the single template?', 'avenue' ),
-        'section' => 'avenue_single_post_section',
-        'type'    => 'radio',
-        'choices'    => array(
-            'col1'      => __( 'No Sidebar', 'avenue' ),
-            'col2r'     => __( 'Right Sidebar', 'avenue' ),
-        )
-    ));
-
     // Single Post Images
     $wp_customize->add_setting( 'avenue[sc_single_featured]', array(
         'default'               => 'on',

@@ -9,8 +9,8 @@
 
 get_header(); 
 
-$avenue_options = avenue_get_options();
-$alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_options['blog_layout_style'] == 'masonry' ? true : false;
+$avenue_options     = avenue_get_options();
+$alternate_blog     = isset( $avenue_options['blog_layout_style'] ) && $avenue_options['blog_layout_style'] == 'masonry' && function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() ? true : false;
 
 ?>
 
@@ -24,28 +24,10 @@ $alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_optio
         
         <?php endif; ?>
 
-        <?php if ( 'no post slider cta' == 'yes' ) : ?>
-
-            <div id="post-slider-cta">
-
-                <?php if ( $avenue_options['avenue_cta_header_one'] ) : ?>
-                    <h3 class="main-heading animated fadeInLeft">
-                        <?php echo esc_html( $avenue_options['avenue_cta_header_one'] ); ?>
-                    </h3>
-                <?php endif; ?>
-
-                <?php if ( $avenue_options['avenue_cta_header_two'] ) : ?>
-                    <h4 class="secondary-heading animated fadeInRight">
-                        <?php echo esc_html( $avenue_options['avenue_cta_header_two'] ); ?>
-                    </h4>
-                <?php endif; ?>
-
-            </div>
-
-        <?php endif; ?>
-        
         <?php if ( $avenue_options['sc_cta_bool'] == 'yes' ) : ?>
+        
             <?php do_action( 'avenue_cta_trio' ); ?>
+        
         <?php endif; ?>
         
         <?php do_action( 'avenue_free_widget_areas' ); ?>

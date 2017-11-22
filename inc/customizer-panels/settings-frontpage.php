@@ -311,20 +311,3 @@ $wp_customize->add_section( 'static_front_page', array(
                 'no'    => __( 'Hide', 'avenue' ),
             )
         ));
-
-        // Include Right Sidebar on Static Frontpage?
-        $wp_customize->add_setting( 'avenue[sc_homepage_sidebar]', array(
-            'default'               => 'sidebar-off',
-            'transport'             => 'refresh',
-            'sanitize_callback'     => 'avenue_sanitize_sidebar_off_on',
-            'type'                  => 'option'
-        ) );
-        $wp_customize->add_control( 'avenue[sc_homepage_sidebar]', array(
-            'label'   => __( 'Include the right sidebar ( only when using Static Front Page)?', 'avenue' ),
-            'section' => 'static_front_page',
-            'type'    => 'radio',
-            'choices'    => array(
-                'sidebar-off'   => __( 'No Sidebar', 'avenue' ),
-                'sidebar-on'    => __( 'Right Sidebar', 'avenue' ),
-            )
-        ));

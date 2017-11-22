@@ -5,7 +5,12 @@
  * @package Avenue
  */
 
-$avenue_options = avenue_get_options();
+$avenue_options     = avenue_get_options();
+$is_alternate       = get_post_meta( get_the_ID(), 'avenue_layout_style', true ) && get_post_meta( get_the_ID(), 'avenue_layout_style', true ) == 'alternate' && function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() ? true : false;  
+$sidebar_override   = get_post_meta( get_the_ID(), 'avenue_sidebar_location', true );
+if ( empty( $sidebar_override ) ) {
+    $sidebar_override = isset( $avenue_options['sc_single_layout'] ) && $avenue_options['sc_single_layout'] == 'col2r' ? 'right' : 'none';
+}
 
 get_header(); ?>
 
@@ -17,57 +22,34 @@ get_header(); ?>
     
             <?php while ( have_posts() ) : the_post(); ?>
     
-                <div class="page-content row ">
+                <div class="page-content row">
                     
-                    <div class="col-md-<?php echo is_active_sidebar(1) && $avenue_options['sc_single_layout'] == 'col2r' ? '8' : '12'; ?>">
+                    <?php if ( ( $sidebar_override == 'left' || $sidebar_override == 'leftright' || $sidebar_override == 'default' ) && is_active_sidebar( 'sidebar-left' ) ) : ?>
                     
-                        <?php if ( isset( $avenue_options['single_post_layout_style'] ) && $avenue_options['single_post_layout_style'] == 'alternate' ) : ?>
+                        <div class="col-md-4 avenue-sidebar">
+                            <?php dynamic_sidebar( 'sidebar-left' ); ?>
+                        </div>
+                    
+                    <?php endif; ?>
+                    
+                    <div class="col-md-<?php echo esc_attr( avenue_main_width( $sidebar_override ) ); ?>">
+                    
+                        <?php if ( $is_alternate ) : ?>
                         
                             <?php get_template_part( 'template-parts/content', 'single-alt' ); ?>
                         
                         <?php else : ?>
                         
-                            <article class="item-page">
+                            <?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-                                <h2 class="post-title">
-                                    <?php the_title(); ?>
-                                </h2>
-
-                                <?php echo $avenue_options['sc_single_date'] == 'on' ? __( 'Posted on: ', 'avenue' ) . esc_html( get_the_date() ) : ''; ?><?php echo $avenue_options['sc_single_author'] == 'on' && $avenue_options['sc_single_date'] == 'on' ? __( ', ', 'avenue' ) : ''; ?>
-
-                                <?php echo $avenue_options['sc_single_author'] == 'on' ? __( 'by : ', 'avenue' ) . get_the_author_posts_link() : ''; ?>
-                                
-                                <div class="entry-content">
-
-                                    <?php $avenue_options['sc_single_featured'] == 'on' ? the_post_thumbnail( 'medium' ) : ''; ?>
-
-                                    <?php the_content(); ?>
-
-                                    <?php 
-
-                                    wp_link_pages(array(
-                                        'before' => '<div class="page-links">' . __( 'Pages:', 'avenue' ),
-                                        'after' => '</div>',
-                                    ));
-
-                                    if (comments_open() || '0' != get_comments_number()) :
-                                        comments_template();
-                                    endif;
-
-                                    ?>
-
-                                </div>
-                                
-                            </article>
-                        
                         <?php endif; ?>
                         
                     </div>
 
-                    <?php if ( is_active_sidebar(1) && $avenue_options['sc_single_layout'] == 'col2r' ) : ?>
+                    <?php if ( ( $sidebar_override == 'right' || $sidebar_override == 'leftright' || $sidebar_override == 'default' ) && is_active_sidebar( 1 ) ) : ?>
 
                         <div class="col-md-4 avenue-sidebar">
-                            <?php get_sidebar(); ?>
+                            <?php get_sidebar( 1 ); ?>
                         </div>
 
                     <?php endif; ?>

@@ -121,9 +121,20 @@ function avenue_widgets_init() {
         'after_title' => '</h2>',
     ));
 
+    // Left Sidebar
+    register_sidebar(array(
+        'name' => __('Left Sidebar', 'avenue'),
+        'id' => 'sidebar-left',
+        'description' => '',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => '</aside>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
+    
     // Right Sidebar
     register_sidebar(array(
-        'name' => __('Sidebar', 'avenue'),
+        'name' => __('Right Sidebar', 'avenue'),
         'id' => 'sidebar-1',
         'description' => '',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -298,6 +309,7 @@ function avenue_custom_css() {
         .avenue-sidebar .avenue-callout .buttons .avenue-button,
         .avenue-sidebar .avenue-contact-form input[type="submit"],
         .avenue-sidebar .avenue-events .event-details a.avenue-button,
+        .page-template-cpt-page-events .avenue-events .event-details a.avenue-button,
         footer#colophon .footer-boxes .avenue-callout .buttons .avenue-button,
         footer#colophon .footer-boxes .avenue-contact-form input[type="submit"],
         footer#colophon .footer-boxes .avenue-events .event-details a.avenue-button,
@@ -351,6 +363,7 @@ function avenue_custom_css() {
         .avenue-sidebar .avenue-callout .buttons .avenue-button:hover,
         .avenue-sidebar .avenue-contact-form input[type="submit"]:hover,
         .avenue-sidebar .avenue-events .event-details a.avenue-button:hover,
+        .page-template-cpt-page-events .avenue-events .event-details a.avenue-button:hover,
         footer#colophon .footer-boxes .avenue-callout .buttons .avenue-button:hover,
         footer#colophon .footer-boxes .avenue-contact-form input[type="submit"]:hover,
         footer#colophon .footer-boxes .avenue-events .event-details a.avenue-button:hover,
@@ -593,5 +606,126 @@ function avenue_check_capacity( $base_value = 1 ) {
     else:
         return $base_value + 3;
     endif;
+    
+}
+
+/**
+ * Determine the width of columns based on left and right sidebar settings.
+ */
+function avenue_main_width( $override = 'default' ) {
+    
+    if ( $override == 'default' ) :
+        
+        // An override was not passed from the Page / Post calling this function, or default is set
+        
+        if( is_active_sidebar( 'sidebar-left' ) && is_active_sidebar( 1 ) ) :
+            $width = 4;
+        elseif( is_active_sidebar( 'sidebar-left' ) || is_active_sidebar( 1 ) ) :
+            $width = 8;
+        else:
+            $width = 12;
+        endif;
+        
+    else :
+
+        // An override was passed from the Page / Post calling this function
+        
+        if( $override == 'leftright' && ( is_active_sidebar( 'sidebar-left' ) && is_active_sidebar( 1 ) ) ) :
+            $width = 4;
+        elseif( ( ( $override == 'left' || $override == 'leftright' ) && is_active_sidebar( 'sidebar-left' ) ) || ( ( $override == 'right' || $override == 'leftright' ) && is_active_sidebar( 1 ) ) ) :
+            $width = 8;
+        else:
+            $width = 12;
+        endif;
+        
+    endif;        
+    
+    return $width;
+
+}
+
+new Avenue_Sidebar_Location_Meta_Box();
+class Avenue_Sidebar_Location_Meta_Box {
+
+    public function __construct() {
+
+        if ( is_admin() ) {
+            add_action( 'load-post.php',        array ( $this, 'init_metabox' ) );
+            add_action( 'load-post-new.php',    array ( $this, 'init_metabox' ) );
+        }
+        
+    }
+
+    public function init_metabox() {
+
+        add_action( 'add_meta_boxes',           array ( $this, 'add_metabox' ) );
+        add_action( 'save_post',                array ( $this, 'save_metabox' ), 10, 2 );
+        
+    }
+
+    public function add_metabox() {
+
+        add_meta_box( 
+            'avenue_sidebar_location_meta_box', 
+            __( 'Sidebar Location', 'avenue' ), 
+            array ( $this, 'render_avenue_sidebar_location_meta_box' ), 
+            array( 'page', 'post'), 
+            'normal', 
+            'high' 
+        );
+
+    }
+
+    public function render_avenue_sidebar_location_meta_box( $post ) {
+        
+        // Add nonce for security and authentication.
+        wp_nonce_field( 'avenue_sidebar_location_meta_box_nonce_action', 'avenue_sidebar_location_meta_box_nonce' );
+
+        // Retrieve an existing value from the database.
+        $avenue_sidebar_location    = get_post_meta( $post->ID, 'avenue_sidebar_location', true );
+        	
+        // Set default values.
+        if ( empty( $avenue_sidebar_location ) )    { $avenue_sidebar_location = 'right'; }
+        
+        // Form fields
+        
+        echo '<table class="form-table">';
+            
+        // Sidebar Setting
+        echo '  <tr>';
+        echo '      <th><label for="avenue_sidebar_location" class="avenue_sidebar_location_label">' . __( 'Sidebar Location', 'avenue' ) . '</label></th>';
+        echo '      <td>';
+        echo '          <select id="avenue_sidebar_location" name="avenue_sidebar_location" class="avenue_sidebar_location_field">';
+        // echo '          <option value="default" ' . esc_attr( selected( $avenue_sidebar_location, 'default', false ) ) . '> ' . __( 'Default', 'avenue' ) . '</option>';
+        echo '          <option value="left" ' . esc_attr( selected( $avenue_sidebar_location, 'left', false ) ) . '> ' . __( 'Left Sidebar', 'avenue' ) . '</option>';
+        echo '          <option value="right" ' . esc_attr( selected( $avenue_sidebar_location, 'right', false ) ) . '> ' . __( 'Right Sidebar', 'avenue' ) . '</option>';
+        echo '          <option value="leftright" ' . esc_attr( selected( $avenue_sidebar_location, 'leftright', false ) ) . '> ' . __( 'Left + Right Sidebars', 'avenue' ) . '</option>';
+        echo '          <option value="none" ' . esc_attr( selected( $avenue_sidebar_location, 'none', false ) ) . '> ' . __( 'No Sidebar', 'avenue' ) . '</option>';
+        echo '          </select>';
+        echo '          <p class="description">' . __( 'Do you want to display a sidebar on this post/page?', 'avenue' ) . '</p>';
+        echo '      </td>';
+        echo '  </tr>';
+
+        echo '</table>';
+        
+    }
+    
+    public function save_metabox( $post_id, $post ) {
+
+        // Add nonce for security and authentication.
+        $nonce_name     = isset( $_POST[ 'avenue_sidebar_location_meta_box_nonce' ] ) ? $_POST[ 'avenue_sidebar_location_meta_box_nonce' ] : '';
+        $nonce_action   = 'avenue_sidebar_location_meta_box_nonce_action';
+
+        // Check if a nonce is set and valid
+        if ( !isset( $nonce_name ) ) { return; }
+        if ( !wp_verify_nonce( $nonce_name, $nonce_action ) ) { return; }
+            
+        // Sanitize user input.
+        $avenue_sidebar_location  = isset( $_POST[ 'avenue_sidebar_location' ] ) ? sanitize_text_field( $_POST[ 'avenue_sidebar_location' ] ) : '';
+		
+        // Update the meta field in the database
+        update_post_meta( $post_id, 'avenue_sidebar_location', $avenue_sidebar_location );
+        
+    }
     
 }
