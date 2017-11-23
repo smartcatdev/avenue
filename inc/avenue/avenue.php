@@ -249,8 +249,8 @@ function avenue_custom_css() {
             #site-branding,
             #site-branding-sticky-wrap-sticky-wrapper,
             #site-branding-sticky-wrap-sticky-wrapper #site-branding-sticky-wrap{
-               height: <?php echo intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
-               min-height: <?php echo intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
+height: <?php echo isset( $avenue_options['avenue_branding_bar_height_mobile'] ) ? intval( $avenue_options['avenue_branding_bar_height_mobile'] ) : intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
+                min-height: <?php echo isset( $avenue_options['avenue_branding_bar_height_mobile'] ) ? intval( $avenue_options['avenue_branding_bar_height_mobile'] ) : intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
             }
         }
         

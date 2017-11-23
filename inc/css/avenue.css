@@ -256,6 +256,7 @@ ul#primary-menu > li.menu-item-has-children ul.sub-menu {
 
 div#mobile-menu-wrap {
     z-index: 9999;
+    width: 220px !important;
 }
 
 .admin-bar div#mobile-menu-wrap {

@@ -27,7 +27,7 @@ get_header(); ?>
                     <?php if ( ( $sidebar_override == 'left' || $sidebar_override == 'leftright' || $sidebar_override == 'default' ) && is_active_sidebar( 'sidebar-left' ) ) : ?>
                     
                         <div class="col-md-4 avenue-sidebar">
-                            <?php dynamic_sidebar( 'sidebar-left' ); ?>
+                            <?php get_sidebar( 'left' ); ?>
                         </div>
                     
                     <?php endif; ?>
@@ -49,7 +49,7 @@ get_header(); ?>
                     <?php if ( ( $sidebar_override == 'right' || $sidebar_override == 'leftright' || $sidebar_override == 'default' ) && is_active_sidebar( 1 ) ) : ?>
 
                         <div class="col-md-4 avenue-sidebar">
-                            <?php get_sidebar( 1 ); ?>
+                            <?php get_sidebar( '1' ); ?>
                         </div>
 
                     <?php endif; ?>

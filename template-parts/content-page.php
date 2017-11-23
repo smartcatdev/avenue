@@ -8,7 +8,6 @@
  */
 
 $avenue_options     = avenue_get_options();
-$is_alternate       = get_post_meta( get_the_ID(), 'avenue_layout_style', true ) && get_post_meta( get_the_ID(), 'avenue_layout_style', true ) == 'alternate' && function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() ? true : false;  
 $sidebar_override   = get_post_meta( get_the_ID(), 'avenue_sidebar_location', true );
 if ( empty( $sidebar_override ) ) {
     $sidebar_override = isset( $avenue_options['sc_single_layout'] ) && $avenue_options['sc_single_layout'] == 'col2r' ? 'right' : 'none';
