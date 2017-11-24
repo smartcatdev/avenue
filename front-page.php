@@ -30,6 +30,8 @@ $alternate_blog     = isset( $avenue_options['blog_layout_style'] ) && $avenue_o
         
         <?php endif; ?>
         
+        <?php do_action( 'avenue_callout_banner' ); ?>
+        
         <?php do_action( 'avenue_free_widget_areas' ); ?>
         
         <?php do_action( 'avenue_pro_widget_areas' ); ?>

@@ -199,6 +199,7 @@ function avenue_get_options() {
         // BLOG LAYOUT
         
         'sc_blog_layout'                    => 'col2r',
+        'sc_blog_layout_left'               => 'col1',
         'sc_blog_featured'                  => 'on',
         
         // SLIDER
@@ -242,6 +243,7 @@ function avenue_get_options() {
         // FRONTPAGE
         
         'sc_frontpage_content_bool'         => 'yes',                                                   // New
+        'sc_cta_trio_underline'             => 'no',                                                    // New
        
     ) );
     
@@ -268,6 +270,10 @@ function avenue_migration_process() {
     endif; 
 
     // If not exists
+    
+    if ( ! array_key_exists( 'sc_cta_trio_underline', $existing_avenue_options ) ) :
+        $existing_avenue_options['sc_cta_trio_underline'] = 'no';
+    endif; 
     
     if ( ! array_key_exists( 'sc_blog_layout_left', $existing_avenue_options ) ) :
         $existing_avenue_options['sc_blog_layout_left'] = 'col1';
@@ -324,13 +330,9 @@ function avenue_migration_process() {
 
         switch ( $existing_avenue_options['sc_font_family'] ):
 
-//            case 'MS Sans Serif, Geneva, sans-serif' :
-//                $existing_avenue_options['sc_font_family'] = 'MS Sans Serif, Tahoma, sans-serif';
-//                break;
-//
-//            case 'Lobster, cursive' :
-//                $existing_avenue_options['sc_font_family'] = 'Lobster Two, cursive';
-//                break;
+            case 'MS Sans Serif, Geneva, sans-serif' :
+                $existing_avenue_options['sc_font_family'] = 'MS Sans Serif, Tahoma, sans-serif';
+                break;
 
             default :
                 break;

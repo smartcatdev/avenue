@@ -16,58 +16,6 @@ $wp_customize->add_section( 'static_front_page', array(
 ) );
 
     // ---------------------------------------------
-    // CTA Header Section
-    // ---------------------------------------------
-//    $wp_customize->add_section( 'avenue_cta_header_section', array(
-//        'title'                 => __( 'CTA Header', 'avenue'),
-//        'description'           => __( 'Customize the CTA banner that appears below the Slider', 'avenue' ),
-//        'panel'                 => 'avenue_frontpage_panel'
-//    ) );
-
-        // Show / Hide the CTA Header?
-//        $wp_customize->add_setting( 'avenue[avenue_post_slider_cta_bool]', array(
-//            'default'               => 'yes',
-//            'transport'             => 'refresh',
-//            'sanitize_callback'     => 'avenue_sanitize_show_hide',
-//            'type'                  => 'option'
-//        ) );
-//        $wp_customize->add_control( 'avenue[avenue_post_slider_cta_bool]', array(
-//            'label'   => __( 'Show or hide the CTA banner below the Slider?', 'avenue' ),
-//            'section' => 'avenue_cta_header_section',
-//            'type'    => 'radio',
-//            'choices'    => array(
-//                'yes'   => __( 'Show', 'avenue' ),
-//                'no'    => __( 'Hide', 'avenue' ),
-//            )
-//        ));
-    
-        // Main Heading 
-//        $wp_customize->add_setting( 'avenue[avenue_cta_header_one]', array(
-//            'default'               => __( 'Modern design with a responsive layout', 'avenue' ),
-//            'transport'             => 'refresh',
-//            'sanitize_callback'     => 'sanitize_text_field',
-//            'type'                  => 'option'
-//        ) );
-//        $wp_customize->add_control( 'avenue[avenue_cta_header_one]', array(
-//            'type'                  => 'text',
-//            'section'               => 'avenue_cta_header_section',
-//            'label'                 => __( 'Main Heading', 'avenue' ),
-//        ) );
-        
-        // Secondary Heading 
-//        $wp_customize->add_setting( 'avenue[avenue_cta_header_two]', array(
-//            'default'               => __( 'User-friendly & Easily Customizable', 'avenue' ),
-//            'transport'             => 'refresh',
-//            'sanitize_callback'     => 'sanitize_text_field',
-//            'type'                  => 'option'
-//        ) );
-//        $wp_customize->add_control( 'avenue[avenue_cta_header_two]', array(
-//            'type'                  => 'text',
-//            'section'               => 'avenue_cta_header_section',
-//            'label'                 => __( 'Secondary Heading', 'avenue' ),
-//        ) );
-    
-    // ---------------------------------------------
     // CTA Trio Section
     // ---------------------------------------------
     $wp_customize->add_section( 'avenue_cta_trio_section', array(
@@ -85,6 +33,23 @@ $wp_customize->add_section( 'static_front_page', array(
         ) );
         $wp_customize->add_control( 'avenue[sc_cta_bool]', array(
             'label'   => __( 'Show or hide the CTA Trio section?', 'avenue' ),
+            'section' => 'avenue_cta_trio_section',
+            'type'    => 'radio',
+            'choices'    => array(
+                'yes'   => __( 'Show', 'avenue' ),
+                'no'    => __( 'Hide', 'avenue' ),
+            )
+        ));
+
+        // Show / Hide the Bottom Border Under the Titles?
+        $wp_customize->add_setting( 'avenue[sc_cta_trio_underline]', array(
+            'default'               => 'no',
+            'transport'             => 'refresh',
+            'sanitize_callback'     => 'avenue_sanitize_show_hide',
+            'type'                  => 'option'
+        ) );
+        $wp_customize->add_control( 'avenue[sc_cta_trio_underline]', array(
+            'label'   => __( 'Show or hide the divider underline for titles?', 'avenue' ),
             'section' => 'avenue_cta_trio_section',
             'type'    => 'radio',
             'choices'    => array(

@@ -778,11 +778,11 @@ h3{ font-size: 22px;line-height: 26px;}
         width: 1200px;
     }*/
 }
-@media(min-width: 992px) and (max-width: 1059px){
+/*@media(min-width: 992px) and (max-width: 1059px){
     .sc-slider-wrapper .camera_caption > div{
         font-size: 24px;
     }       
-}
+}*/
 @media(min-width: 601px) and (max-width: 991px){
     #site-cta{
         margin-top: 0;

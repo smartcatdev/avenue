@@ -226,7 +226,8 @@ function avenue_custom_css() {
         .error-404 .description,
         .faq-item .faq-answer,
         #masonry-blog-wrapper .blog-roll-item .post-category,
-        #masonry-blog-wrapper .blog-roll-item .post-meta {
+        #masonry-blog-wrapper .blog-roll-item .post-meta,
+        div#post-slider-cta .secondary-heading {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family_secondary'] ); ?>;
         }
         
@@ -262,21 +263,15 @@ function avenue_custom_css() {
         #site-branding ul#primary-menu ul.sub-menu {
             top: <?php echo intval( $avenue_options['avenue_branding_bar_height'] ); ?>px;
         }
-        
-        /* 
-        div#content {
-            margin-top: <?php echo esc_attr( $avenue_options['avenue_branding_bar_height'] + ( $avenue_options['sc_headerbar_bool'] == 'yes' ? 40 : 0 ) ); ?>px;
-        }
-
-        <?php if ( $avenue_options['sc_headerbar_bool'] != 'yes' ) : ?>
-        
-            div#content {
-                margin-top: 80px !important;
+            
+        <?php if ( isset( $avenue_options['sc_cta_trio_underline'] ) && $avenue_options['sc_cta_trio_underline'] == 'yes' ) : ?>
+            .site-cta .title-wrap {
+                margin-bottom: 15px;
+                border-bottom: thin solid #e3e3e3;
+                padding-bottom: 10px;
             }
-            
         <?php endif; ?>
-        */
-            
+        
         /*
         ----- Theme Colors -----------------------------------------------------
         */
@@ -353,6 +348,20 @@ function avenue_custom_css() {
                 border-bottom: 2px solid #333333;
             }
         <?php endif; ?>
+        
+        div#post-slider-cta {
+            background: <?php echo isset( $avenue_options['avenue_callout_banner_background'] ) ? esc_attr( $avenue_options['avenue_callout_banner_background'] ) : esc_attr( $primary_theme_color ); ?>;
+            color: <?php echo isset( $avenue_options['avenue_callout_banner_text_color'] ) ? esc_attr( $avenue_options['avenue_callout_banner_text_color'] ) : '#ffffff'; ?>;
+        }
+        
+        div#post-slider-cta a.avenue-button {
+            color: <?php echo isset( $avenue_options['avenue_callout_banner_text_color'] ) ? esc_attr( $avenue_options['avenue_callout_banner_text_color'] ) : '#ffffff'; ?>;
+            border-color: <?php echo isset( $avenue_options['avenue_callout_banner_text_color'] ) ? esc_attr( $avenue_options['avenue_callout_banner_text_color'] ) : '#ffffff'; ?>;
+        }
+
+        div#post-slider-cta a.avenue-button:hover {
+            background: <?php echo isset( $avenue_options['avenue_callout_banner_text_color'] ) ? esc_attr( avenue_hex2rgba( $avenue_options['avenue_callout_banner_text_color'], .25 ) ) : 'rgba(255,255,255,0.25)'; ?>;
+        }
         
         @media(max-width: 600px){
             .nav-menu > li.current_page_item a {
@@ -778,12 +787,15 @@ function avenue_is_homepage_sidebar_active( $homepage_id ) {
 
 function avenue_any_homepage_areas_active() {
     
+    $avenue_options = avenue_get_options();
+    
     if ( 
         ( avenue_is_homepage_sidebar_active( 'a' ) ) ||
         ( avenue_is_homepage_sidebar_active( 'b' ) ) ||
         ( avenue_is_homepage_sidebar_active( 'c' ) ) ||
         ( function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() && avenue_is_homepage_sidebar_active( 'd' ) ) ||
-        ( function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() && avenue_is_homepage_sidebar_active( 'e' ) )
+        ( function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() && avenue_is_homepage_sidebar_active( 'e' ) ) ||
+        ( function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() && isset( $avenue_options['avenue_callout_banner_toggle'] ) && $avenue_options['avenue_callout_banner_toggle'] == 'yes' )
     ) {
         return true;
     } else {
