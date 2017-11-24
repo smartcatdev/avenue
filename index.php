@@ -27,7 +27,25 @@ $alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_optio
 
             <div class="page-content row">
 
-                <div class="col-md-<?php echo $avenue_options['sc_blog_layout'] == 'col2r' && is_active_sidebar(1) ? '8' : '12'; ?> site-content item-page">
+                <?php 
+                
+                if ( ( $avenue_options['sc_blog_layout_left'] == 'col2l' && is_active_sidebar( 'sidebar-left' ) ) && ( $avenue_options['sc_blog_layout'] == 'col2r' && is_active_sidebar( 1 ) ) ) : 
+                    $columns = 4;
+                elseif ( ( $avenue_options['sc_blog_layout_left'] == 'col2l' && is_active_sidebar( 'sidebar-left' ) ) || ( $avenue_options['sc_blog_layout'] == 'col2r' && is_active_sidebar( 1 ) ) ) : 
+                    $columns = 8;
+                else :
+                    $columns = 12;
+                endif;
+                
+                if ( $avenue_options['sc_blog_layout_left'] == 'col2l' && is_active_sidebar( 'sidebar-left' ) ) : ?>
+                    
+                    <div class="col-md-4 avenue-sidebar">
+                        <?php get_sidebar( 'left' ); ?>
+                    </div>
+
+                <?php endif; ?>
+                
+                <div class="col-md-<?php echo esc_attr( $columns ); ?> site-content item-page">
 
                     <?php if ( have_posts() ) :
                     
@@ -113,10 +131,10 @@ $alternate_blog = isset( $avenue_options['blog_layout_style'] ) && $avenue_optio
                     
                 </div>
                 
-                <?php if ( $avenue_options['sc_blog_layout'] == 'col2r' && is_active_sidebar(1) ) : ?>
+                <?php if ( $avenue_options['sc_blog_layout'] == 'col2r' && is_active_sidebar( 1 ) ) : ?>
 
                     <div class="col-md-4 avenue-sidebar">
-                        <?php get_sidebar(); ?>
+                        <?php get_sidebar( '1' ); ?>
                     </div>
 
                 <?php endif; ?>

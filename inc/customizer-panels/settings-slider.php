@@ -66,7 +66,7 @@ for ( $ctr = 1; $ctr < apply_filters( 'avenue_capacity', 1 ); $ctr++ ) :
 
         // Slide - Caption Heading
         $wp_customize->add_setting( 'avenue[sc_slide' . $ctr . '_text]', array(
-            'default'               => __( 'Avenue: Responsive Multi-purpose WordPress Theme', 'avenue' ),
+            'default'               => __( 'Welcome to Avenue', 'avenue' ),
             'transport'             => 'refresh',
             'sanitize_callback'     => 'sanitize_text_field',
             'type'                  => 'option'
@@ -79,7 +79,7 @@ for ( $ctr = 1; $ctr < apply_filters( 'avenue_capacity', 1 ); $ctr++ ) :
 
         // Slide - Caption Subheading
         $wp_customize->add_setting( 'avenue[sc_slide' . $ctr . '_text2]', array(
-            'default'               => __( 'Avenue: Responsive Multi-purpose WordPress Theme', 'avenue' ),
+            'default'               => __( 'A professional, multi-purpose WordPress theme', 'avenue' ),
             'transport'             => 'refresh',
             'sanitize_callback'     => 'sanitize_text_field',
             'type'                  => 'option'

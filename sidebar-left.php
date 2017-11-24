@@ -13,5 +13,5 @@ if ( ! is_active_sidebar( 'sidebar-left' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area">
-    <?php dynamic_sidebar( 'left' ); ?>
+    <?php dynamic_sidebar( 'sidebar-left' ); ?>
 </aside><!-- #secondary -->

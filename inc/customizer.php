@@ -128,6 +128,21 @@ function avenue_sanitize_col_sidebar( $input ) {
 
 }
 
+function avenue_sanitize_col_sidebar_left( $input ) {
+
+    $valid_keys = array(
+        'col1'      => __( 'No Sidebar', 'avenue' ),
+        'col2l'     => __( 'Left Sidebar', 'avenue' ),
+    );
+
+    if ( array_key_exists( $input, $valid_keys ) ) {
+        return $input;
+    } else {
+        return '';
+    }
+
+}
+
 function avenue_sanitize_sidebar_off_on( $input ) {
 
     $valid_keys = array(

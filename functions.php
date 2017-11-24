@@ -222,7 +222,7 @@ function avenue_get_options() {
         'sc_cta_bool'                       => 'yes',
         
         'sc_cta1_title'                     => __( 'Theme Options', 'avenue' ),
-        'sc_cta1_icon'                      => 'fa-gears',
+        'sc_cta1_icon'                      => 'fa-cogs',
         'sc_cta1_text'                      => __( 'Change typography, colors, layouts...', 'avenue' ),
         'sc_cta1_url'                       => '',
         'sc_cta1_button_text'               => __( 'Click Here', 'avenue' ),
@@ -253,6 +253,8 @@ function avenue_migration_process() {
 
     $existing_avenue_options = avenue_get_options();
 
+    // If exists (strip extra "fa " from old theme option values)
+    
     if ( array_key_exists( 'sc_cta1_icon', $existing_avenue_options ) && strpos( $existing_avenue_options['sc_cta1_icon'], 'fa ' ) !== false ) :
         $existing_avenue_options['sc_cta1_icon'] = str_replace( 'fa ', '', $existing_avenue_options['sc_cta1_icon'] );
     endif; 
@@ -263,6 +265,12 @@ function avenue_migration_process() {
 
     if ( array_key_exists( 'sc_cta3_icon', $existing_avenue_options ) && strpos( $existing_avenue_options['sc_cta3_icon'], 'fa ' ) !== false ) :
         $existing_avenue_options['sc_cta3_icon'] = str_replace( 'fa ', '', $existing_avenue_options['sc_cta3_icon'] );
+    endif; 
+
+    // If not exists
+    
+    if ( ! array_key_exists( 'sc_blog_layout_left', $existing_avenue_options ) ) :
+        $existing_avenue_options['sc_blog_layout_left'] = 'col1';
     endif; 
 
     if ( ! array_key_exists( 'sc_frontpage_content_bool', $existing_avenue_options ) ) :

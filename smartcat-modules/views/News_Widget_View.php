@@ -102,7 +102,7 @@ if ( $news->have_posts() ) : ?>
 
 <?php else : ?>
 
-    <h4 class="none-to-display"><?php _e( 'There are currently no News items to display, please check again at a later time.', 'smartcat-modules' ); ?></h4>
+    <h4 class="none-to-display"><?php _e( 'There are currently no News items to display, please check again at a later time.', 'avenue' ); ?></h4>
 
 <?php endif; ?>
     

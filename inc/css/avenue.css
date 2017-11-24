@@ -110,14 +110,13 @@ h2.widget-title {
     font-size: 32px;
 }
 
-#site-branding div#primary-menu {
-    float: right;
-}
 
+#site-branding div#primary-menu,
 #site-branding div.navigation ul#primary-menu {
     text-align: right;
 }
 
+div#primary-menu > ul > li,
 ul#primary-menu > li {
     vertical-align: text-top;
     display: inline-block;
@@ -126,14 +125,17 @@ ul#primary-menu > li {
     padding-right: 15px;
 }
 
+div#primary-menu > ul > li:last-of-type,
 ul#primary-menu > li:last-of-type {
     padding-right: 0;
 }
 
+div#primary-menu > ul > li > a,
 ul#primary-menu > li > a {
     color: #222222;
 }
 
+#site-branding div#primary-menu > ul ul.sub-menu,
 #site-branding ul#primary-menu ul.sub-menu {
     background-color: #fff;
     opacity: 0;
@@ -145,10 +147,12 @@ ul#primary-menu > li > a {
     display: none;
 }
 
+#site-branding div#primary-menu > ul > li.menu-item-has-children:hover > ul.sub-menu,
 #site-branding ul#primary-menu > li.menu-item-has-children:hover > ul.sub-menu {
     display: block;
 }
 
+#site-branding div#primary-menu > ul li:hover ul.sub-menu,
 #site-branding ul#primary-menu li:hover ul.sub-menu {
     opacity: 1;
 }
@@ -174,12 +178,14 @@ div#site-branding-sticky-wrap {
     -moz-animation-duration: .6s;   
 }
 
+header#masthead div#primary-menu > ul > li > a,
 header#masthead ul#primary-menu > li > a {
     transition: 0.15s all ease-in-out;
     -webkit-transition: 0.15s all ease-in-out;
     -moz-transition: 0.15s all ease-in-out;   
 }
 
+header#masthead div#primary-menu > ul > li:hover > a,
 header#masthead ul#primary-menu > li:hover > a {
     border-bottom: 5px solid #eee;
 }

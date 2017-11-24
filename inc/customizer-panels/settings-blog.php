@@ -9,6 +9,23 @@ $wp_customize->add_section( 'avenue_blog_section', array(
     'priority'              => 10
 ) );
 
+    // Blog Layout - Include Left Sidebar?
+    $wp_customize->add_setting( 'avenue[sc_blog_layout_left]', array(
+        'default'               => 'col1',
+        'transport'             => 'refresh',
+        'sanitize_callback'     => 'avenue_sanitize_col_sidebar_left',
+        'type'                  => 'option'
+    ) );
+    $wp_customize->add_control( 'avenue[sc_blog_layout_left]', array(
+        'label'   => __( 'Include the left sidebar on the blog?', 'avenue' ),
+        'section' => 'avenue_blog_section',
+        'type'    => 'radio',
+        'choices'    => array(
+            'col1'      => __( 'No Sidebar', 'avenue' ),
+            'col2l'     => __( 'Left Sidebar', 'avenue' ),
+        )
+    ));
+    
     // Blog Layout - Include Sidebar?
     $wp_customize->add_setting( 'avenue[sc_blog_layout]', array(
         'default'               => 'col2r',

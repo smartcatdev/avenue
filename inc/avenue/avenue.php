@@ -209,6 +209,7 @@ function avenue_custom_css() {
     <style>
 
         h1,h2,h3,h4,h5,h6,
+        #site-branding div.navigation div#primary-menu > ul > li > a,
         #site-branding div.navigation ul#primary-menu > li > a,
         div#mobile-menu-wrap ul#mobile-menu > li,
         .avenue-callout .buttons .avenue-button,
@@ -223,7 +224,9 @@ function avenue_custom_css() {
         }
         
         .error-404 .description,
-        .faq-item .faq-answer {
+        .faq-item .faq-answer,
+        #masonry-blog-wrapper .blog-roll-item .post-category,
+        #masonry-blog-wrapper .blog-roll-item .post-meta {
             font-family: <?php echo esc_attr( $avenue_options['sc_font_family_secondary'] ); ?>;
         }
         
@@ -239,6 +242,7 @@ function avenue_custom_css() {
             #site-branding img {
                max-height: <?php echo intval( $avenue_options['avenue_branding_bar_height'] ); ?>px;
             }
+            div#primary-menu > ul > li,
             ul#primary-menu > li {
                 line-height: <?php echo intval( $avenue_options['avenue_branding_bar_height'] - 5 ); ?>px;
             }
@@ -249,11 +253,12 @@ function avenue_custom_css() {
             #site-branding,
             #site-branding-sticky-wrap-sticky-wrapper,
             #site-branding-sticky-wrap-sticky-wrapper #site-branding-sticky-wrap{
-height: <?php echo isset( $avenue_options['avenue_branding_bar_height_mobile'] ) ? intval( $avenue_options['avenue_branding_bar_height_mobile'] ) : intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
+                height: <?php echo isset( $avenue_options['avenue_branding_bar_height_mobile'] ) ? intval( $avenue_options['avenue_branding_bar_height_mobile'] ) : intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
                 min-height: <?php echo isset( $avenue_options['avenue_branding_bar_height_mobile'] ) ? intval( $avenue_options['avenue_branding_bar_height_mobile'] ) : intval( $avenue_options['avenue_branding_bar_height'] ); ?>px !important;
             }
         }
         
+        #site-branding div#primary-menu > ul ul.sub-menu,
         #site-branding ul#primary-menu ul.sub-menu {
             top: <?php echo intval( $avenue_options['avenue_branding_bar_height'] ); ?>px;
         }
@@ -293,6 +298,8 @@ height: <?php echo isset( $avenue_options['avenue_branding_bar_height_mobile'] )
         .btn-link,
         .sc-primary-color,
         .icon404,
+        header#masthead div#primary-menu > ul > li > a:hover,
+        #site-branding div#primary-menu > ul ul.sub-menu > li a:hover,
         header#masthead ul#primary-menu > li > a:hover,
         #site-branding ul#primary-menu ul.sub-menu > li a:hover,
         .scroll-top:hover,
@@ -321,6 +328,7 @@ height: <?php echo isset( $avenue_options['avenue_branding_bar_height_mobile'] )
         .btn-primary,
         .sc-primary-border,
         .scroll-top:hover,
+        header#masthead div#primary-menu > ul > li > a:hover,
         header#masthead ul#primary-menu > li > a:hover
         {
             border-color: <?php echo esc_attr( $primary_theme_color ); ?>;
@@ -339,6 +347,12 @@ height: <?php echo isset( $avenue_options['avenue_branding_bar_height_mobile'] )
         .sc-slider-wrapper .camera_caption .secondary-caption {
             background: <?php echo esc_attr( avenue_hex2rgba( $primary_theme_color, 1 ) ); ?>;
         }
+        
+        <?php if ( !avenue_any_homepage_areas_active() ) : ?>
+            div#site-cta-wrap {
+                border-bottom: 2px solid #333333;
+            }
+        <?php endif; ?>
         
         @media(max-width: 600px){
             .nav-menu > li.current_page_item a {
@@ -726,6 +740,54 @@ class Avenue_Sidebar_Location_Meta_Box {
         // Update the meta field in the database
         update_post_meta( $post_id, 'avenue_sidebar_location', $avenue_sidebar_location );
         
+    }
+    
+}
+
+function avenue_is_homepage_sidebar_active( $homepage_id ) {
+    
+    $avenue_options = avenue_get_options();
+    
+    if ( isset( $homepage_id ) ) {
+        
+        if ( $homepage_id == 'a' ) : 
+            $is_active = is_active_sidebar( 'sidebar-banner' );
+        else: 
+            $is_active = is_active_sidebar( 'sidebar-banner' . $homepage_id );
+        endif;
+
+        if ( !is_null( $is_active ) ) :
+            
+            if ( isset( $avenue_options['homepage_area_' . $homepage_id . '_toggle'] ) && $avenue_options['homepage_area_' . $homepage_id . '_toggle'] == 'on' && $is_active ) {
+                return true;    // Is set to ON
+            } elseif ( !isset( $avenue_options['homepage_area_' . $homepage_id . '_toggle'] ) && $is_active ) {
+                return true;    // Is NOT set at all (Free)
+            } else {
+                return false;   // Is set to OFF
+            }
+            
+        endif; 
+        
+    } else {
+        
+        return false;
+        
+    }
+    
+}
+
+function avenue_any_homepage_areas_active() {
+    
+    if ( 
+        ( avenue_is_homepage_sidebar_active( 'a' ) ) ||
+        ( avenue_is_homepage_sidebar_active( 'b' ) ) ||
+        ( avenue_is_homepage_sidebar_active( 'c' ) ) ||
+        ( function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() && avenue_is_homepage_sidebar_active( 'd' ) ) ||
+        ( function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() && avenue_is_homepage_sidebar_active( 'e' ) )
+    ) {
+        return true;
+    } else {
+        return false;
     }
     
 }
