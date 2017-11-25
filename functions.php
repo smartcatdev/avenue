@@ -284,7 +284,7 @@ function avenue_migration_process() {
     endif; 
 
     if ( ! array_key_exists( 'sc_font_family_secondary', $existing_avenue_options ) ) :
-        $existing_avenue_options['sc_font_family_secondary'] = 'Roboto, sans-serif';
+        $existing_avenue_options['sc_font_family_secondary'] = $existing_avenue_options['sc_font_family'];
     endif; 
 
     if ( ! array_key_exists( 'avenue_branding_bar_height', $existing_avenue_options ) ) :
