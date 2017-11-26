@@ -532,3 +532,11 @@ div#alt-single-wrap img.feat-img {
     color: #fff;
     border-radius: 50%;
 }
+
+div#homepage-area-a .widget, 
+div#homepage-area-b .widget, 
+div#homepage-area-c .widget, 
+div#homepage-area-d .widget, 
+div#homepage-area-e .widget {
+    text-align: center;
+}

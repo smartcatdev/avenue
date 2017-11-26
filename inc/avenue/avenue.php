@@ -88,12 +88,16 @@ function avenue_widgets_init() {
     
     $avenue_options = avenue_get_options();
     
+    $homepage_a_widths = isset( $avenue_options['homepage_a_widget_widths'] ) && function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() ? $avenue_options['homepage_a_widget_widths'] : '12';
+    $homepage_b_widths = isset( $avenue_options['homepage_b_widget_widths'] ) && function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() ? $avenue_options['homepage_b_widget_widths'] : '12';
+    $homepage_c_widths = isset( $avenue_options['homepage_c_widget_widths'] ) && function_exists( 'avenue_strap_pl' ) && avenue_strap_pl() ? $avenue_options['homepage_c_widget_widths'] : '12';
+    
     // Homepage A
     register_sidebar(array(
         'name' => __('Homepage Widget Area - A', 'avenue'),
         'id' => 'sidebar-banner',
         'description' => '',
-        'before_widget' => '<div class="col-sm-12"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'before_widget' => '<div class="col-sm-' . esc_attr( $homepage_a_widths ) . '"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
         'after_widget' => '</aside></div>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
@@ -104,7 +108,7 @@ function avenue_widgets_init() {
         'name' => __('Homepage Widget Area - B', 'avenue'),
         'id' => 'sidebar-bannerb',
         'description' => '',
-        'before_widget' => '<div class="col-sm-6"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'before_widget' => '<div class="col-sm-' . esc_attr( $homepage_b_widths ) . '"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
         'after_widget' => '</aside></div>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
@@ -115,7 +119,7 @@ function avenue_widgets_init() {
         'name' => __('Homepage Widget Area - C', 'avenue'),
         'id' => 'sidebar-bannerc',
         'description' => '',
-        'before_widget' => '<div class="col-sm-4"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
+        'before_widget' => '<div class="col-sm-' . esc_attr( $homepage_c_widths ) . '"><aside id="%1$s" class="widget %2$s animated wow fadeIn">',
         'after_widget' => '</aside></div>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
