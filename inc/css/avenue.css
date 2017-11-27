@@ -573,6 +573,9 @@ div#homepage-area-e .widget {
     background: none;
 }
 
-#parent-slider-wrap {
-     
+.camera_loader {
+    left: 100%;
+    top: 0%;
+    margin-left: -51px;
+    margin-top: 15px;
 }

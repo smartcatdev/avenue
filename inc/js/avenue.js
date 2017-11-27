@@ -6,6 +6,9 @@ jQuery(document).ready(function ($) {
 
     if ( $('#avenue_slider_wrap').length > 0 ) {
 
+        var overlayer_active = false,
+            height_adjustment = false;
+
         $('#avenue_slider_wrap').camera({
             height: avenueSlider.desktop_height + '%',
             pagination: ( avenueSlider.pagination == 'on' ) ? true : false,
@@ -18,11 +21,19 @@ jQuery(document).ready(function ($) {
             overlayer: true,
             playPause : false,
             loader: 'pie',
+            onLoaded: function() {
+                if ( ! overlayer_active ) {
+                    $('.camera_overlayer').animate({
+                        opacity: 1,
+                    }, 1000 );
+                    overlayer_active = true;
+                }
+                if ( ! height_adjustment ) {
+                    $('#parent-slider-wrap').css( 'height', 'auto' );    
+                    height_adjustment = true;
+                }
+            }
         });
-
-        setTimeout(function(){ 
-            $('#parent-slider-wrap').css( 'height', 'auto' );
-        }, 150);
 
     }
     
