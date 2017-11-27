@@ -319,7 +319,8 @@ function avenue_custom_css() {
         footer#colophon .footer-boxes .avenue-callout .buttons .avenue-button,
         footer#colophon .footer-boxes .avenue-contact-form input[type="submit"],
         footer#colophon .footer-boxes .avenue-events .event-details a.avenue-button,
-        footer#colophon .footer-boxes .avenue-pricing-table a.avenue-button
+        footer#colophon .footer-boxes .avenue-pricing-table a.avenue-button,
+        .pagination-links .page-numbers.current
         {
             background: <?php echo esc_attr( $primary_theme_color ); ?>;
         }

@@ -540,3 +540,35 @@ div#homepage-area-d .widget,
 div#homepage-area-e .widget {
     text-align: center;
 }
+
+/*  
+ * Pagination Links ------------------------------------------------------------
+ */
+.pagination-links {
+    text-align: center;
+    padding: 15px 0;
+}
+
+.pagination-links .page-numbers,
+.woocommerce nav.woocommerce-pagination ul li span {
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    color: #666;
+    transition: .3s all ease-in-out;
+    -moz-transition: .3s all ease-in-out;
+    -webkit-transition: .3s all ease-in-out;
+}
+
+.pagination-links .page-numbers:hover,
+.woocommerce nav.woocommerce-pagination ul li:hover {
+    background-color: #dadada;
+}
+
+.pagination-links .page-numbers.current {
+    color: #ffffff;
+}
+
+.pagination-links .page-numbers.dots {
+    background: none;
+}

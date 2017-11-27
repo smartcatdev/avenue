@@ -290,7 +290,7 @@ h3{ font-size: 22px;line-height: 26px;}
     color: rgb(73, 73, 73);
     font-size: 20px;
     font-weight: 300;
-    line-height: normal;
+    line-height: left;
     padding: 10px 15px;
     text-align: right;
     text-decoration: none;
@@ -305,16 +305,16 @@ h3{ font-size: 22px;line-height: 26px;}
 }
 .sc-slider-wrapper .camera_caption .secondary-caption {
     /*float: right;*/
-    background-color: rgba(13, 172, 158, 0.85);
+/*    background-color: rgba(13, 172, 158, 0.85);*/
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: 300;
     line-height: normal;
     padding: 10px 15px;
-    text-align: right;
+    text-align: left;
     text-decoration: none;
     border-width: 0px;
-    border-color: rgb(255, 214, 88);
+/*    border-color: rgb(255, 214, 88);*/
     border-style: none;    
     animation-delay: 0.4s;
     -moz-animation-delay: 0.4s;
