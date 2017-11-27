@@ -212,6 +212,10 @@ function avenue_custom_css() {
 
     <style>
 
+        #parent-slider-wrap {
+            height: calc(100vw * <?php echo isset( $avenue_options['avenue_slider_height'] ) ? (int)$avenue_options['avenue_slider_height'] / 100 : (int)'42' / 100; ?>);
+        }
+        
         h1,h2,h3,h4,h5,h6,
         #site-branding div.navigation div#primary-menu > ul > li > a,
         #site-branding div.navigation ul#primary-menu > li > a,

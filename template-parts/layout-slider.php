@@ -2,7 +2,7 @@
 
 <?php if ( $avenue_options['sc_slide1_image'] || $avenue_options['sc_slide2_image'] || $avenue_options['sc_slide3_image'] ) : ?>
 
-    <div class="sc-slider-wrapper">
+    <div id="parent-slider-wrap" class="sc-slider-wrapper">
 
         <div class="fluid_container">
 

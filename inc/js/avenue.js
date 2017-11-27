@@ -20,6 +20,10 @@ jQuery(document).ready(function ($) {
             loader: 'pie',
         });
 
+        setTimeout(function(){ 
+            $('#parent-slider-wrap').css( 'height', 'auto' );
+        }, 150);
+
     }
     
     //¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
